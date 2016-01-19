@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{9A2F14BB-4926-4E73-8CDA-13477D27062E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossJob.Common", "Common\CrossJob.Common\CrossJob.Common.csproj", "{37DEB813-2BD0-4A4C-8CD5-303D6A41AD03}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{E93FB7AF-B896-4AD5-B87D-F613A508A44C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossJob.Models", "Data\CrossJob.Models\CrossJob.Models.csproj", "{78476698-8C18-43F3-957B-86A5E0B2F71D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossJob.Data", "Data\CrossJob.Data\CrossJob.Data.csproj", "{951211A0-14BE-4FA9-8111-31423C25AC58}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{75A86612-BDEF-49E6-9052-B4EF8A19AC29}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37DEB813-2BD0-4A4C-8CD5-303D6A41AD03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37DEB813-2BD0-4A4C-8CD5-303D6A41AD03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37DEB813-2BD0-4A4C-8CD5-303D6A41AD03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37DEB813-2BD0-4A4C-8CD5-303D6A41AD03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78476698-8C18-43F3-957B-86A5E0B2F71D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78476698-8C18-43F3-957B-86A5E0B2F71D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78476698-8C18-43F3-957B-86A5E0B2F71D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78476698-8C18-43F3-957B-86A5E0B2F71D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{951211A0-14BE-4FA9-8111-31423C25AC58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{951211A0-14BE-4FA9-8111-31423C25AC58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{951211A0-14BE-4FA9-8111-31423C25AC58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{951211A0-14BE-4FA9-8111-31423C25AC58}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{37DEB813-2BD0-4A4C-8CD5-303D6A41AD03} = {9A2F14BB-4926-4E73-8CDA-13477D27062E}
+		{78476698-8C18-43F3-957B-86A5E0B2F71D} = {E93FB7AF-B896-4AD5-B87D-F613A508A44C}
+		{951211A0-14BE-4FA9-8111-31423C25AC58} = {E93FB7AF-B896-4AD5-B87D-F613A508A44C}
+	EndGlobalSection
+EndGlobal
