@@ -12,7 +12,7 @@ namespace CrossJob.Data.Migrations
 
         protected override void Seed(CrossJobDbContext context)
         {
-
+            SeedDB.Start(context);
         }
     }
 }
