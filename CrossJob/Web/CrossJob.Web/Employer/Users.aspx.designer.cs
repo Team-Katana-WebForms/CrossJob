@@ -11,7 +11,7 @@ namespace CrossJob.Web
 {
 
 
-    public partial class Contact
+    public partial class About
     {
     }
 }
