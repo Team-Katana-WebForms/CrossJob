@@ -41,30 +41,25 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">CrossJob Platform</a>
+                    <a class="navbar-brand" runat="server" href="~/">HOME</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <asp:Menu runat="server" ID="Menu" CssClass="nav navbar-nav"
                         DataSourceID="SiteMapDataSource" Orientation="Horizontal" Font-Size="X-Large"
                         StaticDisplayLevels="2">
                     </asp:Menu>
-                    <asp:SiteMapDataSource runat="server" ID="SiteMapDataSource" />
+                    <asp:SiteMapDataSource runat="server" ID="SiteMapDataSource" ShowStartingNode="false" />
 
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                                <li><a class="btn btn-lg" runat="server" href="~/Account/Register">Register</a></li>
+                                <li><a class="btn btn-lg" runat="server" href="~/Account/Login">Log in</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li><a class="btn btn-lg" runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
@@ -75,12 +70,13 @@
                 --%>
             </div>
         </div>
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> CrossJob - Teamwork ASP.NET Web Forms</p>
             </footer>
         </div>
     </form>

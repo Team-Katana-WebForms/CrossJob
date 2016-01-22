@@ -7,6 +7,14 @@
 
     public class User : IdentityUser
     {
+        public string Avatar { get; set; }
+
+        public Rating Rating { get; set; }
+
+        public string Country { get; set; }
+
+        public string Description { get; set; }
+
         public ClaimsIdentity GenerateUserIdentity(UserManager<User> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType

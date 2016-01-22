@@ -10,13 +10,6 @@
 
     public class Advertisement
     {
-        private ICollection<Freelancer> freelancers;
-
-        public Advertisement()
-        {
-            this.freelancers = new HashSet<Freelancer>();
-        }
-
         [Key]
         public int Id { get; set; }
 
@@ -34,17 +27,10 @@
 
         public Project Project { get; set; }
 
-        [Required]
-        public DateTime DateOfExpiration { get; set; }
+        public DateTime CreatedOn { get; set; }
 
-        public string EmployeeId { get; set; }
+        public string EmployerId { get; set; }
 
-        public virtual Employee Employee { get; set; }
-
-        public virtual ICollection<Freelancer> Freelancers
-        {
-            get { return this.freelancers; }
-            set { this.freelancers = value; }
-        }
+        public virtual Employer Employer { get; set; }
     }
 }

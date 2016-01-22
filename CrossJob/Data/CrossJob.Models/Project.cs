@@ -7,11 +7,11 @@
 
     public class Project
     {
-        private ICollection<Comment> comments;
+        private ICollection<Freelancer> freelancers;
 
         public Project()
         {
-            this.comments = new HashSet<Comment>();
+            this.freelancers = new HashSet<Freelancer>();
         }
 
         [Key]
@@ -34,14 +34,12 @@
 
         public DateTime CreatedOn { get; set; }
 
-        public string EmployeeId { get; set; }
+        public DateTime Deadline { get; set; }
 
-        public virtual Employee Employee { get; set; }
+        public decimal Price { get; set; }
 
-        public virtual ICollection<Comment> Comments
-        {
-            get { return this.comments; }
-            set { this.comments = value; }
-        }
+        public string EmployerId { get; set; }
+
+        public virtual Employer Employer { get; set; }
     }
 }

@@ -1,13 +1,13 @@
 ﻿namespace CrossJob.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+    using System.ComponentModel.DataAnnotations;
 
     public class Rating
     {
+        [Key]
+        public int Id { get; set; }
 
+        [Range(1,5)]
+        public int Value { get; set; }
     }
 }

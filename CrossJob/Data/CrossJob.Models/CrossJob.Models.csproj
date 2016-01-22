@@ -60,7 +60,7 @@
     <Compile Include="Advertisement.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Comment.cs" />
-    <Compile Include="Employee.cs" />
+    <Compile Include="Employer.cs" />
     <Compile Include="Freelancer.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

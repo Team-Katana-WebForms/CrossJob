@@ -16,7 +16,12 @@
             this.projects = new HashSet<Project>();
             this.comments = new HashSet<Comment>();
         }
-        public string Country { get; set; } // from public API
+
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
+        public decimal RatePerHour { get; set; }
 
         public virtual ICollection<Project> Projects
         {
