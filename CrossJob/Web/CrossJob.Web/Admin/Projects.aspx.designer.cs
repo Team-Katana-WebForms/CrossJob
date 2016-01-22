@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CrossJob.Web
+namespace CrossJob.Web.Admin
 {
 
 
-    public partial class About
+    public partial class Projects
     {
     }
 }

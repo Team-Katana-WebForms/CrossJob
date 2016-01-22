@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CrossJob.Web.Employer {
+namespace CrossJob.Web {
     
     
-    public partial class Users {
+    public partial class About {
     }
 }

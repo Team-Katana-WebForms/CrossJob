@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CrossJob.Web.Employer
+namespace CrossJob.Web.Freelancer
 {
-    public partial class Users : Page
+    public partial class MyProjects : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

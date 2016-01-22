@@ -8,12 +8,12 @@
 
     public class Employer : User
     {
-        private ICollection<Advertisement> advertisements;
+        private ICollection<Project> projects;
         private ICollection<Comment> comments;
 
         public Employer()
         {
-            this.advertisements = new HashSet<Advertisement>();
+            this.projects = new HashSet<Project>();
             this.comments = new HashSet<Comment>();
         }
 
@@ -23,10 +23,10 @@
 
         public string WebSite { get; set; }
 
-        public virtual ICollection<Advertisement> Advertisements
+        public virtual ICollection<Project> Projects
         {
-            get { return this.advertisements; }
-            set { this.advertisements = value; }
+            get { return this.projects; }
+            set { this.projects = value; }
         }
 
         public virtual ICollection<Comment> Comments

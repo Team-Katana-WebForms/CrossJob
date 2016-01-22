@@ -44,21 +44,24 @@
                     <a class="navbar-brand" runat="server" href="~/">HOME</a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <asp:Menu runat="server" ID="Menu" CssClass="nav navbar-nav"
-                        DataSourceID="SiteMapDataSource" Orientation="Horizontal" Font-Size="X-Large"
-                        StaticDisplayLevels="2">
+                    <asp:Menu runat="server" ID="Menu" StaticMenuStyle-CssClass="nav navbar-nav"
+                        DataSourceID="SiteMapDataSource" Orientation="Horizontal" Font-Size="Large"
+                        StaticDisplayLevels="2" StaticMenuStyle-Font-Bold="true">
                     </asp:Menu>
                     <asp:SiteMapDataSource runat="server" ID="SiteMapDataSource" ShowStartingNode="false" />
 
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-left">
+                                <li><a class="btn btn-lg" runat="server" href="~/Projects">Projects</a></li>
+                            </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a class="btn btn-lg" runat="server" href="~/Account/Register">Register</a></li>
                                 <li><a class="btn btn-lg" runat="server" href="~/Account/Login">Log in</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right">
+                            <ul class="nav navbar-nav navbar-right" style="float:left">
                                 <li><a class="btn btn-lg" runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
@@ -67,7 +70,6 @@
                         </LoggedInTemplate>
                     </asp:LoginView>
                 </div>
-                --%>
             </div>
         </div>
 

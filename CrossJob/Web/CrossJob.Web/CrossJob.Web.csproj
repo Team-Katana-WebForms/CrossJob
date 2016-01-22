@@ -154,6 +154,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Employers.aspx" />
+    <Content Include="Admin\Projects.aspx" />
     <Content Include="Admin\Users.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
@@ -173,6 +175,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Freelancer\Employers.aspx" />
+    <Content Include="Freelancer\MyProjects.aspx" />
+    <Content Include="Projects.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -214,7 +219,7 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Employer\Users.aspx" />
-    <Content Include="Freelancer\Advertisements.aspx" />
+    <Content Include="Freelancer\Projects.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -338,6 +343,20 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Employers.aspx.cs">
+      <DependentUpon>Employers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Employers.aspx.designer.cs">
+      <DependentUpon>Employers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Projects.aspx.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Projects.aspx.designer.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Admin\Users.aspx.cs">
       <DependentUpon>Users.aspx</DependentUpon>
@@ -349,6 +368,27 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Freelancer\Employers.aspx.cs">
+      <DependentUpon>Employers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Freelancer\Employers.aspx.designer.cs">
+      <DependentUpon>Employers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Freelancer\MyProjects.aspx.cs">
+      <DependentUpon>MyProjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Freelancer\MyProjects.aspx.designer.cs">
+      <DependentUpon>MyProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Projects.aspx.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Projects.aspx.designer.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -389,12 +429,12 @@
     <Compile Include="Employer\Users.aspx.designer.cs">
       <DependentUpon>Users.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Freelancer\Advertisements.aspx.cs">
-      <DependentUpon>Advertisements.aspx</DependentUpon>
+    <Compile Include="Freelancer\Projects.aspx.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Freelancer\Advertisements.aspx.designer.cs">
-      <DependentUpon>Advertisements.aspx</DependentUpon>
+    <Compile Include="Freelancer\Projects.aspx.designer.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
