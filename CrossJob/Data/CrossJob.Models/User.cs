@@ -4,16 +4,11 @@
     using System.Threading.Tasks;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
+    using System.ComponentModel.DataAnnotations;
 
     public class User : IdentityUser
     {
-        public string Avatar { get; set; }
-
-        public Rating Rating { get; set; }
-
-        public string Country { get; set; }
-
-        public string Description { get; set; }
+        //public UserType UserType { get; set; }
 
         public ClaimsIdentity GenerateUserIdentity(UserManager<User> manager)
         {

@@ -2,26 +2,34 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
 
-    public class Freelancer : User
+    public class Freelancer : BaseUser
     {
         private ICollection<Project> projects;
         private ICollection<Comment> comments;
+        private ICollection<Rating> ratings;
 
         public Freelancer()
         {
             this.projects = new HashSet<Project>();
             this.comments = new HashSet<Comment>();
+            this.ratings = new HashSet<Rating>();
         }
 
+        [Required]
+        [MaxLength(20)]
         public string FirstName { get; set; }
 
+        [Required]
+        [MaxLength(20)]
         public string LastName { get; set; }
 
-        public decimal RatePerHour { get; set; }
+        [Required]
+        public decimal? RatePerHour { get; set; }
 
         public virtual ICollection<Project> Projects
         {
@@ -33,6 +41,12 @@
         {
             get { return this.comments; }
             set { this.comments = value; }
+        }
+
+        public virtual ICollection<Rating> Ratings
+        {
+            get { return this.ratings; }
+            set { this.ratings = value; }
         }
     }
 }

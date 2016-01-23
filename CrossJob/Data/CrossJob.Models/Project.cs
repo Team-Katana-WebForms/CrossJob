@@ -15,7 +15,7 @@
         }
 
         [Key]
-        public int Id { get; set; }
+        public int ID { get; set; }
 
         [Required]
         [MinLength(ProjectConstants.MinTitleLength)]
@@ -34,12 +34,20 @@
 
         public DateTime CreatedOn { get; set; }
 
-        public DateTime Deadline { get; set; }
+        public DateTime? StartOn { get; set; }
+
+        public DateTime? FinishOn { get; set; }
 
         public decimal Price { get; set; }
 
-        public string EmployerId { get; set; }
+        public string EmployerID { get; set; }
 
         public virtual Employer Employer { get; set; }
+
+        public ICollection<Freelancer> Freelancers
+        {
+            get { return this.freelancers; }
+            set { this.freelancers = value; }
+        }
     }
 }
