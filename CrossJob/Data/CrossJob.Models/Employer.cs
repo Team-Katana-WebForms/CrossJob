@@ -1,6 +1,7 @@
 ﻿namespace CrossJob.Models
 {
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public class Employer : User
     {
@@ -16,6 +17,7 @@
             this.ratings = new HashSet<Rating>();
         }
 
+        [Required]
         public string CompanyName { get; set; }
 
         public string Address { get; set; }
