@@ -8,7 +8,13 @@
 
     public class User : IdentityUser
     {
-        //public UserType UserType { get; set; }
+        public int FreelancerID { get; set; }
+
+        public virtual  Freelancer Freelancer { get; set; }
+
+        public int EmployerID { get; set; }
+
+        public virtual Employer Employer { get; set; }
 
         public ClaimsIdentity GenerateUserIdentity(UserManager<User> manager)
         {
