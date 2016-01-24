@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionString.cs" />
+    <Compile Include="Constants\Assemblies.cs" />
     <Compile Include="Constants\CommentConstants.cs" />
     <Compile Include="Constants\ProjectConstants.cs" />
     <Compile Include="Constants\TagConstants.cs" />
