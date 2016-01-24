@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-  <siteMapNode url="~/Default.aspx" title="Dummy">
+  <siteMapNode url="~/Default.aspx" title="Home">
     <siteMapNode url="~/Admin/Employers" title="Employers"  description="Edit/delete employers" />
     <siteMapNode url="~/Admin/Users" title="Users"  description="Edit/delete users" />
     <siteMapNode url="~/Admin/Projects" title="Projects"  description="Edit/delete projects" />

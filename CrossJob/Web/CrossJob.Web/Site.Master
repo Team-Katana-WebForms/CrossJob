@@ -44,11 +44,13 @@
                     <a class="navbar-brand" runat="server" href="~/">HOME</a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <asp:Menu runat="server" ID="Menu" StaticMenuStyle-CssClass="nav navbar-nav"
-                        DataSourceID="SiteMapDataSource" Orientation="Horizontal" Font-Size="Large"
-                        StaticDisplayLevels="2" StaticMenuStyle-Font-Bold="true">
-                    </asp:Menu>
-                    <asp:SiteMapDataSource runat="server" ID="SiteMapDataSource" ShowStartingNode="false" />
+                    <ul class="nav navbar-nav">
+                        <asp:Menu runat="server" ID="Menu"
+                            DataSourceID="SiteMapDataSource" Orientation="Horizontal" Font-Size="Large"
+                            StaticDisplayLevels="2" StaticMenuStyle-Font-Bold="true">
+                        </asp:Menu>
+                        <asp:SiteMapDataSource runat="server" ID="SiteMapDataSource" ShowStartingNode="false" />
+                    </ul>
 
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
@@ -61,8 +63,7 @@
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right" style="float:left">
-                                <li><a class="btn btn-lg" runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                            <ul class="nav navbar-nav navbar-right">
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
@@ -77,10 +78,15 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> CrossJob - Teamwork ASP.NET Web Forms</p>
+            <footer class="text-center">
+                <p>&copy; 2016 CrossJob - Teamwork ASP.NET Web Forms</p>
             </footer>
         </div>
     </form>
+        <script>
+        $(document).ready(function () {
+            $('#Menu').removeAttr('style').find('ul').addClass('nav').addClass('navbar-nav');
+        });
+    </script>
 </body>
 </html>

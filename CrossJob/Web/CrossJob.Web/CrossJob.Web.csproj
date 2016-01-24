@@ -154,6 +154,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterEmployer.aspx" />
+    <Content Include="Account\RegisterFreelancer.aspx" />
     <Content Include="Admin\Employers.aspx" />
     <Content Include="Admin\Projects.aspx" />
     <Content Include="Admin\Users.aspx" />
@@ -166,7 +169,6 @@
     <Content Include="Account\ManageLogins.aspx" />
     <Content Include="Account\ManagePassword.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
-    <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
@@ -307,6 +309,20 @@
     </Compile>
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterEmployer.aspx.cs">
+      <DependentUpon>RegisterEmployer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterEmployer.aspx.designer.cs">
+      <DependentUpon>RegisterEmployer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterFreelancer.aspx.cs">
+      <DependentUpon>RegisterFreelancer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterFreelancer.aspx.designer.cs">
+      <DependentUpon>RegisterFreelancer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\RegisterExternalLogin.aspx.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>

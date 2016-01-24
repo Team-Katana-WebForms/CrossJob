@@ -7,13 +7,11 @@
 
     public class User : IdentityUser
     {
-        //[Required]
-        //[MaxLength(1000)]
-        public string Description { get; set; }
-
         public string Country { get; set; }
 
         public string Avatar { get; set; }
+
+        //public string Role { get; set; }
 
         public ClaimsIdentity GenerateUserIdentity(UserManager<User> manager)
         {
