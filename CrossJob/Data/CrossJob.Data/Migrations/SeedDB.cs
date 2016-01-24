@@ -9,13 +9,54 @@
     using Models;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Microsoft.AspNet.Identity;
+    using Repositories;
 
     public static class SeedDB
     {
         public static void Start(CrossJobDbContext context)
         {
             SeedUsers(context);
+            //SeedCategories(context);
         }
+
+        //private static void SeedCategories(CrossJobDbContext context)
+        //{
+        //    var data = new[] {
+        //        "3D Modeling & CAD",
+        //        "Academic Writing & Research",
+        //        "Animation",
+        //        "Article & Blog Writing",
+        //        "Audio Production",
+        //        "Copywriting",
+        //        "Creative Writing",
+        //        "Database Administration",
+        //        "Desktop Software Development",
+        //        "Editing & Proofreading",
+        //        "ERP / CRM Software",
+        //        "Game Development",
+        //        "Graphic Design",
+        //        "Illustration",
+        //        "Information Security",
+        //        "Logo Design & Branding",
+        //        "Market & Customer Research",
+        //        "Marketing Strategy",
+        //        "Mobile Development",
+        //        "Network & System Administration",
+        //        "Other - IT & Networking",
+        //        "Other - Software Development",
+        //        "Photography",
+        //        "Presentations",
+        //        "Product Management",
+        //        "QA & Testing",
+        //        "SEM - Search Engine Marketing",
+        //        "SEO - Search Engine Optimization",
+        //        "SMM - Social Media Marketing",
+        //        "Technical Writing",
+        //        "Video Production",
+        //        "Web & Mobile Design",
+        //        "Web Development"
+        //        };
+        //}
 
         private static void SeedUsers(CrossJobDbContext context)
         {

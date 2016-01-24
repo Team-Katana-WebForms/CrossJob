@@ -1,10 +1,6 @@
 ﻿namespace CrossJob.Models
 {
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class Employer : User
     {
@@ -13,6 +9,7 @@
         private ICollection<Rating> ratings;
 
         public Employer()
+            :base()
         {
             this.projects = new HashSet<Project>();
             this.comments = new HashSet<Comment>();

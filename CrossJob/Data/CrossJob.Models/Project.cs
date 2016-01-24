@@ -27,13 +27,13 @@
 
         public DateTime CreatedOn { get; set; }
 
-        public DateTime? StartOn { get; set; }
+        public DateTime StartOn { get; set; }
 
-        public DateTime? FinishOn { get; set; }
+        public DateTime FinishOn { get; set; }
 
         public decimal Price { get; set; }
 
-        public int FreelancerID { get; set; }
+        public string FreelancerID { get; set; }
 
         public virtual Freelancer Freelancer { get; set; }
 
