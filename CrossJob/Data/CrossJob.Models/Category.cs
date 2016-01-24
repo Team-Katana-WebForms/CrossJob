@@ -6,12 +6,12 @@
     public class Category
     {
         private ICollection<Project> projects;
-        private ICollection<Tag> tags;
+        //private ICollection<Tag> tags;
 
         public Category()
         {
             this.projects = new HashSet<Project>();
-            this.tags = new HashSet<Tag>();
+            //this.tags = new HashSet<Tag>();
         }
 
         [Key]
@@ -27,10 +27,10 @@
             set { this.projects = value; }
         }
 
-        public virtual ICollection<Tag> Tags
-        {
-            get { return this.tags; }
-            set { this.tags = value; }
-        }
+        //public virtual ICollection<Tag> Tags
+        //{
+        //    get { return this.tags; }
+        //    set { this.tags = value; }
+        //}
     }
 }

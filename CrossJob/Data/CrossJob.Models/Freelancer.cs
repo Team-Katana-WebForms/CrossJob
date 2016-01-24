@@ -10,6 +10,7 @@
         private ICollection<Rating> ratings;
 
         public Freelancer()
+            :base()
         {
             this.projects = new HashSet<Project>();
             this.comments = new HashSet<Comment>();
