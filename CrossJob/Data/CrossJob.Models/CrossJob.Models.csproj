@@ -57,10 +57,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseUser.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Comment.cs" />
-    <Compile Include="Country.cs" />
     <Compile Include="Employer.cs" />
     <Compile Include="Freelancer.cs" />
     <Compile Include="Project.cs" />

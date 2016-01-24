@@ -8,13 +8,13 @@
 
     public class User : IdentityUser
     {
-        public int FreelancerID { get; set; }
+        //[Required]
+        //[MaxLength(1000)]
+        public string Description { get; set; }
 
-        public virtual  Freelancer Freelancer { get; set; }
+        public string Country { get; set; }
 
-        public int EmployerID { get; set; }
-
-        public virtual Employer Employer { get; set; }
+        public string Avatar { get; set; }
 
         public ClaimsIdentity GenerateUserIdentity(UserManager<User> manager)
         {

@@ -7,13 +7,6 @@
 
     public class Project
     {
-        private ICollection<Freelancer> freelancers;
-
-        public Project()
-        {
-            this.freelancers = new HashSet<Freelancer>();
-        }
-
         [Key]
         public int ID { get; set; }
 
@@ -40,14 +33,12 @@
 
         public decimal Price { get; set; }
 
+        public int FreelancerID { get; set; }
+
+        public virtual Freelancer Freelancer { get; set; }
+
         public string EmployerID { get; set; }
 
         public virtual Employer Employer { get; set; }
-
-        public ICollection<Freelancer> Freelancers
-        {
-            get { return this.freelancers; }
-            set { this.freelancers = value; }
-        }
     }
 }

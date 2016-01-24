@@ -15,11 +15,11 @@
 
         public string RecipientId { get; set; }
 
-        public virtual Freelancer Recipient { get; set; }
+        public virtual User Recipient { get; set; }
 
         public string AuthorId { get; set; }
 
-        public virtual Employer Author { get; set; }
+        public virtual User Author { get; set; }
 
         public DateTime CreatedOn { get; set; }
     }

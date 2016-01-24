@@ -1,13 +1,9 @@
 ﻿namespace CrossJob.Models
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
-    public class Freelancer : BaseUser
+    public class Freelancer : User
     {
         private ICollection<Project> projects;
         private ICollection<Comment> comments;

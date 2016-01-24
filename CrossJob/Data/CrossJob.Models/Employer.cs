@@ -6,7 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public class Employer : BaseUser
+    public class Employer : User
     {
         private ICollection<Project> projects;
         private ICollection<Comment> comments;
