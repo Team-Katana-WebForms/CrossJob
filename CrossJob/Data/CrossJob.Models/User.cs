@@ -10,7 +10,7 @@
     {
         private ICollection<Project> projects;
         private ICollection<Comment> comments;
-        private ICollection<Rating> ratings;
+        protected ICollection<Rating> ratings;
 
         public User()
         {

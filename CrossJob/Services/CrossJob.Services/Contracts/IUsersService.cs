@@ -7,6 +7,8 @@
     {
         IQueryable<Freelancer> GetAllFreelancers(int skip, int take);
 
+        IQueryable<Freelancer> AllFreelancers();
+
         IQueryable<Employer> GetAllEmployers(int skip, int take);
 
         IQueryable<Freelancer> GetTopFreelancersByRating(int top);
