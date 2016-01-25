@@ -3,7 +3,7 @@
     using System.Linq;
     using Models;
 
-    public interface IProjectService
+    public interface IProjectsService
     {
         IQueryable<Project> GetAll(int skip, int take);
 

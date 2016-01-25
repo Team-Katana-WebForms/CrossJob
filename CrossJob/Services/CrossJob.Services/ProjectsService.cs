@@ -6,7 +6,7 @@
     using Data.Repositories;
     using Models;
 
-    public class ProjectsService : IProjectService
+    public class ProjectsService : IProjectsService
     {
         private readonly IRepository<Project> projects;
 

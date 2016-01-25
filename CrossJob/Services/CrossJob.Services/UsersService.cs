@@ -6,16 +6,18 @@
     using Data.Repositories;
     using Models;
 
-    public class UsersService : IUserService
+    public class UsersService : IUsersService
     {
         private readonly IRepository<Employer> employers;
         private readonly IRepository<Freelancer> freelancers;
+        private readonly IRepository<User> users;
 
 
-        public UsersService(IRepository<Employer> employers, IRepository<Freelancer> freelancers)
+        public UsersService(IRepository<Employer> employers, IRepository<Freelancer> freelancers, IRepository<User> users)
         {
             this.employers = employers;
             this.freelancers = freelancers;
+            this.users = users;
         }
 
         public void DeleteEmployer(string id)
@@ -46,18 +48,20 @@
                 .Take(take);
         }
 
-        public IQueryable<Employer> GetEmployerrDetails(string username)
+        public Employer GetEmployerrDetails(string userId)
         {
             return this.employers
                 .All()
-                .Where(r => r.UserName == username);
+                .Where(r => r.Id == userId)
+                .FirstOrDefault();
         }
 
-        public IQueryable<Freelancer> GetFreelancerDetails(string username)
+        public Freelancer GetFreelancerDetails(string userId)
         {
             return this.freelancers
              .All()
-             .Where(r => r.UserName == username);
+             .Where(r => r.Id == userId)
+             .FirstOrDefault();
         }
 
         public IQueryable<Employer> UpdateProfileEmployer(Employer updatedUser)

@@ -7,6 +7,7 @@
     <siteMapNode url="~/Freelancer/Projects" title="All Projects"  description="Search all projects" />
     <siteMapNode url="~/Freelancer/Employers" title="Employers"  description="Search all employers" />
     <siteMapNode url="~/Freelancer/MyProjects" title="My projects"  description="See my projects" />
+    <siteMapNode url="~/Freelancer/Account" title="My profile"  description="See my profile" />
     <siteMapNode url="~/Employer/Users" title="Users"  description="Search all users" />
   </siteMapNode>
 </siteMap>

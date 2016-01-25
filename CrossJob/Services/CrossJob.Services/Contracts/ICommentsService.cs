@@ -7,7 +7,7 @@
     using System.Threading.Tasks;
     using Models;
 
-    public interface ICommentService
+    public interface ICommentsService
     {
         IQueryable<Comment> GetById(int id);
 
