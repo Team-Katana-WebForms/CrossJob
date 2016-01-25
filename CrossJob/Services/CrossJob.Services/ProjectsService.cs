@@ -6,11 +6,11 @@
     using Data.Repositories;
     using Models;
 
-    public class ProjectService : IProjectService
+    public class ProjectsService : IProjectsService
     {
         private readonly IRepository<Project> projects;
 
-        public ProjectService(IRepository<Project> projects)
+        public ProjectsService(IRepository<Project> projects)
         {
             this.projects = projects;
         }

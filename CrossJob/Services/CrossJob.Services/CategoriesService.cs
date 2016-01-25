@@ -5,11 +5,11 @@
     using Data.Repositories;
     using Models;
 
-    public class CategoryService : ICategoryService
+    public class CategoriesService : ICategoriesService
     {
         private readonly IRepository<Category> categories;
 
-        public CategoryService(IRepository<Category> categories)
+        public CategoriesService(IRepository<Category> categories)
         {
             this.categories = categories;
         }

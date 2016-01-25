@@ -8,17 +8,18 @@
     using Models;
     using System.Web.UI.WebControls;
     using System.Globalization;
+    using Microsoft.AspNet.Identity;
 
     public partial class AddProject : System.Web.UI.Page
     {
         [Inject]
-        public ICategoryService CategoryService { get; set; }
+        public ICategoriesService CategoryService { get; set; }
 
         [Inject]
-        public IUserService UserService { get; set; }
+        public IUsersService UserService { get; set; }
 
         [Inject]
-        public IProjectService ProjectService { get; set; }
+        public IProjectsService ProjectService { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -122,7 +123,7 @@
                     projectPrice = decimal.Parse(this.tbPrice.Text);
                 }
 
-                var employer = this.UserService.GetEmployerrDetails(this.User.Identity.Name).FirstOrDefault();
+                var employer = this.UserService.GetEmployerrDetails(this.User.Identity.GetUserId());
                 var employerId = employer.Id;
                 int projectId = this.ProjectService.AddNew(
                     projectTitle,

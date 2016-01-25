@@ -59,20 +59,20 @@
                 var userManager = new UserManager<User>(new UserStore<User>(context));
                 var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
 
+                //Create Role if it does not exist
+                if (!roleManager.Roles.Any())
+                {
+                    roleManager.Create(new IdentityRole("Admin"));
+                    roleManager.Create(new IdentityRole("Freelancer"));
+                    roleManager.Create(new IdentityRole("Employer"));
+                }
+
                 CreateNewUser(userManager, roleManager, "Admin", "admin@test.com", "123456");
-                CreateNewUser(userManager, roleManager, "Freelancer", "freelancer@test.com", "123456");
-                CreateNewUser(userManager, roleManager, "Employer", "employer@test.com", "123456");
             }
         }
 
         private static void CreateNewUser(UserManager<User> userManager, RoleManager<IdentityRole> roleManager, string name, string email, string password)
         {
-            //Create Role if it does not exist
-            if (!roleManager.RoleExists(name))
-            {
-                var roleresult = roleManager.Create(new IdentityRole(name));
-            }
-
             //Create User with password
             var user = new User();
             user.UserName = email;
