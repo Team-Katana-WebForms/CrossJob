@@ -240,6 +240,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="TopFreelancers.aspx" />
     <Content Include="Utilities\Notifier\css\notifier.css" />
     <Content Include="Utilities\Notifier\js\jquery-2.1.1.min.js" />
     <Content Include="Utilities\Notifier\js\notifier.js" />
@@ -465,6 +466,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="TopFreelancers.aspx.cs">
+      <DependentUpon>TopFreelancers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TopFreelancers.aspx.designer.cs">
+      <DependentUpon>TopFreelancers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\Notifier\Enums\NotificationType.cs" />
     <Compile Include="Utilities\Notifier\Notification.cs" />
     <Compile Include="Utilities\Notifier\Notifier.ascx.cs">
