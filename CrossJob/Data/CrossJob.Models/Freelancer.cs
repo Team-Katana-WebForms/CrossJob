@@ -1,7 +1,7 @@
 ﻿namespace CrossJob.Models
 {
+    using System.ComponentModel.DataAnnotations;
     using System.Linq;
-    using System.Collections.Generic;
 
     public class Freelancer : User
     {
