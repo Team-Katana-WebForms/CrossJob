@@ -1,7 +1,7 @@
 ﻿namespace CrossJob.Models
 {
-    using System.ComponentModel.DataAnnotations;
     using System.Linq;
+    using System.Collections.Generic;
 
     public class Freelancer : User
     {
@@ -21,7 +21,7 @@
             {
                 if (this.ratings.Count != 0)
                 {
-                   return this.ratings.Average(r => r.Value);
+                    return this.ratings.Average(r => r.Value);
                 }
                 else
                 {
@@ -29,5 +29,6 @@
                 }
             }
         }
+
     }
 }
