@@ -32,7 +32,12 @@ input[type="select"] {
     .jumbotron {
         margin-top: 20px;
     }
+
     .body-content {
         padding: 0;
     }
+}
+
+#MainContent_Avatar {
+    width: 225px;
 }

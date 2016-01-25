@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CrossJob.Web.SiteMaster" %>
 
+<%@ Register Src="~/Utilities/Notifier/Notifier.ascx" TagPrefix="ucHandler" TagName="ErrorSuccessNotifier" %>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -78,6 +80,7 @@
 
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                <ucHandler:ErrorSuccessNotifier runat="server" ID="ucHandler" />
             </asp:ContentPlaceHolder>
             <hr />
             <footer class="text-center">

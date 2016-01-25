@@ -3,18 +3,20 @@
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
-
-    <div>
-        <%--   <asp:PlaceHolder runat="server" ID="successMessage" Visible="false" ViewStateMode="Disabled">
-            <p class="text-success"><%: SuccessMessage %></p>
-        </asp:PlaceHolder>--%>
-    </div>
-
+    <h2>Personal Account</h2>
     <div class="row">
         <div class="form-horizontal col-md-12">
             <h4>Change your account settings</h4>
             <hr />
+            <div class="form-group col-md-9 text-center">
+                <asp:Image ID="Avatar" runat="server" />
+            </div>
+            <div class="form-group col-md-9">
+                <asp:Label runat="server" AssociatedControlID="FileUploadControl" CssClass="col-md-2 control-label">Upload new image</asp:Label>
+                <div class="col-md-9">
+                    <asp:FileUpload ID="FileUploadControl" runat="server" OnClick="UpdateAccount_Click" />
+                </div>
+            </div>
             <div class="form-group col-md-9">
                 <asp:Label runat="server" AssociatedControlID="UserName" CssClass="col-md-2 control-label">Username</asp:Label>
                 <div class="col-md-9">
@@ -47,7 +49,7 @@
             <div class="form-group col-md-9">
                 <asp:Label runat="server" AssociatedControlID="LastName" CssClass="col-md-2 control-label">Last Name</asp:Label>
                 <div class="col-md-9">
-                    <asp:TextBox runat="server" ID="LastName" CssClass="form-control"/>
+                    <asp:TextBox runat="server" ID="LastName" CssClass="form-control" />
                     <asp:RegularExpressionValidator Display="Dynamic" runat="server" ControlToValidate="LastName"
                         ValidationExpression=".{3}.*"
                         CssClass="text-danger" ErrorMessage="Minimum first name length is 3." />
@@ -58,7 +60,7 @@
             <div class="form-group col-md-9">
                 <asp:Label runat="server" AssociatedControlID="Country" CssClass="col-md-2 control-label">Country</asp:Label>
                 <div class="col-md-9">
-                    <asp:DropDownList runat="server" ID="Country" CssClass="list-group" />
+                    <asp:DropDownList runat="server" ID="Country" CssClass="list-group btn btn-default dropdown-toggle" />
                 </div>
             </div>
             <div class="form-group col-md-9">

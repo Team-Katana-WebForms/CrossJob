@@ -1,7 +1,7 @@
 ﻿namespace CrossJob.Models
 {
-    using System.Linq;
     using System.ComponentModel.DataAnnotations;
+    using System.Linq;
 
     public class Freelancer : User
     {
@@ -28,24 +28,6 @@
                     return 0;
                 }
             }
-        }
-
-        public virtual ICollection<Project> Projects
-        {
-            get { return this.projects; }
-            set { this.projects = value; }
-        }
-
-        public virtual ICollection<Comment> Comments
-        {
-            get { return this.comments; }
-            set { this.comments = value; }
-        }
-
-        public virtual ICollection<Rating> Ratings
-        {
-            get { return this.ratings; }
-            set { this.ratings = value; }
         }
     }
 }
