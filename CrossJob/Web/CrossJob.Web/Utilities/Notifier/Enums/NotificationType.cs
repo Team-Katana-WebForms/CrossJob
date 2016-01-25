@@ -1,4 +1,4 @@
-﻿namespace BarterSystem.WebForms.Utilities.Notifier.Enums
+﻿namespace CrossJob.WebForms.Utilities.Notifier.Enums
 {
     public enum NotificationType
     {
