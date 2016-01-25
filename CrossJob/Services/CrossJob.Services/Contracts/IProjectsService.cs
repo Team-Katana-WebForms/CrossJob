@@ -6,7 +6,9 @@
 
     public interface IProjectsService
     {
-        IQueryable<Project> GetAll(int skip, int take);
+        IQueryable<Project> GetAll();
+
+        IQueryable<Project> GetAllByEmployer(string employerId);
 
         IQueryable<Project> GetById(int id);
 

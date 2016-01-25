@@ -48,13 +48,19 @@
             this.projects.SaveChanges();
         }
 
-        public IQueryable<Project> GetAll(int skip, int take)
+        public IQueryable<Project> GetAll()
         {
             return this.projects
              .All()
-             .OrderByDescending(r => r.CreatedOn)
-             .Skip(skip)
-             .Take(take);
+             .OrderByDescending(r => r.CreatedOn);
+        }
+
+        public IQueryable<Project> GetAllByEmployer(string employerId)
+        {
+            return this.projects
+             .All()
+             .Where(p => p.EmployerID == employerId)
+             .OrderByDescending(r => r.CreatedOn);
         }
 
         public IQueryable<Project> GetById(int id)

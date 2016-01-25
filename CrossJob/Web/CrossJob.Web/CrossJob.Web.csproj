@@ -206,7 +206,7 @@
     <Content Include="Freelancer\Employers.aspx" />
     <Content Include="Freelancer\MyProjects.aspx" />
     <Content Include="Imgs\calendar-icon.jpg" />
-    <Content Include="Projects.aspx" />
+    <Content Include="Employer\Projects.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -467,11 +467,11 @@
     <Compile Include="Freelancer\MyProjects.aspx.designer.cs">
       <DependentUpon>MyProjects.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Projects.aspx.cs">
+    <Compile Include="Employer\Projects.aspx.cs">
       <DependentUpon>Projects.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Projects.aspx.designer.cs">
+    <Compile Include="Employer\Projects.aspx.designer.cs">
       <DependentUpon>Projects.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
