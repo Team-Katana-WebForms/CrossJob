@@ -52,10 +52,14 @@
 
         public IQueryable<Freelancer> GetTopFreelancersByRating(int top)
         {
-            return this.freelancers
+            var result = this.freelancers
                 .All()
-                .OrderByDescending(f => f.RatePerHour)
-                .Take(top);
+                .ToList()
+                .OrderByDescending(f => f.AverageRating)
+                .ThenByDescending(f => f.Projects.Count)
+                .Take(top)
+                .AsQueryable();
+            return result;
         }
 
         public Employer GetEmployerrDetails(string userId)
