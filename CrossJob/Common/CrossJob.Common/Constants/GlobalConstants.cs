@@ -4,6 +4,8 @@
     {
         public const string ImagesPath = "~/Uploads/";
 
-        public const string DefaultAvatar = "default-avatar.jpg";
+        public const string DefaultExtension = ".png";
+
+        public const string DefaultAvatar = "~/Uploads/default.jpg";
     }
 }

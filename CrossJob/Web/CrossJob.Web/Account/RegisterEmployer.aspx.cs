@@ -8,11 +8,11 @@
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Models;
+    using Common.Constants;
 
     public partial class RegisterEmployer : Page
     {
         private const string Role = "Employer";
-
         protected void CreateUser_Click(object sender, EventArgs e)
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
@@ -21,7 +21,8 @@
             {
                 Email = Email.Text,
                 UserName = UserName.Text,
-                CompanyName = CompanyName.Text
+                CompanyName = CompanyName.Text,
+                Avatar = GlobalConstants.DefaultAvatar
             };
 
             IdentityResult result = manager.Create(user, Password.Text);

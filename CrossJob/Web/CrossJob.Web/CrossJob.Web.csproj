@@ -247,6 +247,7 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="TopFreelancers.aspx" />
+    <Content Include="Uploads\default.jpg" />
     <Content Include="Utilities\Notifier\css\notifier.css" />
     <Content Include="Utilities\Notifier\js\jquery-2.1.1.min.js" />
     <Content Include="Utilities\Notifier\js\notifier.js" />

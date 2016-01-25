@@ -6,6 +6,7 @@
     using System.Linq;
     using System.Web.UI;
     using System.Web.UI.WebControls;
+    using Common.Constants;
     using Microsoft.AspNet.Identity;
     using Ninject;
     using Services.Contracts;
@@ -32,20 +33,13 @@
             var userId = this.User.Identity.GetUserId();
             var currentUser = this.users.GetFreelancerDetails(userId);
 
+            this.Avatar.ImageUrl = currentUser.Avatar;
             this.FirstName.Text = currentUser.FirstName;
             this.LastName.Text = currentUser.LastName;
             this.Country.Text = currentUser.Country;
             this.UserName.Text = currentUser.UserName;
             this.Email.Text = currentUser.Email;
-            if (currentUser.Ratings.Count != 0)
-            {
-                this.Rating.Text = currentUser.Ratings.Select(x => x.Value).Average().ToString();
-            }
-            else
-            {
-                this.Rating.Text = "0";
-            }
-
+            this.Rating.Text = currentUser.AverageRating.ToString();
             this.RatePerHour.Text = currentUser.RatePerHour.ToString();
         }
 
@@ -89,6 +83,33 @@
                 if (decimal.Parse(this.RatePerHour.Text) != currentUser.RatePerHour)
                 {
                     currentUser.RatePerHour = decimal.Parse(this.RatePerHour.Text);
+                }
+
+                if (FileUploadControl.HasFile)
+                {
+                    try
+                    {
+                        if (FileUploadControl.PostedFile.ContentType == "image/jpeg" ||
+                            FileUploadControl.PostedFile.ContentType == "image/jpg" ||
+                            FileUploadControl.PostedFile.ContentType == "image/png")
+                        {
+                            if (FileUploadControl.PostedFile.ContentLength < 3 * 102400)
+                            {
+                                var path = GlobalConstants.ImagesPath + userId + GlobalConstants.DefaultExtension;
+                                FileUploadControl.SaveAs(Server.MapPath(path));
+                                Notifier.Success("Upload status: File uploaded!");
+                                currentUser.Avatar = path;
+                            }
+                            else
+                                Notifier.Error("Upload status: The file has to be less than 300 kb!");
+                        }
+                        else
+                            Notifier.Error("Invalid file type!");
+                    }
+                    catch (Exception ex)
+                    {
+                        Notifier.Error("Upload status: The file could not be uploaded. The following error occured: " + ex.Message);
+                    }
                 }
 
                 var updatedUser = this.users.UpdateProfileFreelancer(currentUser);

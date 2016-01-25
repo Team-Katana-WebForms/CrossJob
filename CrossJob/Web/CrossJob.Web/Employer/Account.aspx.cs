@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Globalization;
+    using System.IO;
     using System.Linq;
     using System.Web.UI;
     using System.Web.UI.WebControls;
@@ -10,6 +11,7 @@
     using Ninject;
     using Services.Contracts;
     using WebForms.Utilities.Notifier;
+    using CrossJob.Common.Constants;
 
     public partial class Account : Page
     {
@@ -32,6 +34,7 @@
             var userId = this.User.Identity.GetUserId();
             var currentUser = this.users.GetEmployerrDetails(userId);
 
+            this.Avatar.ImageUrl = currentUser.Avatar;
             this.Email.Text = currentUser.Email;
             this.UserName.Text = currentUser.UserName;
             this.Country.Text = currentUser.Country;
@@ -80,6 +83,33 @@
                 if (this.Website.Text != currentUser.WebSite)
                 {
                     currentUser.WebSite = this.Website.Text;
+                }
+
+                if (FileUploadControl.HasFile)
+                {
+                    try
+                    {
+                        if (FileUploadControl.PostedFile.ContentType == "image/jpeg" ||
+                            FileUploadControl.PostedFile.ContentType == "image/jpg" ||
+                            FileUploadControl.PostedFile.ContentType == "image/png")
+                        {
+                            if (FileUploadControl.PostedFile.ContentLength < 3 * 102400)
+                            {
+                                var path = GlobalConstants.ImagesPath + userId + GlobalConstants.DefaultExtension;
+                                FileUploadControl.SaveAs(Server.MapPath(path));
+                                Notifier.Success("Upload status: File uploaded!");
+                                currentUser.Avatar = path;
+                            }
+                            else
+                                Notifier.Error("Upload status: The file has to be less than 300 kb!");
+                        }
+                        else
+                            Notifier.Error("Invalid file type!");
+                    }
+                    catch (Exception ex)
+                    {
+                        Notifier.Error("Upload status: The file could not be uploaded. The following error occured: " + ex.Message);
+                    }
                 }
 
                 var updatedUser = this.users.UpdateProfileEmployer(currentUser);

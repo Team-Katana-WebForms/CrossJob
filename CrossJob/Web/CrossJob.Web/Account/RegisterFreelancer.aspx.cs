@@ -4,6 +4,7 @@
     using System.Linq;
     using System.Web;
     using System.Web.UI;
+    using Common.Constants;
     using Data;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
@@ -22,7 +23,8 @@
                 Email = Email.Text,
                 UserName = UserName.Text,
                 FirstName = FirstName.Text,
-                LastName = LastName.Text 
+                LastName = LastName.Text,
+                Avatar = GlobalConstants.DefaultAvatar 
             };
 
             IdentityResult result = manager.Create(user, Password.Text);
