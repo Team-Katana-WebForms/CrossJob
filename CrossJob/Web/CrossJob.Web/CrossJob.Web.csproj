@@ -528,9 +528,7 @@
       <DependentUpon>Projects.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\Common\CrossJob.Common\CrossJob.Common.csproj">
       <Project>{37deb813-2bd0-4a4c-8cd5-303d6a41ad03}</Project>
