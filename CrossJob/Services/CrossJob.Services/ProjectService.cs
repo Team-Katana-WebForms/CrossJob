@@ -6,20 +6,35 @@
     using Data.Repositories;
     using Models;
 
-    public class ProjectsService : IProjectsService
+    public class ProjectService : IProjectService
     {
         private readonly IRepository<Project> projects;
 
-        public ProjectsService(IRepository<Project> projects)
+        public ProjectService(IRepository<Project> projects)
         {
             this.projects = projects;
         }
 
-        public int AddNew(Project newProject, string freelancerId, string employerId)
+        public int AddNew(
+            string title,
+            string description,
+            int category,
+            decimal price,
+            string employerId,
+            DateTime startDate,
+            DateTime endDate)
         {
-            newProject.CreatedOn = DateTime.UtcNow;
-            newProject.FreelancerID = freelancerId;
-            newProject.EmployerID = employerId;
+            var newProject = new Project()
+            {
+                Title = title,
+                Description = description,
+                CategoryId = category,
+                Price = price,
+                CreatedOn = DateTime.UtcNow,
+                StartOn = startDate,
+                FinishOn = endDate,
+                EmployerID = employerId
+            };
 
             this.projects.Add(newProject);
             this.projects.SaveChanges();
