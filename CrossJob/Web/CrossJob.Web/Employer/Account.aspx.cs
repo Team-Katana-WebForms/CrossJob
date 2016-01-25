@@ -60,67 +60,58 @@
 
         protected void UpdateAccount_Click(object sender, EventArgs e)
         {
-            try
+            var userId = this.User.Identity.GetUserId();
+            var currentUser = this.users.GetEmployerrDetails(userId);
+
+            if (this.CompanyName.Text != currentUser.CompanyName)
             {
-                var userId = this.User.Identity.GetUserId();
-                var currentUser = this.users.GetEmployerrDetails(userId);
+                currentUser.CompanyName = this.CompanyName.Text;
+            }
 
-                if (this.CompanyName.Text != currentUser.CompanyName)
-                {
-                    currentUser.CompanyName = this.CompanyName.Text;
-                }
+            if (this.Country.SelectedValue != currentUser.Country)
+            {
+                currentUser.Country = this.Country.SelectedValue;
+            }
 
-                if (this.Country.SelectedValue != currentUser.Country)
-                {
-                    currentUser.Country = this.Country.SelectedValue;
-                }
+            if (this.Address.Text != currentUser.Address)
+            {
+                currentUser.Address = this.Address.Text;
+            }
 
-                if (this.Address.Text != currentUser.Address)
-                {
-                    currentUser.Address = this.Address.Text;
-                }
+            if (this.Website.Text != currentUser.WebSite)
+            {
+                currentUser.WebSite = this.Website.Text;
+            }
 
-                if (this.Website.Text != currentUser.WebSite)
+            if (FileUploadControl.HasFile)
+            {
+                try
                 {
-                    currentUser.WebSite = this.Website.Text;
-                }
-
-                if (FileUploadControl.HasFile)
-                {
-                    try
+                    if (FileUploadControl.PostedFile.ContentType == "image/jpeg" ||
+                        FileUploadControl.PostedFile.ContentType == "image/jpg" ||
+                        FileUploadControl.PostedFile.ContentType == "image/png")
                     {
-                        if (FileUploadControl.PostedFile.ContentType == "image/jpeg" ||
-                            FileUploadControl.PostedFile.ContentType == "image/jpg" ||
-                            FileUploadControl.PostedFile.ContentType == "image/png")
+                        if (FileUploadControl.PostedFile.ContentLength < 3 * 102400)
                         {
-                            if (FileUploadControl.PostedFile.ContentLength < 3 * 102400)
-                            {
-                                var path = GlobalConstants.ImagesPath + userId + GlobalConstants.DefaultExtension;
-                                FileUploadControl.SaveAs(Server.MapPath(path));
-                                Notifier.Success("Upload status: File uploaded!");
-                                currentUser.Avatar = path;
-                            }
-                            else
-                                Notifier.Error("Upload status: The file has to be less than 300 kb!");
+                            var path = GlobalConstants.ImagesPath + userId + GlobalConstants.DefaultExtension;
+                            FileUploadControl.SaveAs(Server.MapPath(path));
+                            currentUser.Avatar = path;
                         }
                         else
-                            Notifier.Error("Invalid file type!");
+                            Notifier.Error("Upload status: The file has to be less than 300 kb!");
                     }
-                    catch (Exception ex)
-                    {
-                        Notifier.Error("Upload status: The file could not be uploaded. The following error occured: " + ex.Message);
-                    }
+                    else
+                        Notifier.Error("Invalid file type!");
                 }
+                catch (Exception ex)
+                {
+                    Notifier.Error("Upload status: The file could not be uploaded. The following error occured: " + ex.Message);
+                }
+            }
 
-                var updatedUser = this.users.UpdateProfileEmployer(currentUser);
-                Notifier.Success("Account successfully updated");
-                Response.Redirect("~/Employer/Account.aspx", true);
-            }
-            catch (Exception err)
-            {
-                //TODO catch right exception
-                Notifier.Error(err.Message);
-            }
+            var updatedUser = this.users.UpdateProfileEmployer(currentUser);
+            Notifier.Success("Account successfully updated");
+            Response.Redirect("~/Employer/Account.aspx", true);
         }
     }
 }

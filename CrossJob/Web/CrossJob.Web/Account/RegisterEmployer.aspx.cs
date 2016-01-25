@@ -9,6 +9,7 @@
     using Microsoft.AspNet.Identity.Owin;
     using Models;
     using Common.Constants;
+    using WebForms.Utilities.Notifier;
 
     public partial class RegisterEmployer : Page
     {
@@ -32,11 +33,12 @@
                 manager.AddToRole(user.Id, Role);
 
                 signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
+                Notifier.Success("Registration was successful!");
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
             }
             else
             {
-                ErrorMessage.Text = result.Errors.FirstOrDefault();
+                Notifier.Error(result.Errors.FirstOrDefault());
             }
         }
 

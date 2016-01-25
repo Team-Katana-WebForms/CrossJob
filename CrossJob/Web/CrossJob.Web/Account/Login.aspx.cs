@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Owin;
 using CrossJob.Models;
 using CrossJob.Data;
+using CrossJob.WebForms.Utilities.Notifier;
 
 namespace CrossJob.Web.Account
 {
@@ -51,8 +52,8 @@ namespace CrossJob.Web.Account
                         break;
                     case SignInStatus.Failure:
                     default:
-                        FailureText.Text = "Invalid login attempt";
-                        ErrorMessage.Visible = true;
+                        Notifier.Error("Invalid login attempt" + result);
+                        //ErrorMessage.Visible = true;
                         break;
                 }
             }

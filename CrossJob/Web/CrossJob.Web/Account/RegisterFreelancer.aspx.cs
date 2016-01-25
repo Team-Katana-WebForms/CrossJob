@@ -9,6 +9,7 @@
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Models;
+    using WebForms.Utilities.Notifier;
 
     public partial class RegisterFreelancer : Page
     {
@@ -24,7 +25,7 @@
                 UserName = UserName.Text,
                 FirstName = FirstName.Text,
                 LastName = LastName.Text,
-                Avatar = GlobalConstants.DefaultAvatar 
+                Avatar = GlobalConstants.DefaultAvatar
             };
 
             IdentityResult result = manager.Create(user, Password.Text);
@@ -34,11 +35,12 @@
                 manager.AddToRole(user.Id, Role);
 
                 signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
+                Notifier.Success("Registration was successful!");
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
             }
             else
             {
-                ErrorMessage.Text = result.Errors.FirstOrDefault();
+                Notifier.Error(result.Errors.FirstOrDefault());
             }
         }
     }

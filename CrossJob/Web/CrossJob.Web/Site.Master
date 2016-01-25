@@ -41,6 +41,7 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
+        <ucHandler:ErrorSuccessNotifier runat="server" ID="ucHandler" />
 
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -80,7 +81,6 @@
 
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                <ucHandler:ErrorSuccessNotifier runat="server" ID="ucHandler" />
             </asp:ContentPlaceHolder>
             <hr />
             <footer class="text-center">
