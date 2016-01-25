@@ -7,11 +7,11 @@
     using Data.Repositories;
     using Models;
 
-    public class CommentsService : ICommentService
+    public class CommentService : ICommentService
     {
         private readonly IRepository<Comment> comments;
 
-        public CommentsService(IRepository<Comment> comments)
+        public CommentService(IRepository<Comment> comments)
         {
             this.comments = comments;
         }

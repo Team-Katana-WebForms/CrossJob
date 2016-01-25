@@ -57,16 +57,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CategoriesService.cs" />
-    <Compile Include="CommentsService.cs" />
+    <Compile Include="CategoryService.cs" />
+    <Compile Include="CommentService.cs" />
     <Compile Include="Contracts\ICategoryService.cs" />
     <Compile Include="Contracts\ICommentService.cs" />
     <Compile Include="Contracts\IProjectService.cs" />
     <Compile Include="Contracts\IRatingService.cs" />
     <Compile Include="Contracts\IUserService.cs" />
-    <Compile Include="RatingsService.cs" />
-    <Compile Include="UsersService.cs" />
-    <Compile Include="ProjectsService.cs" />
+    <Compile Include="RatingService.cs" />
+    <Compile Include="UserService.cs" />
+    <Compile Include="ProjectService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -77,10 +77,6 @@
     <ProjectReference Include="..\..\Data\CrossJob.Models\CrossJob.Models.csproj">
       <Project>{78476698-8c18-43f3-957b-86a5e0b2f71d}</Project>
       <Name>CrossJob.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Web\CrossJob.Web\CrossJob.Web.csproj">
-      <Project>{a4b39b45-aa68-4324-b775-d3f559dc99fe}</Project>
-      <Name>CrossJob.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

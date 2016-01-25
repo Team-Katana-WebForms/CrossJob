@@ -2,6 +2,7 @@
 {
     using System.Linq;
     using Models;
+    using System;
 
     public interface IProjectService
     {
@@ -11,7 +12,13 @@
 
         IQueryable<Project> Update(Project project);
 
-        int AddNew(Project newProject, string freelancerId, string employerId);
+        int AddNew(string title,
+            string description,
+            int category,
+            decimal price,
+            string employerId,
+            DateTime startDate,
+            DateTime endDate);
 
         void DeleteProject(int id);
     }

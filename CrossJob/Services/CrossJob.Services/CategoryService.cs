@@ -5,11 +5,11 @@
     using Data.Repositories;
     using Models;
 
-    public class CategoriesService : ICategoryService
+    public class CategoryService : ICategoryService
     {
         private readonly IRepository<Category> categories;
 
-        public CategoriesService(IRepository<Category> categories)
+        public CategoryService(IRepository<Category> categories)
         {
             this.categories = categories;
         }
@@ -27,12 +27,10 @@
             return newCategory.ID;
         }
 
-        public IQueryable<Category> GetAll(int skip, int take)
+        public IQueryable<Category> GetAll()
         {
             return this.categories
-                .All()
-                .Skip(skip)
-                .Take(take);
+                .All();
         }
 
         public IQueryable<Category> GetById(int id)

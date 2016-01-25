@@ -6,13 +6,13 @@
     using Data.Repositories;
     using Models;
 
-    public class UsersService : IUserService
+    public class UserService : IUserService
     {
         private readonly IRepository<Employer> employers;
         private readonly IRepository<Freelancer> freelancers;
 
 
-        public UsersService(IRepository<Employer> employers, IRepository<Freelancer> freelancers)
+        public UserService(IRepository<Employer> employers, IRepository<Freelancer> freelancers)
         {
             this.employers = employers;
             this.freelancers = freelancers;

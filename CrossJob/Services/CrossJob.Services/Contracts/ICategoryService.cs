@@ -5,7 +5,7 @@
 
     public interface ICategoryService
     {
-        IQueryable<Category> GetAll(int skip, int take);
+        IQueryable<Category> GetAll();
 
         IQueryable<Category> GetById(int id);
 

@@ -195,8 +195,11 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\Styles\site.css" />
+    <Content Include="Employer\AddProject.aspx" />
     <Content Include="Freelancer\Employers.aspx" />
     <Content Include="Freelancer\MyProjects.aspx" />
+    <Content Include="Imgs\calendar-icon.jpg" />
     <Content Include="Projects.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -390,6 +393,13 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Employer\AddProject.aspx.cs">
+      <DependentUpon>AddProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employer\AddProject.aspx.designer.cs">
+      <DependentUpon>AddProject.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Freelancer\Employers.aspx.cs">
       <DependentUpon>Employers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -475,6 +485,10 @@
     <ProjectReference Include="..\..\Data\CrossJob.Models\CrossJob.Models.csproj">
       <Project>{78476698-8c18-43f3-957b-86a5e0b2f71d}</Project>
       <Name>CrossJob.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\CrossJob.Services\CrossJob.Services.csproj">
+      <Project>{42799ff4-5717-41d6-a85c-914ad2101ef0}</Project>
+      <Name>CrossJob.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
