@@ -2,6 +2,7 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     using Common.Constants;
 
     public class Comment
@@ -13,14 +14,15 @@
         [MaxLength(CommentConstants.MaxContentLength)]
         public string Content { get; set; }
 
-        public string RecipientId { get; set; }
+        public string FreelancerId { get; set; }
 
-        public virtual User Recipient { get; set; }
+        public virtual Freelancer Freelancer { get; set; }
 
-        public string AuthorId { get; set; }
+        public string EmployerId { get; set; }
 
-        public virtual User Author { get; set; }
+        public virtual Employer Employer { get; set; }
 
+        [Column(TypeName = "Date")]
         public DateTime CreatedOn { get; set; }
     }
 }

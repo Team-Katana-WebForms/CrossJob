@@ -1,6 +1,7 @@
 ﻿namespace CrossJob.Services
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Linq.Expressions;
     using Contracts;
@@ -19,8 +20,8 @@
         public int AddNew(Comment comment, string userId, string authorId)
         {
             comment.CreatedOn = DateTime.UtcNow;
-            comment.RecipientId = userId;
-            comment.AuthorId = authorId;
+            comment.FreelancerId = userId;
+            comment.EmployerId = authorId;
 
             this.comments.Add(comment);
             this.comments.SaveChanges();
@@ -30,12 +31,12 @@
 
         public IQueryable<Comment> GetAllByAuthor(string userId, int skip, int take)
         {
-            return this.SortAndPageComments(c => c.AuthorId == userId, skip, take);
+            return this.SortAndPageComments(c => c.EmployerId == userId, skip, take);
         }
 
-        public IQueryable<Comment> GetAllByUser(string userId, int skip, int take)
+        public List<Comment> GetAllByUser(string userId, int skip, int take)
         {
-            return this.SortAndPageComments(c => c.RecipientId == userId, skip, take);
+            return this.SortAndPageComments(c => c.FreelancerId == userId, skip, take).ToList();
         }
 
         public IQueryable<Comment> GetById(int id)

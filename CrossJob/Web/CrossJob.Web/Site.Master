@@ -13,6 +13,8 @@
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
 
 </head>
 <body>
@@ -83,7 +85,7 @@
             </footer>
         </div>
     </form>
-        <script>
+    <script>
         $(document).ready(function () {
             $('#Menu').removeAttr('style').find('ul').addClass('nav').addClass('navbar-nav');
         });

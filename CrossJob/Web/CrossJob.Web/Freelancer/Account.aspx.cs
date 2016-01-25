@@ -45,6 +45,7 @@
             {
                 this.Rating.Text = "0";
             }
+
             this.RatePerHour.Text = currentUser.RatePerHour.ToString();
         }
 

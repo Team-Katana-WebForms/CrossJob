@@ -16,19 +16,19 @@
             <h4>Change your account settings</h4>
             <hr />
             <div class="form-group col-md-9">
-                <asp:Label runat="server" CssClass="col-md-2 control-label">Username</asp:Label>
+                <asp:Label runat="server" AssociatedControlID="UserName" CssClass="col-md-2 control-label">Username</asp:Label>
                 <div class="col-md-9">
                     <asp:Literal ID="UserName" runat="server"></asp:Literal>
                 </div>
             </div>
             <div class="form-group col-md-9">
-                <asp:Label runat="server" CssClass="col-md-2 control-label">Email</asp:Label>
+                <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Email</asp:Label>
                 <div class="col-md-9">
                     <asp:Literal ID="Email" runat="server"></asp:Literal>
                 </div>
             </div>
             <div class="form-group col-md-9">
-                <asp:Label runat="server" CssClass="col-md-2 control-label">Rating</asp:Label>
+                <asp:Label runat="server" AssociatedControlID="Rating" CssClass="col-md-2 control-label">Rating</asp:Label>
                 <div class="col-md-9">
                     <asp:Literal ID="Rating" runat="server"></asp:Literal>
                 </div>
@@ -36,7 +36,7 @@
             <div class="form-group col-md-9">
                 <asp:Label runat="server" AssociatedControlID="FirstName" CssClass="col-md-2 control-label">First Name</asp:Label>
                 <div class="col-md-9">
-                    <asp:TextBox runat="server" ID="FirstName" CssClass="form-control" placeholder='First Name' />
+                    <asp:TextBox runat="server" ID="FirstName" CssClass="form-control" />
                     <asp:RegularExpressionValidator Display="Dynamic" runat="server" ControlToValidate="FirstName"
                         ValidationExpression=".{3}.*"
                         CssClass="text-danger" ErrorMessage="Minimum first name length is 3." />
@@ -47,7 +47,7 @@
             <div class="form-group col-md-9">
                 <asp:Label runat="server" AssociatedControlID="LastName" CssClass="col-md-2 control-label">Last Name</asp:Label>
                 <div class="col-md-9">
-                    <asp:TextBox runat="server" ID="LastName" CssClass="form-control" placeholder='Last Name' />
+                    <asp:TextBox runat="server" ID="LastName" CssClass="form-control"/>
                     <asp:RegularExpressionValidator Display="Dynamic" runat="server" ControlToValidate="LastName"
                         ValidationExpression=".{3}.*"
                         CssClass="text-danger" ErrorMessage="Minimum first name length is 3." />
@@ -69,6 +69,12 @@
                         Type="Currency" MinimumValue="0" MaximumValue="99999"
                         CssClass="text-danger" ErrorMessage="The value should be number.">
                     </asp:RangeValidator>
+                </div>
+            </div>
+            <div class="form-group col-md-9">
+                <asp:Label runat="server" AssociatedControlID="Comments" CssClass="col-md-2 control-label">Comments</asp:Label>
+                <div class="col-md-9">
+                    <asp:HyperLink class="btn btn-default" ID="Comments" runat="server" NavigateUrl="~/Freelancer/Comments.aspx">See...</asp:HyperLink>
                 </div>
             </div>
             <div class="form-group col-md-9">
