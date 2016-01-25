@@ -36,6 +36,7 @@
         {
             return this.employers
                 .All()
+                .OrderBy(e => e.Id)
                 .Skip(skip)
                 .Take(take);
         }
@@ -44,8 +45,21 @@
         {
             return this.freelancers
                 .All()
+                .OrderBy(f => f.Id)
                 .Skip(skip)
                 .Take(take);
+        }
+
+        public IQueryable<Freelancer> GetTopFreelancersByRating(int top)
+        {
+            var result = this.freelancers
+                .All()
+                .ToList()
+                .OrderByDescending(f => f.AverageRating)
+                .ThenByDescending(f => f.Projects.Count)
+                .Take(top)
+                .AsQueryable();
+            return result;
         }
 
         public Employer GetEmployerrDetails(string userId)

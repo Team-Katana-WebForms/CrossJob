@@ -1,6 +1,7 @@
 ﻿namespace CrossJob.Models
 {
     using System.Collections.Generic;
+    using System.Linq;
     using System.ComponentModel.DataAnnotations;
 
     public class Freelancer : User
@@ -26,6 +27,21 @@
         public string LastName { get; set; }
 
         public decimal RatePerHour { get; set; }
+
+        public double AverageRating
+        {
+            get
+            {
+                if (this.ratings.Count != 0)
+                {
+                   return this.ratings.Average(r => r.Value);
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
 
         public virtual ICollection<Project> Projects
         {

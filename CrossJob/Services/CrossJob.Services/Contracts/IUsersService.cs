@@ -9,6 +9,8 @@
 
         IQueryable<Employer> GetAllEmployers(int skip, int take);
 
+        IQueryable<Freelancer> GetTopFreelancersByRating(int top);
+
         Freelancer GetFreelancerDetails(string userId);
 
         Employer GetEmployerrDetails(string userId);
