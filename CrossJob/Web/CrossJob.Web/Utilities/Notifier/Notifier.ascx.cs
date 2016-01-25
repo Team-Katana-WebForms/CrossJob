@@ -1,4 +1,4 @@
-﻿namespace BarterSystem.WebForms.Utilities.Notifier
+﻿namespace CrossJob.WebForms.Utilities.Notifier
 {
     using System;
     using System.Collections.Generic;

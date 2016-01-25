@@ -10,7 +10,7 @@
 
         List<Comment> GetAllByUser(string userId, int skip, int take);
 
-        IQueryable<Comment> GetAllByAuthor(string userId, int skip, int take);
+        List<Comment> GetAllByAuthor(string userId, int skip, int take);
 
         int AddNew(Comment comment, string userId, string authorId);
     }

@@ -6,10 +6,10 @@
     using System.Linq;
     using System.Web.UI;
     using System.Web.UI.WebControls;
-    using BarterSystem.WebForms.Utilities.Notifier;
     using Microsoft.AspNet.Identity;
     using Ninject;
     using Services.Contracts;
+    using WebForms.Utilities.Notifier;
 
     public partial class Account : Page
     {

@@ -1,23 +1,10 @@
 ﻿namespace CrossJob.Models
 {
-    using System.Collections.Generic;
     using System.Linq;
     using System.ComponentModel.DataAnnotations;
 
     public class Freelancer : User
     {
-        private ICollection<Project> projects;
-        private ICollection<Comment> comments;
-        private ICollection<Rating> ratings;
-
-        public Freelancer()
-            :base()
-        {
-            this.projects = new HashSet<Project>();
-            this.comments = new HashSet<Comment>();
-            this.ratings = new HashSet<Rating>();
-        }
-
         [Required]
         [MaxLength(20)]
         public string FirstName { get; set; }
