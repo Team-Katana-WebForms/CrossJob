@@ -3,7 +3,7 @@
     using System.Linq;
     using Models;
 
-    public interface ICategoryService
+    public interface ICategoriesService
     {
         IQueryable<Category> GetAll(int skip, int take);
 

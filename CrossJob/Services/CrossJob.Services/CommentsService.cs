@@ -7,7 +7,7 @@
     using Data.Repositories;
     using Models;
 
-    public class CommentsService : ICommentService
+    public class CommentsService : ICommentsService
     {
         private readonly IRepository<Comment> comments;
 

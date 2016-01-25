@@ -197,6 +197,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Freelancer\Account.aspx" />
     <Content Include="Freelancer\Employers.aspx" />
     <Content Include="Freelancer\MyProjects.aspx" />
     <Content Include="Projects.aspx" />
@@ -239,6 +240,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="Utilities\Notifier\css\notifier.css" />
+    <Content Include="Utilities\Notifier\js\jquery-2.1.1.min.js" />
+    <Content Include="Utilities\Notifier\js\notifier.js" />
+    <Content Include="Utilities\Notifier\Notifier.ascx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Employer\Users.aspx" />
     <Content Include="Freelancer\Projects.aspx" />
@@ -406,6 +411,13 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Freelancer\Account.aspx.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Freelancer\Account.aspx.designer.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Freelancer\Employers.aspx.cs">
       <DependentUpon>Employers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -453,6 +465,12 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Utilities\Notifier\Enums\NotificationType.cs" />
+    <Compile Include="Utilities\Notifier\Notification.cs" />
+    <Compile Include="Utilities\Notifier\Notifier.ascx.cs">
+      <DependentUpon>Notifier.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -491,6 +509,10 @@
     <ProjectReference Include="..\..\Data\CrossJob.Models\CrossJob.Models.csproj">
       <Project>{78476698-8c18-43f3-957b-86a5e0b2f71d}</Project>
       <Name>CrossJob.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\CrossJob.Services\CrossJob.Services.csproj">
+      <Project>{42799ff4-5717-41d6-a85c-914ad2101ef0}</Project>
+      <Name>CrossJob.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

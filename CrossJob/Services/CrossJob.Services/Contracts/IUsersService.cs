@@ -3,15 +3,15 @@
     using System.Linq;
     using Models;
 
-    public interface IUserService
+    public interface IUsersService
     {
         IQueryable<Freelancer> GetAllFreelancers(int skip, int take);
 
         IQueryable<Employer> GetAllEmployers(int skip, int take);
 
-        IQueryable<Freelancer> GetFreelancerDetails(string username);
+        Freelancer GetFreelancerDetails(string userId);
 
-        IQueryable<Employer> GetEmployerrDetails(string username);
+        Employer GetEmployerrDetails(string userId);
 
         void DeleteEmployer(string id);
 

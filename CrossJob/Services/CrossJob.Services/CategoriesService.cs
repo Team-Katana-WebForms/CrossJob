@@ -5,7 +5,7 @@
     using Data.Repositories;
     using Models;
 
-    public class CategoriesService : ICategoryService
+    public class CategoriesService : ICategoriesService
     {
         private readonly IRepository<Category> categories;
 

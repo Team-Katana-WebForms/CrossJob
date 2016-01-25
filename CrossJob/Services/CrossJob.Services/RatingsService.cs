@@ -6,7 +6,7 @@
     using Data.Repositories;
     using Models;
 
-    public class RatingsService : IRatingService
+    public class RatingsService : IRatingsService
     {
         private readonly IRepository<Rating> ratings;
 
