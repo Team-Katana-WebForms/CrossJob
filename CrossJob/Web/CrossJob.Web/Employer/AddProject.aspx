@@ -1,5 +1,9 @@
 ﻿<%@ Page Title="New Project" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddProject.aspx.cs" Inherits="CrossJob.Web.Employer.AddProject" %>
 
+<asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
+    <link href="../Content/Styles/site.css" rel="stylesheet" />
+</asp:Content>
+
 <asp:Content ID="ContentBody" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %></h2>
 
@@ -16,7 +20,7 @@
                             <label for="tbTitle" class="col-md-3 control-label">Title</label>
                             <div class="col-md-9">
                                 <asp:TextBox ID="tbTitle" runat="server" CssClass="form-control" PlaceHolder="Title"></asp:TextBox>
-                                <asp:RequiredFieldValidator ErrorMessage="*Title is requared" ControlToValidate="tbTitle" runat="server" ValidationGroup="AddProject" ForeColor="Red" />
+                                <asp:RequiredFieldValidator ErrorMessage="*Title is required" ControlToValidate="tbTitle" runat="server" ValidationGroup="AddProject" ForeColor="Red" />
                                 <asp:RegularExpressionValidator ErrorMessage="Title is between 5 and 50 characters long" ControlToValidate="tbTitle" runat="server" ValidationGroup="AddProject" ForeColor="Red"
                                     ValidationExpression="^[\s\S]{5,50}" />
                             </div>
@@ -25,7 +29,7 @@
                             <label for="tbDescription" class="col-md-3 control-label">Description</label>
                             <div class="col-md-9">
                                 <asp:TextBox ID="tbDescription" runat="server" CssClass="form-control" TextMode="MultiLine" PlaceHolder="Description"></asp:TextBox>
-                                <asp:RequiredFieldValidator ErrorMessage="*Description is requared" ControlToValidate="tbDescription" runat="server" ValidationGroup="AddProject" ForeColor="Red" />
+                                <asp:RequiredFieldValidator ErrorMessage="*Description is required" ControlToValidate="tbDescription" runat="server" ValidationGroup="AddProject" ForeColor="Red" />
                                 <asp:RegularExpressionValidator ErrorMessage="Description is between 10 and 50 characters long" ControlToValidate="tbDescription" ValidationGroup="AddProject" runat="server" ForeColor="Red"
                                     ValidationExpression="^[\s\S]{10,1000}" />
                             </div>
@@ -46,7 +50,7 @@
                                     <ContentTemplate>
                                         <asp:TextBox ID="tbStartOn" runat="server" CssClass="form-control"></asp:TextBox>
                                         <asp:RegularExpressionValidator ErrorMessage="Date must be in format MM/DD/YYYY" ControlToValidate="tbStartOn" ValidationGroup="AddProject" runat="server" ForeColor="Red"
-                                            ValidationExpression="^((0?[13578]|10|12)(-|\/)(([1-9])|(0[1-9])|([12])([0-9]?)|(3[01]?))(-|\/)((19)([2-9])(\d{1})|(20)([01])(\d{1})|([8901])(\d{1}))|(0?[2469]|11)(-|\/)(([1-9])|(0[1-9])|([12])([0-9]?)|(3[0]?))(-|\/)((19)([2-9])(\d{1})|(20)([01])(\d{1})|([8901])(\d{1})))$" />
+                                            ValidationExpression="^$|(^((0?[13578]|10|12)(-|\/)(([1-9])|(0[1-9])|([12])([0-9]?)|(3[01]?))(-|\/)((19)([2-9])(\d{1})|(20)([01])(\d{1})|([8901])(\d{1}))|(0?[2469]|11)(-|\/)(([1-9])|(0[1-9])|([12])([0-9]?)|(3[0]?))(-|\/)((19)([2-9])(\d{1})|(20)([01])(\d{1})|([8901])(\d{1})))$)" />
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
 
@@ -81,7 +85,7 @@
                                     <ContentTemplate>
                                         <asp:TextBox ID="tbFinishOn" runat="server" CssClass="form-control"></asp:TextBox>
                                         <asp:RegularExpressionValidator ErrorMessage="Date must be in format MM/DD/YYYY" ControlToValidate="tbFinishOn" ValidationGroup="AddProject" runat="server" ForeColor="Red"
-                                            ValidationExpression="^((0?[13578]|10|12)(-|\/)(([1-9])|(0[1-9])|([12])([0-9]?)|(3[01]?))(-|\/)((19)([2-9])(\d{1})|(20)([01])(\d{1})|([8901])(\d{1}))|(0?[2469]|11)(-|\/)(([1-9])|(0[1-9])|([12])([0-9]?)|(3[0]?))(-|\/)((19)([2-9])(\d{1})|(20)([01])(\d{1})|([8901])(\d{1})))$" />
+                                            ValidationExpression="^$|(^((0?[13578]|10|12)(-|\/)(([1-9])|(0[1-9])|([12])([0-9]?)|(3[01]?))(-|\/)((19)([2-9])(\d{1})|(20)([01])(\d{1})|([8901])(\d{1}))|(0?[2469]|11)(-|\/)(([1-9])|(0[1-9])|([12])([0-9]?)|(3[0]?))(-|\/)((19)([2-9])(\d{1})|(20)([01])(\d{1})|([8901])(\d{1})))$)" />
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
 
@@ -112,6 +116,7 @@
                             <label for="tbPrice" class="col-md-3 control-label">Project Price</label>
                             <div class="col-md-9">
                                 <asp:TextBox ID="tbPrice" runat="server" CssClass="form-control" PlaceHolder="0.00"></asp:TextBox>
+                                <asp:RequiredFieldValidator ErrorMessage="*Price is required" ControlToValidate="tbPrice" runat="server" ValidationGroup="AddProject" ForeColor="Red" />
                                 <asp:RangeValidator ErrorMessage="Price must be greater than 0" ControlToValidate="tbPrice" runat="server" ValidationGroup="AddProject" ForeColor="Red"
                                     MinimumValue="0"
                                     Type="Double" />

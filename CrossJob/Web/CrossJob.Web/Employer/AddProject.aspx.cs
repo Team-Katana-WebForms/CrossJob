@@ -16,9 +16,6 @@
         public ICategoriesService CategoryService { get; set; }
 
         [Inject]
-        public IUsersService UserService { get; set; }
-
-        [Inject]
         public IProjectsService ProjectService { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -103,14 +100,14 @@
                 var projectDescription = this.tbDescription.Text;
                 var projectCategory = int.Parse(this.ddlCategory.SelectedValue);
 
-                DateTime projectStartDate = new DateTime();
+                DateTime projectStartDate = DateTime.Now;
                 if (!string.IsNullOrEmpty(this.tbStartOn.Text))
                 {
                     projectStartDate = DateTime.Parse(this.tbStartOn.Text);
                 }
 
 
-                DateTime projectEndDate = new DateTime();
+                DateTime projectEndDate = DateTime.Now;
                 if (!string.IsNullOrEmpty(this.tbFinishOn.Text))
                 {
                     projectEndDate = DateTime.Parse(this.tbFinishOn.Text);
@@ -123,8 +120,7 @@
                     projectPrice = decimal.Parse(this.tbPrice.Text);
                 }
 
-                var employer = this.UserService.GetEmployerrDetails(this.User.Identity.GetUserId());
-                var employerId = employer.Id;
+                var employerId = this.User.Identity.GetUserId();
                 int projectId = this.ProjectService.AddNew(
                     projectTitle,
                     projectDescription,

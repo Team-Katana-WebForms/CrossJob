@@ -197,12 +197,14 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\Styles\site.css" />
     <Content Include="Employer\Account.aspx" />
     <Content Include="Employer\AddProject.aspx" />
     <Content Include="Freelancer\Account.aspx" />
     <Content Include="Freelancer\Comments.aspx" />
     <Content Include="Freelancer\Employers.aspx" />
     <Content Include="Freelancer\MyProjects.aspx" />
+    <Content Include="Imgs\calendar-icon.jpg" />
     <Content Include="Projects.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
