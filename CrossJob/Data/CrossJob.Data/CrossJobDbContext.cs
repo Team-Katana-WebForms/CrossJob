@@ -20,6 +20,16 @@ namespace CrossJob.Data
         {
             return new CrossJobDbContext();
         }
+
+        public IDbSet<Category> Categories { get; set; }
+
+        public IDbSet<Comment> Comments { get; set; }
+
+        public IDbSet<Project> Projects { get; set; }
+
+        public IDbSet<Rating> Ratings { get; set; }
+
+        public IDbSet<Tag> Tags { get; set; }
     }
 }
 

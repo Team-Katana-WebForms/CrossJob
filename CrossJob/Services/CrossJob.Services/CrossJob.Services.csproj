@@ -57,16 +57,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CategoryService.cs" />
-    <Compile Include="CommentService.cs" />
-    <Compile Include="Contracts\ICategoryService.cs" />
-    <Compile Include="Contracts\ICommentService.cs" />
-    <Compile Include="Contracts\IProjectService.cs" />
-    <Compile Include="Contracts\IRatingService.cs" />
-    <Compile Include="Contracts\IUserService.cs" />
-    <Compile Include="RatingService.cs" />
-    <Compile Include="UserService.cs" />
-    <Compile Include="ProjectService.cs" />
+    <Compile Include="CategoriesService.cs" />
+    <Compile Include="CommentsService.cs" />
+    <Compile Include="Contracts\ICategoriesService.cs" />
+    <Compile Include="Contracts\ICommentsService.cs" />
+    <Compile Include="Contracts\IProjectsService.cs" />
+    <Compile Include="Contracts\IRatingsService.cs" />
+    <Compile Include="Contracts\IUsersService.cs" />
+    <Compile Include="RatingsService.cs" />
+    <Compile Include="UsersService.cs" />
+    <Compile Include="ProjectsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

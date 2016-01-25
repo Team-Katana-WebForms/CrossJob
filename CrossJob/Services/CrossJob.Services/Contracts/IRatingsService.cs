@@ -3,7 +3,7 @@
     using System.Linq;
     using Models;
 
-    public interface IRatingService
+    public interface IRatingsService
     {
         IQueryable<Rating> GetById(int id);
 

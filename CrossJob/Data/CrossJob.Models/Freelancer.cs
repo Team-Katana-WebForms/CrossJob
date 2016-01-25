@@ -25,8 +25,7 @@
         [MaxLength(20)]
         public string LastName { get; set; }
 
-        [Required]
-        public decimal? RatePerHour { get; set; }
+        public decimal RatePerHour { get; set; }
 
         public virtual ICollection<Project> Projects
         {

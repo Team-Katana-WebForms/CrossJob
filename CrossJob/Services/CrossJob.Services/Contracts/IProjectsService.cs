@@ -4,7 +4,7 @@
     using Models;
     using System;
 
-    public interface IProjectService
+    public interface IProjectsService
     {
         IQueryable<Project> GetAll(int skip, int take);
 

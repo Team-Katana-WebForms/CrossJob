@@ -6,11 +6,11 @@
     using Data.Repositories;
     using Models;
 
-    public class RatingService : IRatingService
+    public class RatingsService : IRatingsService
     {
         private readonly IRepository<Rating> ratings;
 
-        public RatingService(IRepository<Rating> ratings)
+        public RatingsService(IRepository<Rating> ratings)
         {
             this.ratings = ratings;
         }

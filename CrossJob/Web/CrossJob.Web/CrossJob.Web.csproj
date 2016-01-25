@@ -174,6 +174,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterEmployer.aspx" />
+    <Content Include="Account\RegisterFreelancer.aspx" />
     <Content Include="Admin\Employers.aspx" />
     <Content Include="Admin\Projects.aspx" />
     <Content Include="Admin\Users.aspx" />
@@ -186,7 +189,6 @@
     <Content Include="Account\ManageLogins.aspx" />
     <Content Include="Account\ManagePassword.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
-    <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
@@ -195,11 +197,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Content\Styles\site.css" />
-    <Content Include="Employer\AddProject.aspx" />
+    <Content Include="Freelancer\Account.aspx" />
     <Content Include="Freelancer\Employers.aspx" />
     <Content Include="Freelancer\MyProjects.aspx" />
-    <Content Include="Imgs\calendar-icon.jpg" />
     <Content Include="Projects.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -240,6 +240,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="Utilities\Notifier\css\notifier.css" />
+    <Content Include="Utilities\Notifier\js\jquery-2.1.1.min.js" />
+    <Content Include="Utilities\Notifier\js\notifier.js" />
+    <Content Include="Utilities\Notifier\Notifier.ascx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Employer\Users.aspx" />
     <Content Include="Freelancer\Projects.aspx" />
@@ -331,6 +335,20 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Account\RegisterEmployer.aspx.cs">
+      <DependentUpon>RegisterEmployer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterEmployer.aspx.designer.cs">
+      <DependentUpon>RegisterEmployer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterFreelancer.aspx.cs">
+      <DependentUpon>RegisterFreelancer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterFreelancer.aspx.designer.cs">
+      <DependentUpon>RegisterFreelancer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\RegisterExternalLogin.aspx.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -393,12 +411,12 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Employer\AddProject.aspx.cs">
-      <DependentUpon>AddProject.aspx</DependentUpon>
+    <Compile Include="Freelancer\Account.aspx.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Employer\AddProject.aspx.designer.cs">
-      <DependentUpon>AddProject.aspx</DependentUpon>
+    <Compile Include="Freelancer\Account.aspx.designer.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
     </Compile>
     <Compile Include="Freelancer\Employers.aspx.cs">
       <DependentUpon>Employers.aspx</DependentUpon>
@@ -447,6 +465,12 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Utilities\Notifier\Enums\NotificationType.cs" />
+    <Compile Include="Utilities\Notifier\Notification.cs" />
+    <Compile Include="Utilities\Notifier\Notifier.ascx.cs">
+      <DependentUpon>Notifier.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
