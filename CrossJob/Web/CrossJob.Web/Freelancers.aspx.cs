@@ -48,6 +48,10 @@ namespace CrossJob.Web
             {
                 ifNoResult.Text = "No results found!";
             }
+            else
+            {
+                ifNoResult.Text = "";
+            }
 
             return query.ToList().OrderBy(f => f.AverageRating).AsQueryable();
         }
