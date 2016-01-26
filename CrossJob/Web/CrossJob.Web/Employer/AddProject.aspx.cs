@@ -9,6 +9,7 @@
     using System.Web.UI.WebControls;
     using System.Globalization;
     using Microsoft.AspNet.Identity;
+    using WebForms.Utilities.Notifier;
 
     public partial class AddProject : System.Web.UI.Page
     {
@@ -130,6 +131,7 @@
                     projectStartDate,
                     projectEndDate);
 
+                Notifier.Success("New project was added successfully!");
                 this.Response.Redirect("~/");
             }
         }

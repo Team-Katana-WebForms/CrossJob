@@ -50,6 +50,12 @@
                 .Take(take);
         }
 
+        public IQueryable<Freelancer> AllFreelancers()
+        {
+            return this.freelancers
+                .All();
+        }
+
         public IQueryable<Freelancer> GetTopFreelancersByRating(int top)
         {
             var result = this.freelancers

@@ -6,11 +6,13 @@
 
     public interface IProjectsService
     {
+        void SaveChanges();
+
         IQueryable<Project> GetAll();
 
         IQueryable<Project> GetAllByEmployer(string employerId);
 
-        IQueryable<Project> GetById(int id);
+        Project GetById(int id);
 
         IQueryable<Project> Update(Project project);
 

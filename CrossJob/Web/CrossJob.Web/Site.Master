@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CrossJob.Web.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CrossJob.Web.SiteMaster" EnableViewState="true" %>
 
 <%@ Register Src="~/Utilities/Notifier/Notifier.ascx" TagPrefix="ucHandler" TagName="ErrorSuccessNotifier" %>
 
@@ -52,16 +52,13 @@
                     <ul class="nav navbar-nav">
                         <asp:Menu runat="server" ID="Menu"
                             DataSourceID="SiteMapDataSource" Orientation="Horizontal" Font-Size="Large"
-                            StaticDisplayLevels="2" StaticMenuStyle-Font-Bold="true">
+                            StaticDisplayLevels="1" StaticMenuStyle-Font-Bold="true" DynamicMenuItemStyle-BackColor="Black" DynamicMenuStyle-Width="500px">
                         </asp:Menu>
                         <asp:SiteMapDataSource runat="server" ID="SiteMapDataSource" ShowStartingNode="false" />
                     </ul>
 
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-left">
-                                <li><a class="btn btn-lg" runat="server" href="~/Projects">Projects</a></li>
-                            </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a class="btn btn-lg" runat="server" href="~/Account/Register">Register</a></li>
                                 <li><a class="btn btn-lg" runat="server" href="~/Account/Login">Log in</a></li>

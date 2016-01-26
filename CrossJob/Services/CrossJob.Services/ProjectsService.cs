@@ -15,6 +15,11 @@
             this.projects = projects;
         }
 
+        public void SaveChanges()
+        {
+            this.projects.SaveChanges();
+        }
+
         public int AddNew(
             string title,
             string description,
@@ -63,11 +68,12 @@
              .OrderByDescending(r => r.CreatedOn);
         }
 
-        public IQueryable<Project> GetById(int id)
+        public Project GetById(int id)
         {
             return this.projects
             .All()
-            .Where(r => r.ID == id);
+            .Where(r => r.ID == id)
+            .FirstOrDefault();
         }
 
         public IQueryable<Project> Update(Project updatedProject)

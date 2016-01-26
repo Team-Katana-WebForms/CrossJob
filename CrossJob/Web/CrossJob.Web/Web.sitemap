@@ -2,16 +2,18 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode url="~/Default.aspx" title="Home">
     <siteMapNode url="~/TopFreelancers" title="Top Freelancers"  description="Display top 10 freelancers" />
-    <siteMapNode url="~/Admin/Employers" title="Employers"  description="Edit/delete employers" />
-    <siteMapNode url="~/Admin/Users" title="Users"  description="Edit/delete users" />
-    <siteMapNode url="~/Admin/Projects" title="Projects"  description="Edit/delete projects" />
-    <siteMapNode url="~/Freelancer/Projects" title="All Projects"  description="Search all projects" />
+    <siteMapNode url="~/Freelancers" title="Freelancers"  description="Search all freelancers" />
+    <siteMapNode url="~/Projects" title="Projects"  description="Edit/delete projects" />
     <siteMapNode url="~/Freelancer/Employers" title="Employers"  description="Search all employers" />
     <siteMapNode url="~/Freelancer/MyProjects" title="My projects"  description="See my projects" />
     <siteMapNode url="~/Freelancer/Account" title="My profile"  description="See my profile" />
-    <siteMapNode url="~/Employer/Users" title="Users"  description="Search all users" />
     <siteMapNode url="~/Employer/AddProject" title="Add project" description="Add new project" />
     <siteMapNode url="~/Employer/Projects" title="Your Projects" description="Employer's Projects" />
     <siteMapNode url="~/Employer/Account" title="My profile"  description="See my profile" />
+    <siteMapNode url="" title="Admin panel" description="Modify application" roles="Admin">
+      <siteMapNode url="~/Admin/Employers" title="Employers"  description="Edit/delete employers" />
+      <siteMapNode url="~/Admin/Freelancers" title="Freelancers"  description="Edit/delete freelancers" />
+      <siteMapNode url="~/Admin/Projects" title="Projects"  description="Edit/delete projects" />
+    </siteMapNode>
   </siteMapNode>
 </siteMap>

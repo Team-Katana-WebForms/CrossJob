@@ -3,15 +3,14 @@
     using System;
     using System.Collections.Generic;
     using System.Globalization;
-    using System.IO;
     using System.Linq;
     using System.Web.UI;
     using System.Web.UI.WebControls;
+    using Common.Constants;
     using Microsoft.AspNet.Identity;
     using Ninject;
     using Services.Contracts;
     using WebForms.Utilities.Notifier;
-    using CrossJob.Common.Constants;
 
     public partial class Account : Page
     {

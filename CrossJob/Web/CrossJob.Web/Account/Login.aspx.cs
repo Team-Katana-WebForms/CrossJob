@@ -54,7 +54,6 @@ namespace CrossJob.Web.Account
                     case SignInStatus.Failure:
                     default:
                         Notifier.Error("Invalid login attempt");
-                        //ErrorMessage.Visible = true;
                         break;
                 }
             }
