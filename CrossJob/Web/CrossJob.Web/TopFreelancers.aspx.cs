@@ -14,7 +14,7 @@ namespace CrossJob.Web
     public partial class TopFreelancers : System.Web.UI.Page
     {
         [Inject]
-        public IUsersService UsersService { get; set; }
+        public IFreelancersService UsersService { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {

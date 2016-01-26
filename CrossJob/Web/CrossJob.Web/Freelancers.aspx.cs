@@ -14,7 +14,7 @@ namespace CrossJob.Web
     public partial class Freelancers : System.Web.UI.Page
     {
         [Inject]
-        public IUsersService UsersService { get; set; }
+        public IFreelancersService UsersService { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,24 +23,24 @@ namespace CrossJob.Web
 
         public IQueryable<Models.Freelancer> GridViewFreelancers_GetData([Control] double? displayRating)
         {
-            var query = UsersService.AllFreelancers();
+            var query = UsersService.GetAllFreelancers();
 
             switch (DisplayRating.SelectedValue)
             {
                 case  "1":
-                    query = UsersService.AllFreelancers().ToList().Where(f => f.AverageRating > 1).AsQueryable();
+                    query = UsersService.GetAllFreelancers().ToList().Where(f => f.AverageRating > 1).AsQueryable();
                     break;
                 case "2":
-                    query = UsersService.AllFreelancers().ToList().Where(f => f.AverageRating > 2).AsQueryable();
+                    query = UsersService.GetAllFreelancers().ToList().Where(f => f.AverageRating > 2).AsQueryable();
                     break;
                 case "3":
-                    query = UsersService.AllFreelancers().ToList().Where(f => f.AverageRating > 3).AsQueryable();
+                    query = UsersService.GetAllFreelancers().ToList().Where(f => f.AverageRating > 3).AsQueryable();
                     break;
                 case  "4":
-                    query = UsersService.AllFreelancers().ToList().Where(f => f.AverageRating > 4).AsQueryable();
+                    query = UsersService.GetAllFreelancers().ToList().Where(f => f.AverageRating > 4).AsQueryable();
                     break;
                 case "5":
-                    query = UsersService.AllFreelancers().ToList().Where(f => f.AverageRating == 5).AsQueryable();
+                    query = UsersService.GetAllFreelancers().ToList().Where(f => f.AverageRating == 5).AsQueryable();
                     break;
             }
 

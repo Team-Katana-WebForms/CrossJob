@@ -15,7 +15,7 @@
     public partial class Account : Page
     {
         [Inject]
-        public IUsersService users { get; set; }
+        public IEmployersService users { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -177,8 +177,10 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterEmployer.aspx" />
     <Content Include="Account\RegisterFreelancer.aspx" />
+    <Content Include="Admin\Categories.aspx" />
     <Content Include="Admin\Employers.aspx" />
     <Content Include="Admin\Freelancers.aspx" />
+    <Content Include="Admin\Projects.aspx" />
     <Content Include="Employer\ProjectDetails.aspx" />
     <Content Include="Projects.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
@@ -386,6 +388,13 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Categories.aspx.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Categories.aspx.designer.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Employers.aspx.cs">
       <DependentUpon>Employers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -399,6 +408,13 @@
     </Compile>
     <Compile Include="Admin\Freelancers.aspx.designer.cs">
       <DependentUpon>Freelancers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Projects.aspx.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Projects.aspx.designer.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
     </Compile>
     <Compile Include="Employer\ProjectDetails.aspx.cs">
       <DependentUpon>ProjectDetails.aspx</DependentUpon>

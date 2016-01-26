@@ -11,7 +11,7 @@
     public partial class Freelancers : Page
     {
         [Inject]
-        public IUsersService users { get; set; }
+        public IFreelancersService users { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -59,7 +59,7 @@
 
             try
             {
-                this.users.DeleteFreelancerr(id);
+                this.users.DeleteFreelancer(id);
             }
             catch (Exception ex)
             {
