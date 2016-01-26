@@ -41,40 +41,5 @@
 
             return categories;
         }
-
-        protected void imgStartDate_Click(object sender, System.Web.UI.ImageClickEventArgs e)
-        {
-            
-        }
-
-        // The id parameter name should match the DataKeyNames value set on the control
-        public void FormViewProjectDetails_UpdateItem(int ID)
-        {
-            Project item = this.ProjectsService.GetById(ID);
-            // Load the item here, e.g. item = MyDataLayer.Find(id);
-            if (item == null)
-            {
-                // The item wasn't found
-                ModelState.AddModelError("", String.Format("Item with id {0} was not found", ID));
-                return;
-            }
-
-            TryUpdateModel(item);
-
-            if (ModelState.IsValid)
-            {
-                this.ProjectsService.SaveChanges();
-            }
-        }
-
-        protected void calStartDate_SelectionChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void calStartDate_DayRender(object sender, DayRenderEventArgs e)
-        {
-
-        }
     }
 }
