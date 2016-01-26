@@ -28,6 +28,7 @@
             Freelancer user = this.users.GetFreelancerDetails(id);
             if (user == null)
             {
+                Notifier.Warning(String.Format("Item with id {0} was not found", id));
                 ModelState.AddModelError("", String.Format("Item with id {0} was not found", id));
                 return;
             }

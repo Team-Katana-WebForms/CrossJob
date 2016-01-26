@@ -11,7 +11,7 @@
                 <h2>Create a Free Employer Account</h2>
             </div>
             <hr />
-            <div class="col-md-7 col-md-offset-3">
+            <div class="col-md-9 col-md-offset-3">
                 <asp:ValidationSummary runat="server" CssClass="text-danger" />
                 <div class="form-group">
                     <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Email</asp:Label>
@@ -53,8 +53,8 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-lg btn-primary" />
+                    <div class="col-md-offset-2 col-md-4">
+                        <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-lg btn-primary btn-block" />
                     </div>
                 </div>
             </div>

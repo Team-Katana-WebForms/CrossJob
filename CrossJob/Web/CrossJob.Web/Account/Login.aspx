@@ -8,7 +8,7 @@
         <div class="col-md-12 text-center">
             <h2>Log in and get to work</h2>
         </div>
-        <div class="col-md-7 col-md-offset-3">
+        <div class="col-md-9 col-md-offset-3">
             <section id="loginForm">
                 <div class="form-horizontal">
                     <hr />
@@ -41,8 +41,8 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <asp:Button runat="server" OnClick="LogIn" Text="Log in" CssClass="btn btn-default" />
+                        <div class="col-md-offset-2 col-md-4">
+                            <asp:Button runat="server" OnClick="LogIn" Text="Log in" CssClass="btn btn-block btn-success" />
                         </div>
                     </div>
                 </div>
