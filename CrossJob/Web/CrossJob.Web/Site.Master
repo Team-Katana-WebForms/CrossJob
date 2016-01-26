@@ -77,11 +77,12 @@
         </div>
 
         <asp:SiteMapPath ID="SiteMap" runat="server"
-            PathSeparator="/"
+            PathSeparator=" / "
             PathDirection="RootToCurrent"
             RenderCurrentNodeAsLink="true"
-            CssClass="breadcrump">
+            CssClass="breadcrumb">
         </asp:SiteMapPath>
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
