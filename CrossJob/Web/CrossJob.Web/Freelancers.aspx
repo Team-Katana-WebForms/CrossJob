@@ -14,7 +14,6 @@
             <asp:ListItem Value ="4" Text ="> 4" />
             <asp:ListItem Value ="5" Text="= 5" />
         </asp:DropDownList>
-        <div><%:DisplayRating.SelectedValue%></div>
         <br />
         <asp:GridView ID="GridViewFreelancers" runat="server" 
                 AutoGenerateColumns="False" 

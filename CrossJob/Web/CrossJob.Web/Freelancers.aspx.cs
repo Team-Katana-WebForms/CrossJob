@@ -1,9 +1,11 @@
-﻿using CrossJob.Services.Contracts;
+﻿using CrossJob.Models;
+using CrossJob.Services.Contracts;
 using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.ModelBinding;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -19,7 +21,7 @@ namespace CrossJob.Web
             
         }
 
-        public IQueryable<Models.Freelancer> GridViewFreelancers_GetData()
+        public IQueryable<Models.Freelancer> GridViewFreelancers_GetData([Control] double? displayRating)
         {
             var query = UsersService.AllFreelancers();
 
