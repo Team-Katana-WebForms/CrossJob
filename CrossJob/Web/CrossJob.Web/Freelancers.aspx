@@ -5,6 +5,8 @@
           <div class="jumbotron text-center">
             <strong><h1><%: Title %></h1></strong>
          </div>
+         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+          <ContentTemplate>
         <asp:Label runat="server" Text="Show freelancers with rating:"  SelectMethod="GridViewFreelancers_GetData"/>
         <asp:DropDownList runat="server" AutoPostBack="true" ID="DisplayRating">
             <asp:ListItem Text="All" Value ="" />
@@ -15,22 +17,24 @@
             <asp:ListItem Value ="5" Text="= 5" />
         </asp:DropDownList>
         <br />
-        <asp:GridView ID="GridViewFreelancers" runat="server" 
-                AutoGenerateColumns="False" 
-                CssClass="table table-hover table-striped" 
-                GridLines="None"
-                SelectMethod="GridViewFreelancers_GetData"
-                ItemType="CrossJob.Models.Freelancer"
-                AllowPaging="True" 
-                PageSize="10" 
-                AllowSorting="True"
-                DataKeyNames="ID">
-                <Columns>
-                    <asp:BoundField DataField="FirstName" HeaderText="First name" />
-                    <asp:DynamicField DataField="LastName" HeaderText="Last name" />
-                    <asp:DynamicField DataField="RatePerHour" HeaderText="Rate per hour" />
-                    <asp:BoundField DataField="AverageRating" HeaderText="Average rating" />
-                </Columns>
-            </asp:GridView>
-       <h1 class="text-center"><strong><asp:label id="ifNoResult" runat="server" /></strong></h1>
+                <asp:GridView ID="GridViewFreelancers" runat="server" 
+                        AutoGenerateColumns="False" 
+                        CssClass="table table-hover table-striped" 
+                        GridLines="None"
+                        SelectMethod="GridViewFreelancers_GetData"
+                        ItemType="CrossJob.Models.Freelancer"
+                        AllowPaging="True" 
+                        PageSize="10" 
+                        AllowSorting="True"
+                        DataKeyNames="ID">
+                        <Columns>
+                            <asp:BoundField DataField="FirstName" HeaderText="First name" />
+                            <asp:DynamicField DataField="LastName" HeaderText="Last name" />
+                            <asp:DynamicField DataField="RatePerHour" HeaderText="Rate per hour" />
+                            <asp:BoundField DataField="AverageRating" HeaderText="Average rating" />
+                        </Columns>
+                    </asp:GridView>
+                <h1 class="text-center"><strong><asp:label id="ifNoResult" runat="server" /></strong></h1>
+              </ContentTemplate>
+          </asp:UpdatePanel>
 </asp:Content>
