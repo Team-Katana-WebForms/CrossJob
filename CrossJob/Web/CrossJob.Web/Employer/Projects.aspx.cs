@@ -30,7 +30,7 @@
         {
             var employerId = this.User.Identity.GetUserId();
             var projects = this.ProjectsService
-                .GetAllByEmployer(employerId);
+                .GetAllProjectsOfUser(employerId, true);
 
             return projects;
         }

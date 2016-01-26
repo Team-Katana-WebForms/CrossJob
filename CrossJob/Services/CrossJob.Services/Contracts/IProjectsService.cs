@@ -10,7 +10,7 @@
 
         IQueryable<Project> GetAll();
 
-        IQueryable<Project> GetAllByEmployer(string employerId);
+        IQueryable<Project> GetAllProjectsOfUser(string userId, bool isEmployer);
 
         Project GetById(int id);
 
