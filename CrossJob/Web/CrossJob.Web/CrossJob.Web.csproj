@@ -178,7 +178,7 @@
     <Content Include="Account\RegisterEmployer.aspx" />
     <Content Include="Account\RegisterFreelancer.aspx" />
     <Content Include="Admin\Employers.aspx" />
-    <Content Include="Admin\Projects.aspx" />
+    <Content Include="Projects.aspx" />
     <Content Include="Admin\Users.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
@@ -392,11 +392,11 @@
     <Compile Include="Admin\Employers.aspx.designer.cs">
       <DependentUpon>Employers.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Projects.aspx.cs">
+    <Compile Include="Projects.aspx.cs">
       <DependentUpon>Projects.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Projects.aspx.designer.cs">
+    <Compile Include="Projects.aspx.designer.cs">
       <DependentUpon>Projects.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />

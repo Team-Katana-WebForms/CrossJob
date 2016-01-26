@@ -59,9 +59,6 @@
 
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-left">
-                                <li><a class="btn btn-lg" runat="server" href="~/Projects">Projects</a></li>
-                            </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a class="btn btn-lg" runat="server" href="~/Account/Register">Register</a></li>
                                 <li><a class="btn btn-lg" runat="server" href="~/Account/Login">Log in</a></li>
