@@ -44,6 +44,11 @@ namespace CrossJob.Web
                     break;
             }
 
+            if(query.Count() == 0)
+            {
+                ifNoResult.Text = "No results found!";
+            }
+
             return query.ToList().OrderBy(f => f.AverageRating).AsQueryable();
         }
     }

@@ -32,4 +32,5 @@
                     <asp:BoundField DataField="AverageRating" HeaderText="Average rating" />
                 </Columns>
             </asp:GridView>
+       <h1 class="text-center"><strong><asp:label id="ifNoResult" runat="server" /></strong></h1>
 </asp:Content>
