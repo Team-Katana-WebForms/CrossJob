@@ -7,6 +7,8 @@
     using Models;
     using System.Linq;
     using Microsoft.AspNet.Identity;
+    using System.Web.UI.WebControls;
+    using WebForms.Utilities.Notifier;
 
     public partial class Projects : Page
     {
@@ -15,7 +17,7 @@
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         // The return type can be changed to IEnumerable, however to support
@@ -38,11 +40,11 @@
             return null;
         }
 
-        // The return type can be changed to IEnumerable, however to support
-        // paging and sorting, the following parameters must be added:
-        //     int maximumRows
-        //     int startRowIndex
-        //     out int totalRowCount
-        //     string sortByExpression
+        // The id parameter name should match the DataKeyNames value set on the control
+        public void ViewAllProjects_DeleteItem(int id)
+        {
+            this.ProjectsService.DeleteProject(id);
+            Notifier.Success("Project was delete successfully");
+        }
     }
 }

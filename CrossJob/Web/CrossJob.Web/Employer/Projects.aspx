@@ -11,7 +11,7 @@
             </div>
             <br />
             <div class="row text-center">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-12">
                     <div class="panel panel-info">
                         <div class="panel-heading text-center"><%: Title %></div>
                         <asp:ListView ID="ViewAllProjects" runat="server"
@@ -21,7 +21,8 @@
                             EnableSortingAndPagingCallback="True"
                             AllowSorting="True"
                             DataKeyNames="ID"
-                            AutoGenerateColumns="false">
+                            AutoGenerateColumns="false"
+                            DeleteMethod="ViewAllProjects_DeleteItem">
                             <LayoutTemplate>
                                 <table class="table table-striped table-hover">
                                     <tr>
@@ -49,6 +50,8 @@
                                                 CommandName="Sort"
                                                 CommandArgument="FinishOn" />
                                         </th>
+                                        <th class="text-center">Details</th>
+                                        <th class="text-center">Delete</th>
                                     </tr>
                                     <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
                                 </table>
@@ -72,8 +75,12 @@
                                         <asp:Label Text='<%# Eval("FinishOn","{0:MM-dd-yyyy}")  %>' runat="server" />
                                     </td>
                                     <td>
-                                        <asp:HyperLink NavigateUrl='<%#: string.Format("~/Employer/ProjectDetails.aspx?id={0}", Item.ID) %>' runat="server"> Details
+                                        <asp:HyperLink NavigateUrl='<%#: string.Format("~/Employer/ProjectDetails.aspx?id={0}", Item.ID) %>' runat="server" CssClass="btn btn-primary"> Details
                                         </asp:HyperLink>
+                                    </td>
+                                    <td>
+                                        <asp:LinkButton ID="lbDelete" runat="server" CssClass="btn btn-primary" Text="Delete"
+                                            CommandName="Delete"></asp:LinkButton>
                                     </td>
                                 </tr>
                             </ItemTemplate>
