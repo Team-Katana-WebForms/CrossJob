@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Web;
 using System.Web.UI;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Owin;
-using CrossJob.Models;
 using CrossJob.Data;
-using CrossJob.WebForms.Utilities.Notifier;
+using CrossJob.Utilities.Notifier;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace CrossJob.Web.Account
 {

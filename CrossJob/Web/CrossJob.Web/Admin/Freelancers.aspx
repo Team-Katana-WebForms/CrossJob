@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Freelancers" Language="C#" MasterPageFile="../Site.Master" AutoEventWireup="true" CodeBehind="Freelancers.aspx.cs" Inherits="CrossJob.Web.Admin.Freelancers" %>
+
 <asp:Content ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content runat="server" ContentPlaceHolderID="MainContent">
@@ -27,7 +28,7 @@
                 </table>
             </EmptyDataTemplate>
             <LayoutTemplate>
-                <table class="table table-bordered" runat="server" id="tblFreelancers">
+                <table class="table table-bordered table-hover table-striped" runat="server" id="tblFreelancers">
                     <tr runat="server">
                         <th>
                             <asp:LinkButton Text="UserName" CommandName="Sort" CommandArgument="UserName" runat="Server" />
@@ -54,7 +55,7 @@
                     </tr>
                     <tr runat="server" id="itemPlaceholder" />
                 </table>
-                <asp:DataPager runat="server" PageSize="3">
+                <asp:DataPager runat="server" PageSize="5">
                     <Fields>
                         <asp:NextPreviousPagerField ShowFirstPageButton="false"
                             ShowNextPageButton="false" ShowPreviousPageButton="true" />
@@ -87,9 +88,9 @@
                     <td>
                         <asp:DynamicControl runat="server" DataField="AverageRating" />
                     </td>
-                    <td>
-                        <asp:LinkButton ID="EditButton" CommandName="Edit" runat="server" Text="Edit" CausesValidation="false" />
-                        <asp:LinkButton ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" CausesValidation="false" OnClientClick='return confirm("Are you sure you want to delete this item?");' />
+                    <td class="text-center">
+                        <asp:LinkButton class="btn btn-sm btn-warning" ID="EditButton" CommandName="Edit" runat="server" Text="Edit" CausesValidation="false" />
+                        <asp:LinkButton class="btn btn-sm btn-danger" ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" CausesValidation="false" OnClientClick='return confirm("Are you sure you want to delete this item?");' />
                     </td>
                 </tr>
             </ItemTemplate>
@@ -116,9 +117,9 @@
                     <td>
                         <asp:DynamicControl runat="server" DataField="AverageRating" Mode="Edit" ValidationGroup="Edit" />
                     </td>
-                    <td>
-                        <asp:LinkButton ID="UpdateButton" runat="server" CommandName="Update" Text="Update" ValidationGroup="Edit" />
-                        <asp:LinkButton ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" CausesValidation="false" />
+                    <td class="text-center">
+                        <asp:LinkButton class="btn btn-sm btn-warning" ID="UpdateButton" runat="server" CommandName="Update" Text="Update" ValidationGroup="Edit" />
+                        <asp:LinkButton class="btn btn-sm btn-success" ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" CausesValidation="false" />
                     </td>
                 </tr>
             </EditItemTemplate>

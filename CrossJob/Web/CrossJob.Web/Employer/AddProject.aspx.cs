@@ -2,14 +2,12 @@
 {
     using System;
     using System.Linq;
-    using Ninject;
-    using Ninject.Web;
-    using Services.Contracts;
-    using Models;
     using System.Web.UI.WebControls;
-    using System.Globalization;
     using Microsoft.AspNet.Identity;
-    using WebForms.Utilities.Notifier;
+    using Models;
+    using Ninject;
+    using Services.Contracts;
+    using Utilities.Notifier;
 
     public partial class AddProject : System.Web.UI.Page
     {
