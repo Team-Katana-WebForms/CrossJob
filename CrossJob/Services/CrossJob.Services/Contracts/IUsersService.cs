@@ -5,11 +5,11 @@
 
     public interface IUsersService
     {
-        IQueryable<Freelancer> GetAllFreelancers(int skip, int take);
+        IQueryable<Freelancer> GetAllFreelancers();
 
         IQueryable<Freelancer> AllFreelancers();
 
-        IQueryable<Employer> GetAllEmployers(int skip, int take);
+        IQueryable<Employer> GetAllEmployers();
 
         IQueryable<Freelancer> GetTopFreelancersByRating(int top);
 

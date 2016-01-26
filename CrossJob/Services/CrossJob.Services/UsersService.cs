@@ -32,22 +32,14 @@
             this.freelancers.SaveChanges();
         }
 
-        public IQueryable<Employer> GetAllEmployers(int skip, int take)
+        public IQueryable<Employer> GetAllEmployers()
         {
-            return this.employers
-                .All()
-                .OrderBy(e => e.Id)
-                .Skip(skip)
-                .Take(take);
+            return this.employers.All();
         }
 
-        public IQueryable<Freelancer> GetAllFreelancers(int skip, int take)
+        public IQueryable<Freelancer> GetAllFreelancers()
         {
-            return this.freelancers
-                .All()
-                .OrderBy(f => f.Id)
-                .Skip(skip)
-                .Take(take);
+            return this.freelancers.All();
         }
 
         public IQueryable<Freelancer> AllFreelancers()
