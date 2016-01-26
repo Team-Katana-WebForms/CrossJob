@@ -1,4 +1,4 @@
-﻿namespace CrossJob.WebForms.Utilities.Notifier
+﻿namespace CrossJob.Utilities.Notifier
 {
     using System;
     using System.Collections.Generic;

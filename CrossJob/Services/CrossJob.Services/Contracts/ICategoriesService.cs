@@ -7,8 +7,12 @@
     {
         IQueryable<Category> GetAll();
 
-        IQueryable<Category> GetById(int id);
+        Category GetById(int id);
+
+        IQueryable<Category> UpdateCategory(Category updatedCategory);
 
         int AddNew(string name);
+
+        void DeleteCategory(int id);
     }
 }

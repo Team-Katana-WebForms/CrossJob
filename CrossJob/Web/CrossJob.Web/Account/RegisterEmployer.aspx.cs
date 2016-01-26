@@ -4,12 +4,12 @@
     using System.Linq;
     using System.Web;
     using System.Web.UI;
+    using Common.Constants;
     using Data;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Models;
-    using Common.Constants;
-    using WebForms.Utilities.Notifier;
+    using Utilities.Notifier;
 
     public partial class RegisterEmployer : Page
     {

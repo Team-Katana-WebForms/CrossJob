@@ -1,5 +1,6 @@
 ﻿namespace CrossJob.Services
 {
+    using System;
     using System.Linq;
     using Contracts;
     using Data.Repositories;
@@ -27,17 +28,33 @@
             return newCategory.ID;
         }
 
+        public void DeleteCategory(int id)
+        {
+            this.categories.Delete(id);
+        }
+
         public IQueryable<Category> GetAll()
         {
             return this.categories
                 .All();
         }
 
-        public IQueryable<Category> GetById(int id)
+        public Category GetById(int id)
         {
             return this.categories
                 .All()
-                .Where(r => r.ID == id);
+                .Where(r => r.ID == id)
+                .FirstOrDefault();
+        }
+
+        public IQueryable<Category> UpdateCategory(Category updatedCategory)
+        {
+            this.categories.Update(updatedCategory);
+            this.categories.SaveChanges();
+
+            return this.categories
+                .All()
+                .Where(r => r.ID == updatedCategory.ID);
         }
     }
 }

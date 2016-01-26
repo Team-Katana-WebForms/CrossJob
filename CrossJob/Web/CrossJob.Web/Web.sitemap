@@ -14,7 +14,7 @@
       <siteMapNode url="~/Admin/Employers" title="Employers"  description="Edit/delete employers" />
       <siteMapNode url="~/Admin/Freelancers" title="Freelancers"  description="Edit/delete freelancers" />
       <siteMapNode url="~/Admin/Projects" title="Projects"  description="Edit/delete projects" />
-      <siteMapNode url="~/Admin/Categories" title="Projects"  description="Edit/delete projects" />
+      <siteMapNode url="~/Admin/Categories" title="Categories"  description="Edit/delete categories" />
     </siteMapNode>
   </siteMapNode>
 </siteMap>
