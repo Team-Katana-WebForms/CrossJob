@@ -200,6 +200,7 @@
     <Content Include="Employer\Account.aspx" />
     <Content Include="Employer\AddProject.aspx" />
     <Content Include="Employer\Comments.aspx" />
+    <Content Include="Freelancers.aspx" />
     <Content Include="Freelancer\Account.aspx" />
     <Content Include="Freelancer\Comments.aspx" />
     <Content Include="Freelancer\Employers.aspx" />
@@ -431,6 +432,13 @@
     </Compile>
     <Compile Include="Employer\Comments.aspx.designer.cs">
       <DependentUpon>Comments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Freelancers.aspx.cs">
+      <DependentUpon>Freelancers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Freelancers.aspx.designer.cs">
+      <DependentUpon>Freelancers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Freelancer\Account.aspx.cs">
       <DependentUpon>Account.aspx</DependentUpon>
