@@ -42,7 +42,7 @@ namespace CrossJob.Web
                     break;
             }
 
-            return query.ToList().OrderBy(f => f.Ratings).AsQueryable();
+            return query.ToList().OrderBy(f => f.AverageRating).AsQueryable();
         }
     }
 }
