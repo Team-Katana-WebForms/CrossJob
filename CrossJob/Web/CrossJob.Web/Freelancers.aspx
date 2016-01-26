@@ -26,15 +26,15 @@
                         AllowPaging="True" 
                         PageSize="10" 
                         AllowSorting="True"
-                        DataKeyNames="ID">
+                        DataKeyNames="ID"
+                        EmptyDataText="There are no data records to display.">
                         <Columns>
-                            <asp:BoundField DataField="FirstName" HeaderText="First name" />
+                            <asp:HyperLinkField HeaderText="First name" DataTextField="FirstName"  DataNavigateUrlFields="Id" DataNavigateUrlFormatString="~/Projects/ProjectDetails.aspx?id={0}" />
                             <asp:DynamicField DataField="LastName" HeaderText="Last name" />
                             <asp:DynamicField DataField="RatePerHour" HeaderText="Rate per hour" />
                             <asp:BoundField DataField="AverageRating" HeaderText="Average rating" />
                         </Columns>
                     </asp:GridView>
-                <h1 class="text-center"><strong><asp:label id="ifNoResult" runat="server" /></strong></h1>
               </ContentTemplate>
           </asp:UpdatePanel>
 </asp:Content>
