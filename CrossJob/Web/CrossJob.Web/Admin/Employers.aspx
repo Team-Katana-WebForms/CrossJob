@@ -26,7 +26,7 @@
                 </table>
             </EmptyDataTemplate>
             <LayoutTemplate>
-                <table class="table table-bordered table-hover table-striped" runat="server" id="tblFreelancers">
+                <table class="table table-bordered table-hover table-striped" runat="server" id="tblEmployers">
                     <tr runat="server">
                         <th>
                             <asp:LinkButton Text="UserName" CommandName="Sort" CommandArgument="UserName" runat="Server" />
