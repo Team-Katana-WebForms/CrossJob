@@ -52,7 +52,7 @@
                     <ul class="nav navbar-nav">
                         <asp:Menu runat="server" ID="Menu"
                             DataSourceID="SiteMapDataSource" Orientation="Horizontal" Font-Size="Large"
-                            StaticDisplayLevels="2" StaticMenuStyle-Font-Bold="true">
+                            StaticDisplayLevels="1" StaticMenuStyle-Font-Bold="true" DynamicMenuItemStyle-BackColor="Black" DynamicMenuStyle-Width="500px">
                         </asp:Menu>
                         <asp:SiteMapDataSource runat="server" ID="SiteMapDataSource" ShowStartingNode="false" />
                     </ul>
@@ -76,6 +76,12 @@
             </div>
         </div>
 
+        <asp:SiteMapPath ID="SiteMap" runat="server"
+            PathSeparator="/"
+            PathDirection="RootToCurrent"
+            RenderCurrentNodeAsLink="true"
+            CssClass="breadcrump">
+        </asp:SiteMapPath>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

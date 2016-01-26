@@ -39,6 +39,7 @@ namespace CrossJob.Web.Account
                 switch (result)
                 {
                     case SignInStatus.Success:
+                        Notifier.Success("Successfully login!");
                         IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
                         break;
                     case SignInStatus.LockedOut:
@@ -52,8 +53,7 @@ namespace CrossJob.Web.Account
                         break;
                     case SignInStatus.Failure:
                     default:
-                        Notifier.Error("Invalid login attempt" + result);
-                        //ErrorMessage.Visible = true;
+                        Notifier.Error("Invalid login attempt");
                         break;
                 }
             }

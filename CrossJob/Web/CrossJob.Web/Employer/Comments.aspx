@@ -1,12 +1,18 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Comments.aspx.cs" Inherits="CrossJob.Web.Employer.Comments" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ListView ID="ListComments" runat="server" ItemType="CrossJob.Models.Comment">
         <LayoutTemplate>
-            <h2>Comments</h2><h4> by me</h4>
+            <h2>Comments</h2>
+            <h4>by me</h4>
             <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
         </LayoutTemplate>
+
+        <EmptyDataTemplate>
+            <h3>No comments</h3>
+        </EmptyDataTemplate>
 
         <ItemSeparatorTemplate>
             <hr />

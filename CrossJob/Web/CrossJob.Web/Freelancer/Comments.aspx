@@ -10,6 +10,10 @@
             <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
         </LayoutTemplate>
 
+        <EmptyDataTemplate>
+            <h3>No comments</h3>
+        </EmptyDataTemplate>
+
         <ItemSeparatorTemplate>
             <hr />
         </ItemSeparatorTemplate>
