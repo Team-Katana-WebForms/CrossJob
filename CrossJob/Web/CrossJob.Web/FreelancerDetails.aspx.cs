@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 
 using CrossJob.Models;
 using Microsoft.AspNet.Identity;
+using CrossJob.Controls.Notifier;
 
 namespace CrossJob.Web
 {
@@ -20,6 +21,9 @@ namespace CrossJob.Web
 
         [Inject]
         public IRatingsService RatingsService { get; set; }
+
+        [Inject]
+        public IProjectsService ProjectsService { get; set; }
 
         protected void Page_PreInit(object sender, EventArgs e)
         {
@@ -53,6 +57,21 @@ namespace CrossJob.Web
                 var freelancerId = label.Text;
 
                 var employerId = this.User.Identity.GetUserId();
+
+                var employerRatings = this.RatingsService.GetAllByAuthor(employerId);
+                var freelancerRating = employerRatings.Any(f => f.FreelancerID == freelancerId);
+                if (freelancerRating)
+                {
+                    Notifier.Error("You already rated this freelancer");
+                    return;
+                }
+
+                var freelancerProjects = this.ProjectsService.GetAllProjectsOfUser(freelancerId);
+                if (!freelancerProjects.Any(p => p.EmployerID == employerId))
+                {
+                    Notifier.Error("You cannot rate this user");
+                    return;
+                }
 
                 this.RatingsService.AddNew(rate, freelancerId, employerId);
             }

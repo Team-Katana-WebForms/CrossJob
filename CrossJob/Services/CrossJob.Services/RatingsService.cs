@@ -30,6 +30,13 @@
             return newRating.Id;
         }
 
+        public IQueryable<Rating> GetAllByAuthor(string userId)
+        {
+            return this.ratings
+                .All()
+                .Where(r => r.EmployerID == userId);
+        }
+
         public IQueryable<Rating> GetAllByAuthor(string userId, int skip, int take)
         {
             return this.ratings

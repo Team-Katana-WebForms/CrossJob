@@ -37,9 +37,14 @@
                 </asp:ListView>
             </div>
 
-            <asp:TextBox ID="tbRate" runat="server" TextMode="Number"></asp:TextBox>
-            <asp:Label ID="lbRate" runat="server" Visible="false"></asp:Label>
-            <asp:ImageButton ID="btnRate" runat="server" OnClick="btnRate_Click" />
+            <div class="col-md-offset-5">
+                <asp:TextBox ID="tbRate" runat="server" TextMode="Number" CssClass="form-control box-number" ValidationGroup="Rating"></asp:TextBox>
+                <asp:RangeValidator ID="rvRating" runat="server" Display="Dynamic" ControlToValidate="tbRate" 
+                    MinimumValue="0" MaximumValue="5" ErrorMessage="Rating must be between 1 and 5 stars" ValidationGroup="Rating"></asp:RangeValidator>
+                <asp:Label ID="lbRate" runat="server" Visible="false"></asp:Label>
+                <asp:ImageButton ID="btnRate" runat="server" OnClick="btnRate_Click" ImageUrl="~/Imgs/rating.jpg" CssClass="image-container" />
+            </div>
+
         </LoggedInTemplate>
     </asp:LoginView>
 </asp:Content>
