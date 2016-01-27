@@ -13,6 +13,15 @@ namespace CrossJob.Web.Admin {
     public partial class Employers {
         
         /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
         /// DynamicDataManager1 control.
         /// </summary>
         /// <remarks>

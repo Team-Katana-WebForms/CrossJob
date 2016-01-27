@@ -4,6 +4,8 @@
     <div class="jumbotron text-center">
         <h1><%: Title %></h1>
    </div>
+      <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+          <ContentTemplate>
                <asp:ListView ID="ViewAllProjects" runat="server"
                             SelectMethod="ViewMyProjects_GetData"
                             ItemType="CrossJob.Models.Project"
@@ -69,5 +71,6 @@
                             ButtonCssClass="btn btn-default" RenderNonBreakingSpacesBetweenControls="false" RenderDisabledButtonsAsLabels="false" />
                     </Fields>
                 </asp:DataPager>
-            </div>
+              </ContentTemplate>
+          </asp:UpdatePanel>
 </asp:Content>

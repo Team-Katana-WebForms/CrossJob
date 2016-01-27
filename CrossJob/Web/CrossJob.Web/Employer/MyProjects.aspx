@@ -10,6 +10,8 @@
                 </div>
             </div>
             <br />
+     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+          <ContentTemplate>
             <div class="row text-center">
                 <div class="col-md-12">
                     <div class="panel panel-info">
@@ -110,5 +112,6 @@
             </div>
         </div>
     </div>
-
+  </ContentTemplate>
+ </asp:UpdatePanel>
 </asp:Content>
