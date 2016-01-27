@@ -31,6 +31,7 @@
         public void DeleteCategory(int id)
         {
             this.categories.Delete(id);
+            this.categories.SaveChanges();
         }
 
         public IQueryable<Category> GetAll()

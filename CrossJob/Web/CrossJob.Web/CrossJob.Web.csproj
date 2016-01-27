@@ -198,8 +198,7 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Content\Styles\site.css" />
+    <Content Include="Content\site.css" />
     <Content Include="Employer\Account.aspx" />
     <Content Include="Employer\AddProject.aspx" />
     <Content Include="Employer\Comments.aspx" />
@@ -215,6 +214,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="Admin\Admin.master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -251,6 +251,8 @@
     <Content Include="Site.Master" />
     <Content Include="TopFreelancers.aspx" />
     <Content Include="Uploads\default.jpg" />
+    <Content Include="Utilities\ModalWindow\ModalWindow.ascx" />
+    <Content Include="Utilities\ModalWindow\modalWindow.js" />
     <Content Include="Utilities\Notifier\css\notifier.css" />
     <Content Include="Utilities\Notifier\js\jquery-2.1.1.min.js" />
     <Content Include="Utilities\Notifier\js\notifier.js" />
@@ -387,6 +389,13 @@
     </Compile>
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin.master.cs">
+      <DependentUpon>Admin.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.master.designer.cs">
+      <DependentUpon>Admin.master</DependentUpon>
     </Compile>
     <Compile Include="Admin\Categories.aspx.cs">
       <DependentUpon>Categories.aspx</DependentUpon>
@@ -531,6 +540,13 @@
     </Compile>
     <Compile Include="TopFreelancers.aspx.designer.cs">
       <DependentUpon>TopFreelancers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\ModalWindow\ModalWindow.ascx.cs">
+      <DependentUpon>ModalWindow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities\ModalWindow\ModalWindow.ascx.designer.cs">
+      <DependentUpon>ModalWindow.ascx</DependentUpon>
     </Compile>
     <Compile Include="Utilities\Notifier\Enums\NotificationType.cs" />
     <Compile Include="Utilities\Notifier\Notification.cs" />

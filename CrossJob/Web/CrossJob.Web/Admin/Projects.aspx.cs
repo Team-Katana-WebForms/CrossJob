@@ -1,14 +1,11 @@
 ﻿namespace CrossJob.Web.Admin
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Web;
     using System.Web.UI;
-    using System.Web.UI.WebControls;
-    using Services.Contracts;
-    using Ninject;
     using Models;
+    using Ninject;
+    using Services.Contracts;
     using Utilities.Notifier;
 
     public partial class Projects1 : Page
@@ -56,6 +53,13 @@
 
         public void Projects_DeleteItem(int id)
         {
+            this.HiddenfieldDeleteId.Text = id.ToString();
+            this.ModalWindow.Show();
+        }
+
+        protected void ModalWindow_OKButtonClicked(object sender, EventArgs e)
+        {
+            var id = int.Parse(this.HiddenfieldDeleteId.Text);
             if (this.projectsService.GetById(id) == null)
             {
                 ModelState.AddModelError("", String.Format("Item with id {0} was not found", id));

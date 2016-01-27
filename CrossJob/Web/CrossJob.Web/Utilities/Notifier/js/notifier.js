@@ -1,5 +1,4 @@
-﻿
-if (typeof (jQuery) == 'undefined') {
+﻿if (typeof (jQuery) == 'undefined') {
     console.log("Please add jQuery first");
 }
 
