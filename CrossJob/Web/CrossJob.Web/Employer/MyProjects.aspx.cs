@@ -8,7 +8,7 @@
     using System.Linq;
     using Microsoft.AspNet.Identity;
     using System.Web.UI.WebControls;
-    using Utilities.Notifier;
+    using Controls.Notifier;
 
     public partial class MyProjects : Page
     {

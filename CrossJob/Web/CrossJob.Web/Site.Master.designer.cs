@@ -28,7 +28,7 @@ namespace CrossJob.Web {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::CrossJob.Utilities.Notifier.Notifier ucHandler;
+        protected global::CrossJob.Controls.Notifier.Notifier ucHandler;
         
         /// <summary>
         /// Menu control.

@@ -181,6 +181,8 @@
     <Content Include="Admin\Employers.aspx" />
     <Content Include="Admin\Freelancers.aspx" />
     <Content Include="Admin\Projects.aspx" />
+    <Content Include="EmployerDetails.aspx" />
+    <Content Include="FreelancerDetails.aspx" />
     <Content Include="ProjectDetails.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
@@ -249,12 +251,12 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="Uploads\default.jpg" />
-    <Content Include="Utilities\ModalWindow\ModalWindow.ascx" />
-    <Content Include="Utilities\ModalWindow\modalWindow.js" />
-    <Content Include="Utilities\Notifier\css\notifier.css" />
-    <Content Include="Utilities\Notifier\js\jquery-2.1.1.min.js" />
-    <Content Include="Utilities\Notifier\js\notifier.js" />
-    <Content Include="Utilities\Notifier\Notifier.ascx" />
+    <Content Include="Controls\ModalWindow\ModalWindow.ascx" />
+    <Content Include="Controls\ModalWindow\modalWindow.js" />
+    <Content Include="Controls\Notifier\css\notifier.css" />
+    <Content Include="Controls\Notifier\js\jquery-2.1.1.min.js" />
+    <Content Include="Controls\Notifier\js\notifier.js" />
+    <Content Include="Controls\Notifier\Notifier.ascx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -421,6 +423,20 @@
     <Compile Include="Admin\Projects.aspx.designer.cs">
       <DependentUpon>Projects.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EmployerDetails.aspx.cs">
+      <DependentUpon>EmployerDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployerDetails.aspx.designer.cs">
+      <DependentUpon>EmployerDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FreelancerDetails.aspx.cs">
+      <DependentUpon>FreelancerDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FreelancerDetails.aspx.designer.cs">
+      <DependentUpon>FreelancerDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProjectDetails.aspx.cs">
       <DependentUpon>ProjectDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -523,16 +539,16 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="Utilities\ModalWindow\ModalWindow.ascx.cs">
+    <Compile Include="Controls\ModalWindow\ModalWindow.ascx.cs">
       <DependentUpon>ModalWindow.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Utilities\ModalWindow\ModalWindow.ascx.designer.cs">
+    <Compile Include="Controls\ModalWindow\ModalWindow.ascx.designer.cs">
       <DependentUpon>ModalWindow.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Utilities\Notifier\Enums\NotificationType.cs" />
-    <Compile Include="Utilities\Notifier\Notification.cs" />
-    <Compile Include="Utilities\Notifier\Notifier.ascx.cs">
+    <Compile Include="Controls\Notifier\Enums\NotificationType.cs" />
+    <Compile Include="Controls\Notifier\Notification.cs" />
+    <Compile Include="Controls\Notifier\Notifier.ascx.cs">
       <DependentUpon>Notifier.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

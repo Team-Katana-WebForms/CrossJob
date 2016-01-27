@@ -113,7 +113,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="tbPrice" class="col-md-3 control-label">Project Price</label>
+                            <label for="tbPrice" class="col-md-3 control-label">Price per hour</label>
                             <div class="col-md-9">
                                 <asp:TextBox ID="tbPrice" runat="server" CssClass="form-control" PlaceHolder="0.00"></asp:TextBox>
                                 <asp:RequiredFieldValidator ErrorMessage="*Price is required" ControlToValidate="tbPrice" runat="server" ValidationGroup="AddProject" ForeColor="Red" />

@@ -47,7 +47,7 @@
                     </LayoutTemplate>
                     <ItemTemplate>
                         <a class="list-group-item"
-                            href='<%#: string.Format("FreelancersDetails.aspx?id={0}", Item.Id) %>'>
+                            href='<%#: string.Format("FreelancerDetails.aspx?id={0}", Item.Id) %>'>
                             <%#:Item.UserName  %>
                             <span class="pull-right"><%#: Item.AverageRating %></span>
                         </a>
