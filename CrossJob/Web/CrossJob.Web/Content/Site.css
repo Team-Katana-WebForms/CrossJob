@@ -97,3 +97,7 @@ input[type="select"] {
     display:inline-block;
     width:20%;
 }
+
+.box-text{
+    display:block;
+}

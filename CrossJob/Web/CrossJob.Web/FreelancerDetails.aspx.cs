@@ -25,6 +25,9 @@ namespace CrossJob.Web
         [Inject]
         public IProjectsService ProjectsService { get; set; }
 
+        [Inject]
+        public ICommentsService CommentsService { get; set; }
+
         protected void Page_PreInit(object sender, EventArgs e)
         {
             if (!this.User.Identity.IsAuthenticated)
@@ -47,9 +50,16 @@ namespace CrossJob.Web
 
         protected void btnRate_Click(object sender, ImageClickEventArgs e)
         {
+
             if (this.User.Identity.IsAuthenticated)
             {
                 var textBox = this.loginFreelancer.FindControl("tbRate") as TextBox;
+                if (textBox.Text == string.Empty)
+                {
+                    Notifier.Error("Rating cannot be an empty string");
+                    return;
+                }
+
                 var rate = int.Parse(textBox.Text);
                 textBox.Text = "";
 
@@ -66,14 +76,39 @@ namespace CrossJob.Web
                     return;
                 }
 
-                var freelancerProjects = this.ProjectsService.GetAllProjectsOfUser(freelancerId);
-                if (!freelancerProjects.Any(p => p.EmployerID == employerId))
+                var employerProjects = this.ProjectsService.GetAllProjectsOfUser(employerId);
+                var freelancerProjects = employerProjects.Any(f => f.FreelancerID == freelancerId);
+                if (freelancerProjects)
                 {
-                    Notifier.Error("You cannot rate this user");
+                    Notifier.Error("No projects related to this freelancer");
                     return;
                 }
 
                 this.RatingsService.AddNew(rate, freelancerId, employerId);
+            }
+        }
+
+        protected void btnComment_Click(object sender, EventArgs e)
+        {
+
+            if (this.User.Identity.IsAuthenticated)
+            {
+                var textBox = this.loginFreelancer.FindControl("tbComment") as TextBox;
+                if (textBox.Text == string.Empty)
+                {
+                    Notifier.Error("Comment cannot be an empty string");
+                    return;
+                }
+
+                var comment = textBox.Text;
+                textBox.Text = "";
+
+                var label = this.loginFreelancer.FindControl("lbRate") as Label;
+                var freelancerId = label.Text;
+
+                var employerId = this.User.Identity.GetUserId();
+
+                this.CommentsService.AddNew(comment, freelancerId, employerId);
             }
         }
     }

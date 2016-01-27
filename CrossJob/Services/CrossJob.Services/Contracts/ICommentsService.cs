@@ -12,6 +12,6 @@
 
         List<Comment> GetAllByAuthor(string userId, int skip, int take);
 
-        int AddNew(Comment comment, string userId, string authorId);
+        int AddNew(string comment, string userId, string authorId);
     }
 }
