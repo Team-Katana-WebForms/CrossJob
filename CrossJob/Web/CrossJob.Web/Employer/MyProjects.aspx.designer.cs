@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CrossJob.Web {
+namespace CrossJob.Employer {
     
     
-    public partial class Projects {
+    public partial class MyProjects {
         
         /// <summary>
         /// UpdatePanel1 control.

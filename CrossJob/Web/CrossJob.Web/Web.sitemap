@@ -2,6 +2,7 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode url="~/Default.aspx" title="Home">
     <siteMapNode url="~/Freelancers" title="Freelancers"  description="Search all freelancers" /> <!--public-->
+    <siteMapNode url="~/Projects" title="Projects"  description="Search all projects" /> <!--public-->
     <siteMapNode url="~/Freelancer/MyProjects" title="My projects"  description="See my projects" /> <!--reg.freelancer-->
     <siteMapNode url="~/Freelancer/Account" title="My profile"  description="See my profile" /> <!--reg.freelancer-->
     <siteMapNode url="~/Employer/AddProject" title="Add project" description="Add new project" /> <!--reg.employer-->

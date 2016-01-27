@@ -10,33 +10,24 @@
 namespace CrossJob.Web {
     
     
-    public partial class _Default {
+    public partial class Projects {
         
         /// <summary>
-        /// Statistics control.
+        /// UpdatePanel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Statistics;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// ListViewTop10Freelancers control.
+        /// GridViewProjects control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListViewTop10Freelancers;
-        
-        /// <summary>
-        /// ListViewRecent10Projects control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListViewRecent10Projects;
+        protected global::System.Web.UI.WebControls.GridView GridViewProjects;
     }
 }
