@@ -8,7 +8,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title>CrossJob - Hire Freelancers & Get Freelance Jobs Online</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -41,7 +41,7 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-        <ucHandler:ErrorSuccessNotifier runat="server" ID="ucHandler" />
+        <uc:ErrorSuccessNotifier runat="server" ID="ucHandler" />
 
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">

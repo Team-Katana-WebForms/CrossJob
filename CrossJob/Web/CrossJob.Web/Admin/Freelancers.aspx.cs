@@ -52,6 +52,13 @@
 
         public void Freelancers_DeleteItem(string id)
         {
+            this.HiddenfieldDeleteId.Text = id;
+            this.ModalWindow.Show();
+        }
+
+        protected void ModalWindow_OKButtonClicked(object sender, EventArgs e)
+        {
+            var id = this.HiddenfieldDeleteId.Text;
             if (this.users.GetFreelancerDetails(id) == null)
             {
                 ModelState.AddModelError("", String.Format("Item with id {0} was not found", id));

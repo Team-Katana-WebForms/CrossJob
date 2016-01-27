@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="New Project" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddProject.aspx.cs" Inherits="CrossJob.Web.Employer.AddProject" %>
 
 <asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
-    <link href="../Content/Styles/site.css" rel="stylesheet" />
+    <link href="../Content/site.css" rel="stylesheet" />
 </asp:Content>
 
 <asp:Content ID="ContentBody" ContentPlaceHolderID="MainContent" runat="server">

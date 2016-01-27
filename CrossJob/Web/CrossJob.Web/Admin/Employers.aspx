@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Employers.aspx.cs" Inherits="CrossJob.Web.Admin.Employers" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Employers.aspx.cs" Inherits="CrossJob.Web.Admin.Employers" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="AdminMainContent" runat="server">
     <h2>List of registered employers</h2>
 
     <div>
@@ -88,7 +88,7 @@
                     </td>
                     <td class="text-center">
                         <asp:LinkButton class="btn btn-sm btn-warning" ID="EditButton" CommandName="Edit" runat="server" Text="Edit" CausesValidation="false" />
-                        <asp:LinkButton class="btn btn-sm btn-danger" ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" CausesValidation="false" OnClientClick='return confirm("Are you sure you want to delete this item?");' />
+                        <asp:LinkButton class="btn btn-sm btn-danger" ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" CausesValidation="false" />
                     </td>
                 </tr>
             </ItemTemplate>
@@ -123,4 +123,6 @@
             </EditItemTemplate>
         </asp:ListView>
     </div>
+    <asp:TextBox ID="HiddenfieldDeleteId" runat="server" Visible="false"></asp:TextBox>
+    <uc:ModalWindow ID="ModalWindow" runat="server" OKButtonText="Delete" ModalWindowText="Are you sure you want to delete this item? This action is irreversible!" OnOKButtonClicked="ModalWindow_OKButtonClicked" />
 </asp:Content>

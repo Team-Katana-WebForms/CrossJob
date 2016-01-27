@@ -51,6 +51,13 @@
 
         public void Categories_DeleteItem(int id)
         {
+            this.HiddenfieldDeleteId.Text = id.ToString();
+            this.ModalWindow.Show();
+        }
+
+        protected void ModalWindow_OKButtonClicked(object sender, EventArgs e)
+        {
+            var id = int.Parse(this.HiddenfieldDeleteId.Text);
             var category = this.categoriesService.GetById(id);
             if (category == null)
             {
