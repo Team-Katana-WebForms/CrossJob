@@ -21,13 +21,13 @@
             <div class="form-group col-md-9">
                 <asp:Label runat="server" AssociatedControlID="UserName" CssClass="col-md-2 control-label">Username</asp:Label>
                 <div class="col-md-9">
-                    <asp:Literal ID="UserName" runat="server"></asp:Literal>
+                    <asp:Literal ID="UserName" runat="server" Mode="Encode"></asp:Literal>
                 </div>
             </div>
             <div class="form-group col-md-9">
                 <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Email</asp:Label>
                 <div class="col-md-9">
-                    <asp:Literal ID="Email" runat="server"></asp:Literal>
+                    <asp:Literal ID="Email" runat="server" Mode="Encode"></asp:Literal>
                 </div>
             </div>
             <div class="form-group col-md-9">

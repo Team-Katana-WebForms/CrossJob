@@ -18,7 +18,7 @@
             </div>
             <div class="modal-body">
                 <p>
-                    <asp:Literal ID="ModalText" runat="server"></asp:Literal>
+                    <asp:Literal ID="ModalText" runat="server" Mode="Encode"></asp:Literal>
                 </p>
             </div>
             <div class="modal-footer">

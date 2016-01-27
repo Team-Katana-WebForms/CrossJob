@@ -11,7 +11,7 @@
         <div class="row text-center">
             <h2><%: Title %></h2>
             <p class="text-danger">
-                <asp:Literal runat="server" ID="ErrorMessage" />
+                <asp:Literal runat="server" ID="ErrorMessage" Mode="Encode"/>
             </p>
             <div class="row form-horizontal">
                 <div class="col-md-6 col-md-offset-3">

@@ -2,7 +2,7 @@
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <p class="text-danger">
-        <asp:Literal runat="server" ID="ErrorMessage" />
+        <asp:Literal runat="server" ID="ErrorMessage" Mode="Encode"/>
     </p>
 
     <div class="form-horizontal">

@@ -21,8 +21,8 @@
             var user = new Employer()
             {
                 Email = Email.Text,
-                UserName = UserName.Text,
-                CompanyName = CompanyName.Text,
+                UserName = Server.HtmlEncode(UserName.Text),
+                CompanyName = Server.HtmlEncode(CompanyName.Text),
                 Avatar = GlobalConstants.DefaultAvatar
             };
 
