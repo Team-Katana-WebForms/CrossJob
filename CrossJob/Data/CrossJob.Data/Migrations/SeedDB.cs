@@ -15,7 +15,9 @@
 
         private static void SeedCategories(CrossJobDbContext context)
         {
-            var data = new[] {
+            if (!context.Categories.Any())
+            {
+                var data = new[] {
                 "3D Modeling & CAD",
                 "Academic Writing & Research",
                 "Animation",
@@ -51,9 +53,10 @@
                 "Web Development"
                 };
 
-            for (int i = 0; i < data.Length; i++)
-            {
-                context.Categories.Add(new Category { Name = data[i] });
+                for (int i = 0; i < data.Length; i++)
+                {
+                    context.Categories.Add(new Category { Name = data[i] });
+                }
             }
         }
 

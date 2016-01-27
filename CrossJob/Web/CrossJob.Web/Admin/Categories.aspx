@@ -3,6 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <h2>List of all categories</h2>
+
     <div>
         <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
 
@@ -18,7 +20,8 @@
             SelectMethod="Categories_GetData"
             UpdateMethod="Categories_UpdateItem"
             DeleteMethod="Categories_DeleteItem"
-            InsertMethod="Categories_InsertItem">
+            InsertMethod="Categories_InsertItem"
+            InsertItemPosition="LastItem">
             <EmptyDataTemplate>
                 <table>
                     <tr>
@@ -27,24 +30,28 @@
                 </table>
             </EmptyDataTemplate>
             <LayoutTemplate>
-                <table class="table table-bordered table-hover table-striped" runat="server" id="tblCategories">
-                    <tr runat="server">
-                        <th>
-                            <asp:LinkButton Text="Name" CommandName="Sort" CommandArgument="Name" runat="Server" />
-                        </th>
-                        <th>&nbsp;</th>
-                    </tr>
-                    <tr runat="server" id="itemPlaceholder" />
-                </table>
-                <asp:DataPager runat="server" PageSize="10">
-                    <Fields>
-                        <asp:NextPreviousPagerField ShowFirstPageButton="false"
-                            ShowNextPageButton="false" ShowPreviousPageButton="true" />
-                        <asp:NumericPagerField />
-                        <asp:NextPreviousPagerField ShowLastPageButton="false"
-                            ShowNextPageButton="true" ShowPreviousPageButton="false" />
-                    </Fields>
-                </asp:DataPager>
+                <div class="row">
+                    <div class="col-md-6 coll-md-offset-3">
+                        <table class="table table-bordered table-hover table-striped" runat="server" id="tblCategories">
+                            <tr runat="server">
+                                <th>
+                                    <asp:LinkButton Text="Name" CommandName="Sort" CommandArgument="Name" runat="Server" />
+                                </th>
+                                <th>&nbsp;</th>
+                            </tr>
+                            <tr runat="server" id="itemPlaceholder" />
+                        </table>
+                        <asp:DataPager runat="server" PageSize="10">
+                            <Fields>
+                                <asp:NextPreviousPagerField ShowFirstPageButton="false"
+                                    ShowNextPageButton="false" ShowPreviousPageButton="true" />
+                                <asp:NumericPagerField />
+                                <asp:NextPreviousPagerField ShowLastPageButton="false"
+                                    ShowNextPageButton="true" ShowPreviousPageButton="false" />
+                            </Fields>
+                        </asp:DataPager>
+                    </div>
+                </div>
             </LayoutTemplate>
             <ItemTemplate>
                 <tr>
@@ -62,13 +69,23 @@
                     <td>
                         <asp:DynamicControl runat="server" DataField="Name" Mode="Edit" ValidationGroup="Edit" />
                     </td>
-                    <td>
                     <td class="text-center">
                         <asp:LinkButton class="btn btn-sm btn-warning" ID="UpdateButton" runat="server" CommandName="Update" Text="Update" ValidationGroup="Edit" />
                         <asp:LinkButton class="btn btn-sm btn-success" ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" CausesValidation="false" />
                     </td>
                 </tr>
             </EditItemTemplate>
+            <InsertItemTemplate>
+                <tr>
+                    <td>
+                        <asp:DynamicControl runat="server" DataField="Name" Mode="Insert" ValidationGroup="Insert" />
+                    </td>
+                    <td class="text-center">
+                        <asp:LinkButton ID="InsertButton" runat="server" CommandName="Insert"
+                            Text="Add new" ValidationGroup="Insert" CssClass="btn btn-block btn-primary" />
+                    </td>
+                </tr>
+            </InsertItemTemplate>
         </asp:ListView>
     </div>
 </asp:Content>

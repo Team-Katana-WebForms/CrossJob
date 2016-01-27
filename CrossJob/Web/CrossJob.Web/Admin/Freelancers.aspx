@@ -49,7 +49,7 @@
                             <asp:LinkButton Text="RatePerHour" CommandName="Sort" CommandArgument="RatePerHour" runat="Server" />
                         </th>
                         <th>
-                            <asp:LinkButton Text="AverageRating" CommandName="Sort" CommandArgument="AverageRating" runat="Server" />
+                            <asp:LinkButton Text="Avatar" runat="Server" />
                         </th>
                         <th>&nbsp;</th>
                     </tr>
@@ -86,7 +86,7 @@
                         <asp:DynamicControl runat="server" DataField="RatePerHour" />
                     </td>
                     <td>
-                        <asp:DynamicControl runat="server" DataField="AverageRating" />
+                        <asp:DynamicControl runat="server" DataField="Avatar" />
                     </td>
                     <td class="text-center">
                         <asp:LinkButton class="btn btn-sm btn-warning" ID="EditButton" CommandName="Edit" runat="server" Text="Edit" CausesValidation="false" />
@@ -115,7 +115,7 @@
                         <asp:DynamicControl runat="server" DataField="RatePerHour" Mode="Edit" ValidationGroup="Edit" />
                     </td>
                     <td>
-                        <asp:DynamicControl runat="server" DataField="AverageRating" Mode="Edit" ValidationGroup="Edit" />
+                        <asp:DynamicControl runat="server" DataField="Avatar" Mode="Edit" ValidationGroup="Edit" />
                     </td>
                     <td class="text-center">
                         <asp:LinkButton class="btn btn-sm btn-warning" ID="UpdateButton" runat="server" CommandName="Update" Text="Update" ValidationGroup="Edit" />

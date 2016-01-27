@@ -51,9 +51,17 @@
 
         public void Categories_DeleteItem(int id)
         {
-            if (this.categoriesService.GetById(id) == null)
+            var category = this.categoriesService.GetById(id);
+            if (category == null)
             {
+                Notifier.Warning(String.Format("Item with id {0} was not found", id));
                 ModelState.AddModelError("", String.Format("Item with id {0} was not found", id));
+                return;
+            }
+
+            if (category.Projects.Count > 0)
+            {
+                Notifier.Warning("Cannot delete category with projects in it!");
                 return;
             }
 
@@ -64,9 +72,33 @@
             catch (Exception ex)
             {
                 Notifier.Error("Sorry, cannot delete this category." + ex.Message);
+                return;
             }
 
-            Notifier.Success("Successfully deleted the user!");
+            Notifier.Success("Successfully deleted the category!");
+            Response.Redirect("~/Admin/Categories");
+        }
+
+        public void Categories_InsertItem(string name)
+        {
+            var test = this.categoriesService.GetByName(name);
+            if (test != null)
+            {
+                Notifier.Warning("There is already such directory!");
+                return;
+            }
+
+            try
+            {
+                this.categoriesService.AddNew(name);
+            }
+            catch (Exception ex)
+            {
+                Notifier.Error("Sorry, cannot delete this category." + ex.Message);
+                return;
+            }
+
+            Notifier.Success("Successfully added new category!");
             Response.Redirect("~/Admin/Categories");
         }
     }

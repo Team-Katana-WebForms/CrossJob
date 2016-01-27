@@ -66,8 +66,8 @@
                 </div>
             </div>
             <div class="form-group col-md-9">
-                <div class="col-md-offset-6">
-                    <asp:Button type="Submit" runat="server" OnClick="UpdateAccount_Click" Text="Update" CssClass="btn btn-primary" />
+                <div class="col-md-offset-2 col-md-6">
+                    <asp:Button type="Submit" runat="server" OnClick="UpdateAccount_Click" Text="Update" CssClass="btn btn-primary block" />
                 </div>
             </div>
         </div>

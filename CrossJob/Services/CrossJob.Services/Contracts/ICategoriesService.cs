@@ -9,6 +9,8 @@
 
         Category GetById(int id);
 
+        Category GetByName(string name);
+
         IQueryable<Category> UpdateCategory(Category updatedCategory);
 
         int AddNew(string name);

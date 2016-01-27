@@ -36,7 +36,8 @@
         public IQueryable<Category> GetAll()
         {
             return this.categories
-                .All();
+                .All()
+                .OrderBy(c => c.Name);
         }
 
         public Category GetById(int id)
@@ -44,6 +45,14 @@
             return this.categories
                 .All()
                 .Where(r => r.ID == id)
+                .FirstOrDefault();
+        }
+
+        public Category GetByName(string name)
+        {
+            return this.categories
+                .All()
+                .Where(c => c.Name == name)
                 .FirstOrDefault();
         }
 
