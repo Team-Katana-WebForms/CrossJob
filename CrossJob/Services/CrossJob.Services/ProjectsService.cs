@@ -60,12 +60,23 @@
              .OrderByDescending(r => r.CreatedOn);
         }
 
-        public IQueryable<Project> GetAllByEmployer(string employerId)
+        public IQueryable<Project> GetAllProjectsOfUser(string userId, bool isEmployer)
         {
-            return this.projects
-             .All()
-             .Where(p => p.EmployerID == employerId)
-             .OrderByDescending(r => r.CreatedOn);
+            if (isEmployer)
+            {
+                return this.projects
+                 .All()
+                 .Where(p => p.EmployerID == userId)
+                 .OrderByDescending(r => r.CreatedOn);
+            }
+            else
+            {
+                return this.projects
+                 .All()
+                 .Where(p => p.FreelancerID == userId)
+                 .OrderByDescending(r => r.CreatedOn);
+            }
+
         }
 
         public Project GetById(int id)
