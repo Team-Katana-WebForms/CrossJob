@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CrossJob.Employer {
+namespace CrossJob.Web {
     
     
-    public partial class MyProjects {
+    public partial class Projects {
         
         /// <summary>
         /// UpdatePanel1 control.
@@ -22,21 +22,12 @@ namespace CrossJob.Employer {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// ViewAllProjects control.
+        /// GridViewProjects control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ViewAllProjects;
-        
-        /// <summary>
-        /// DataPagerAll control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DataPager DataPagerAll;
+        protected global::System.Web.UI.WebControls.GridView GridViewProjects;
     }
 }

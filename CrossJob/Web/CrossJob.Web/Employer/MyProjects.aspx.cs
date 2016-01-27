@@ -1,4 +1,4 @@
-﻿namespace CrossJob.Web
+﻿namespace CrossJob.Employer
 {
     using Services.Contracts;
     using Ninject;
@@ -10,7 +10,7 @@
     using System.Web.UI.WebControls;
     using Utilities.Notifier;
 
-    public partial class Projects : Page
+    public partial class MyProjects : Page
     {
         [Inject]
         public IProjectsService ProjectsService { get; set; }
