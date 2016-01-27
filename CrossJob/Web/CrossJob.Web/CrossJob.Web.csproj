@@ -182,7 +182,6 @@
     <Content Include="Admin\Freelancers.aspx" />
     <Content Include="Admin\Projects.aspx" />
     <Content Include="Employer\ProjectDetails.aspx" />
-    <Content Include="Projects.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
@@ -208,7 +207,7 @@
     <Content Include="Freelancer\Employers.aspx" />
     <Content Include="Freelancer\MyProjects.aspx" />
     <Content Include="Imgs\calendar-icon.jpg" />
-    <Content Include="Employer\Projects.aspx" />
+    <Content Include="Employer\MyProjects.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -432,13 +431,6 @@
     <Compile Include="Employer\ProjectDetails.aspx.designer.cs">
       <DependentUpon>ProjectDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Projects.aspx.cs">
-      <DependentUpon>Projects.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Projects.aspx.designer.cs">
-      <DependentUpon>Projects.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\NinjectWeb.cs" />
@@ -501,12 +493,12 @@
     <Compile Include="Freelancer\MyProjects.aspx.designer.cs">
       <DependentUpon>MyProjects.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employer\Projects.aspx.cs">
-      <DependentUpon>Projects.aspx</DependentUpon>
+    <Compile Include="Employer\MyProjects.aspx.cs">
+      <DependentUpon>MyProjects.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Employer\Projects.aspx.designer.cs">
-      <DependentUpon>Projects.aspx</DependentUpon>
+    <Compile Include="Employer\MyProjects.aspx.designer.cs">
+      <DependentUpon>MyProjects.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

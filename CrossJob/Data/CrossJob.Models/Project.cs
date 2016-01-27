@@ -7,6 +7,12 @@
 
     public class Project
     {
+        private ICollection<Freelancer> candidates;
+
+        public Project()
+        {
+            this.candidates = new HashSet<Freelancer>();
+        }
         [Key]
         public int ID { get; set; }
 
@@ -40,5 +46,11 @@
         public string EmployerID { get; set; }
 
         public virtual Employer Employer { get; set; }
+
+        public virtual ICollection<Freelancer> Candidates
+        {
+            get { return this.candidates; }
+            set { this.candidates = value; }
+        }
     }
 }
