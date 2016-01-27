@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row text-center">
                 <div class="col-md-8 col-md-offset-2">
-                    <a runat="server" href="~/Employer/AddProject" class="btn btn-lg btn-primary">Add Project</a>
+                    <a runat="server" href="~/Employer/AddProject" class="btn btn-lg btn-warning">Add Project</a>
                 </div>
             </div>
             <br />
@@ -14,7 +14,7 @@
                 <ContentTemplate>
                     <div class="row text-center">
                         <div class="col-md-12">
-                            <div class="panel panel-info">
+                            <div class="panel panel-warning">
                                 <div class="panel-heading text-center"><%: Title %></div>
                                 <asp:ListView ID="ViewAllProjects" runat="server"
                                     SelectMethod="ViewAllProjects_GetData"

@@ -125,7 +125,7 @@
 
                         <div class="form-group">
                             <div class="col-md-9 col-lg-offset-3 pull-right">
-                                <asp:Button ID="btnAddProject" runat="server" OnClick="btnAddProject_Click" Text="Add Project" ValidationGroup="AddProject" CssClass="btn btn-info full-width" />
+                                <asp:Button ID="btnAddProject" runat="server" OnClick="btnAddProject_Click" Text="Add Project" ValidationGroup="AddProject" CssClass="btn btn-success btn-block" />
                             </div>
                         </div>
                     </fieldset>
