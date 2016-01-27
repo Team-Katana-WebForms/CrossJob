@@ -24,7 +24,7 @@
                         SelectMethod="GridViewFreelancers_GetData"
                         ItemType="CrossJob.Models.Freelancer"
                         AllowPaging="True" 
-                        PageSize="10" 
+                        PageSize="5" 
                         AllowSorting="True"
                         DataKeyNames="ID"
                         EmptyDataText="There are no data records to display.">

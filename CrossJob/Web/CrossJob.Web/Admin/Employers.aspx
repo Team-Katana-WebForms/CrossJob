@@ -4,6 +4,8 @@
     <h2>List of registered employers</h2>
 
     <div>
+       <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+          <ContentTemplate>
         <asp:DynamicDataManager ID="DynamicDataManager1" runat="server" AutoLoadForeignKeys="true" />
 
         <asp:ValidationSummary ID="EditValidationSummary" runat="server" EnableClientScript="true"
@@ -125,4 +127,6 @@
     </div>
     <asp:TextBox ID="HiddenfieldDeleteId" runat="server" Visible="false"></asp:TextBox>
     <uc:ModalWindow ID="ModalWindow" runat="server" OKButtonText="Delete" ModalWindowText="Are you sure you want to delete this item? This action is irreversible!" OnOKButtonClicked="ModalWindow_OKButtonClicked" />
+ </ContentTemplate>
+ </asp:UpdatePanel>
 </asp:Content>
