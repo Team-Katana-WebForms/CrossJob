@@ -96,5 +96,13 @@
                 .All()
                 .Where(r => r.ID == updatedProject.ID);
         }
+
+        public IQueryable<Project> GetAllLatest(int take)
+        {
+            return this.projects
+                .All()
+                .OrderByDescending(p => p.CreatedOn)
+                .Take(take);
+        }
     }
 }

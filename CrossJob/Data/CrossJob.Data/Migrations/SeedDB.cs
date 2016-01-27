@@ -83,7 +83,7 @@
         {
             //Create User with password
             var user = new User();
-            user.UserName = email;
+            user.UserName = "admin";
             user.Email = email;
             var adminresult = userManager.Create(user, password);
 

@@ -256,7 +256,6 @@
     <Content Include="Utilities\Notifier\js\notifier.js" />
     <Content Include="Utilities\Notifier\Notifier.ascx" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Employer\Users.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -543,13 +542,6 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Employer\Users.aspx.cs">
-      <DependentUpon>Users.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Employer\Users.aspx.designer.cs">
-      <DependentUpon>Users.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

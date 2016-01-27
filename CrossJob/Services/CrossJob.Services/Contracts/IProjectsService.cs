@@ -10,6 +10,8 @@
 
         IQueryable<Project> GetAll();
 
+        IQueryable<Project> GetAllLatest(int take);
+
         IQueryable<Project> GetAllProjectsOfUser(string userId, bool isEmployer);
 
         Project GetById(int id);

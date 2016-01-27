@@ -6,6 +6,13 @@
 
     public class Freelancer : User
     {
+        protected ICollection<Rating> ratings;
+
+        public Freelancer()
+        {
+            this.ratings = new HashSet<Rating>();
+        }
+
         [Required]
         [MaxLength(20)]
         public string FirstName { get; set; }
@@ -15,6 +22,12 @@
         public string LastName { get; set; }
 
         public decimal RatePerHour { get; set; }
+
+        public virtual ICollection<Rating> Ratings
+        {
+            get { return this.ratings; }
+            set { this.ratings = value; }
+        }
 
         public double AverageRating
         {

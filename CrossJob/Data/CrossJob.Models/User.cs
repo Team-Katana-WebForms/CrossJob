@@ -10,13 +10,11 @@
     {
         private ICollection<Project> projects;
         private ICollection<Comment> comments;
-        protected ICollection<Rating> ratings;
 
         public User()
         {
             this.projects = new HashSet<Project>();
             this.comments = new HashSet<Comment>();
-            this.ratings = new HashSet<Rating>();
         }
 
         public string Country { get; set; }
@@ -33,12 +31,6 @@
         {
             get { return this.comments; }
             set { this.comments = value; }
-        }
-
-        public virtual ICollection<Rating> Ratings
-        {
-            get { return this.ratings; }
-            set { this.ratings = value; }
         }
 
         public ClaimsIdentity GenerateUserIdentity(UserManager<User> manager)
