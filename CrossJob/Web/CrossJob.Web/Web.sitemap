@@ -1,19 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
   <siteMapNode url="~/Default.aspx" title="Home">
-    <siteMapNode url="~/TopFreelancers" title="Top Freelancers"  description="Display top 10 freelancers" />
-    <siteMapNode url="~/Freelancers" title="Freelancers"  description="Search all freelancers" />
-    <siteMapNode url="~/Projects" title="Projects"  description="Edit/delete projects" />
-    <siteMapNode url="~/Freelancer/MyProjects" title="My projects"  description="See my projects" />
-    <siteMapNode url="~/Freelancer/Account" title="My profile"  description="See my profile" />
-    <siteMapNode url="~/Employer/AddProject" title="Add project" description="Add new project" />
-    <siteMapNode url="~/Employer/Projects" title="Your Projects" description="Employer's Projects" />
-    <siteMapNode url="~/Employer/Account" title="My profile"  description="See my profile" />
-    <siteMapNode url="" title="Admin panel" description="Modify application" roles="Admin">
-      <siteMapNode url="~/Admin/Employers" title="Employers"  description="Edit/delete employers" />
-      <siteMapNode url="~/Admin/Freelancers" title="Freelancers"  description="Edit/delete freelancers" />
-      <siteMapNode url="~/Admin/Projects" title="Projects"  description="Edit/delete projects" />
-      <siteMapNode url="~/Admin/Categories" title="Categories"  description="Edit/delete categories" />
+    <siteMapNode url="~/Freelancers" title="Freelancers"  description="Search all freelancers" /> <!--public-->
+    <siteMapNode url="~/Freelancer/MyProjects" title="My projects"  description="See my projects" /> <!--reg.freelancer-->
+    <siteMapNode url="~/Freelancer/Account" title="My profile"  description="See my profile" /> <!--reg.freelancer-->
+    <siteMapNode url="~/Employer/AddProject" title="Add project" description="Add new project" /> <!--reg.employer-->
+    <siteMapNode url="~/Employer/MyProjects" title="My Projects" description="Employer's Projects" /> <!--reg.employer-->
+    <siteMapNode url="~/Employer/Account" title="My profile"  description="See my profile" /> <!--reg.employer-->
+    <siteMapNode url="" title="Admin panel" description="Modify application" roles="Admin"> <!--admin-->
+      <siteMapNode url="~/Admin/Employers" title="Employers"  description="Edit/delete employers" /> <!--admin-->
+      <siteMapNode url="~/Admin/Freelancers" title="Freelancers"  description="Edit/delete freelancers" /> <!--admin-->
+      <siteMapNode url="~/Admin/Projects" title="Projects"  description="Edit/delete projects" /> <!--admin-->
+      <siteMapNode url="~/Admin/Categories" title="Categories"  description="Edit/delete categories" /> <!--admin-->
     </siteMapNode>
   </siteMapNode>
 </siteMap>
