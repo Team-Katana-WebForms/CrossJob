@@ -39,6 +39,19 @@
             <%-- <div>
                 <asp:LinkButton Text="Edit" runat="server" ID="lbEdit" CommandName="Edit"></asp:LinkButton>
             </div>--%>
+      <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <asp:LoginView runat="server" ID="freelanseZone" ViewStateMode="Disabled">
+                <RoleGroups>
+                   <asp:RoleGroup Roles="Freelancer">
+                       <ContentTemplate>
+                              <asp:Button class="btn btn-success" onclick="ApplyForWork" Text="Apply" runat="server"/>
+                        </ContentTemplate>
+                   </asp:RoleGroup>
+             </RoleGroups>
+            </asp:LoginView>
+        </ContentTemplate>
+       </asp:UpdatePanel>
         </ItemTemplate>
     </asp:FormView>
 </asp:Content>
