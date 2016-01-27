@@ -7,7 +7,6 @@
                     <div class="row text-center">
                         <asp:ListView runat="server" ID="UsersDetail" ItemType="CrossJob.Models.Employer"
                     SelectMethod="ListViewEmployerDetails_GetData" DataKeyNames="ID">
-                            <div>
                                   <ItemTemplate>
                                               <div class="row-fluid">
                                                  <p>
@@ -22,7 +21,6 @@
                                                     <p>
                                                 </div>
                                   </ItemTemplate>
-                               </div>
                             </asp:ListView>
                     </div>
                 </LoggedInTemplate>

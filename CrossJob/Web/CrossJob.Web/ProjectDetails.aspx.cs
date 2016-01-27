@@ -6,7 +6,8 @@
     using Models;
     using Ninject;
     using Services.Contracts;
-
+    using System.Web.Security;
+    using System.Web.UI.WebControls;
     public partial class ProjectDetails : System.Web.UI.Page
     {
         [Inject]
@@ -17,6 +18,7 @@
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
 
         // The id parameter should match the DataKeyNames value set on the control
@@ -39,6 +41,11 @@
                 .GetAll();
 
             return categories;
+        }
+
+        protected void ApplyForWork(object sender, EventArgs e)
+        {
+            
         }
     }
 }
