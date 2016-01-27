@@ -10,7 +10,7 @@
     using Microsoft.AspNet.Identity;
     using Ninject;
     using Services.Contracts;
-    using Utilities.Notifier;
+    using Controls.Notifier;
 
     public partial class Account : Page
     {

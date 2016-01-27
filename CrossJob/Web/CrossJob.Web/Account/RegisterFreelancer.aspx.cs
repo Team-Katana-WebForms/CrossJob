@@ -9,7 +9,7 @@
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Models;
-    using Utilities.Notifier;
+    using Controls.Notifier;
 
     public partial class RegisterFreelancer : Page
     {
