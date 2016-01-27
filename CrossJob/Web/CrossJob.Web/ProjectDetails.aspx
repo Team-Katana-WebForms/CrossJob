@@ -6,44 +6,37 @@
 
 <asp:Content ID="BodyContent2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:FormView runat="server" ID="FormViewProjectDetails" ItemType="CrossJob.Models.Project"
-        SelectMethod="FormViewProjectDetails_GetItem" DataKeyNames="ID">
+        SelectMethod="FormViewProjectDetails_GetItem" DataKeyNames="ID" CssClass="">
         <ItemTemplate>
-            <h1><%: Title %></h1>
-            <p>
-                <span><strong>Title: </strong></span>
-                <%#: Item.Title %>
-            </p>
-            <div class="row-fluid">
-                <p>
-                    <span><strong>Description: </strong></span>
-                    <%#: Item.Description %>
-                </p>
+            <div class="row">
+                <h1><%: Title %></h1>
+                <div class="col-md-20">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="title"><%#: Item.Title %>
+                                <span>
+                                    <i class="muted element-font">by 
+                                        <strong><%#: Item.Employer.CompanyName %></strong>
+                                    </i>
+                                </span>
+                            </h3>
+                            <p class="text-muted inline-element">From <span class="glyphicon glyphicon-calendar"></span><%#: string.Format("{0:MM-dd-yyyy}", Item.StartOn) %></p>
+                            <p class="text-muted inline-element">To <span class="glyphicon glyphicon-calendar"></span><%#: string.Format("{0:MM-dd-yyyy}", Item.FinishOn) %></p>
+                        </div>
+                        <div class="panel-body">
+                            <p class="element-margins">
+                                <%#: Item.Description %>
+                            </p>
+                        </div>
+                        <div class="panel-footer">
+                            <p class="text-danger">Price <strong><%#: Item.Price %></strong></p>
+                            <p class="text-danger">Freelancer <strong><%#: string.Format("{0}", Item.Freelancer != null ? string.Format("{0} {1}", Item.Freelancer.FirstName, Item.Freelancer.LastName) : "No freelancers") %></strong></p>
+                            <p class="text-muted">Category <i><%#: Item.Category.Name %></i></p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p>
-                <span><strong>Category: </strong></span>
-                <%#: Item.Category.Name %>
-            </p>
-            <p>
-                <span><strong>Company Name: </strong></span>
-                <%#: Item.Employer.CompanyName %></a>
-            </p>
-            <p>
-                <span><strong>Freelancer employed:</strong> </span>
-                <%#: string.Format("{0}", Item.Freelancer != null ? string.Format("{0} {1}", Item.Freelancer.FirstName, Item.Freelancer.LastName) : "No freelancers") %>
-            </p>
-            <p>
-                <span><strong>Start Date:</strong></span>
-                <%#: string.Format("{0:MM-dd-yyyy}", Item.StartOn) %>
-            </p>
-            <p>
-                <span><strong>End Date:</strong></span>
-                <%#: string.Format("{0:MM-dd-yyyy}", Item.FinishOn) %>
-            </p>
-            <p>
-                <span><strong>Price: </strong></span>
-                <%#: Item.Price %>
-            </p>
-           <%-- <div>
+            <%-- <div>
                 <asp:LinkButton Text="Edit" runat="server" ID="lbEdit" CommandName="Edit"></asp:LinkButton>
             </div>--%>
         </ItemTemplate>

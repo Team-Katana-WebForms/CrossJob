@@ -80,3 +80,17 @@ input[type="select"] {
 .row.vertical-divider div[class^="col-"]:last-child {
   border-right: none;
 }
+
+.inline-element{
+    display:inline;
+}
+
+.element-margins{
+    margin-top:10px;
+}
+
+.element-font{
+    font-size:15px;
+}
+
+
