@@ -8,6 +8,8 @@
     using Services.Contracts;
     using System.Web.Security;
     using System.Web.UI.WebControls;
+    using System.Web;
+    using Microsoft.AspNet.Identity;
     public partial class ProjectDetails : System.Web.UI.Page
     {
         [Inject]
@@ -16,9 +18,11 @@
         [Inject]
         public ICategoriesService CategoriesService { get; set; }
 
+        [Inject]
+        public IFreelancersService FreelancersService { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         // The id parameter should match the DataKeyNames value set on the control
@@ -43,9 +47,16 @@
             return categories;
         }
 
-        protected void ApplyForWork(object sender, EventArgs e)
+        protected void ApplyForWork_Click(object sender, CommandEventArgs e)
         {
-            
+            LinkButton b = sender as LinkButton;
+            var candidateID = this.User.Identity.GetUserId();
+            var candidate = FreelancersService.GetFreelancerDetails(candidateID);
+            Label label = (Label)b.Parent.Parent.Parent.FindControl("projectId");
+            int id = Convert.ToInt32(label.Text);
+            var project = ProjectsService.GetById(id);
+            project.Candidates.Add(candidate);
+            this.ProjectsService.Update(project);
         }
     }
 }

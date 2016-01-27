@@ -29,6 +29,7 @@
                             </p>
                         </div>
                         <div class="panel-footer">
+                            <asp:Label runat="server" ID="projectId" Text="<%#: Item.ID %>" style="display: none;"></asp:Label>
                             <p class="text-danger">Price <strong><%#: Item.Price %></strong></p>
                             <p class="text-danger">Freelancer <strong><%#: string.Format("{0}", Item.Freelancer != null ? string.Format("{0} {1}", Item.Freelancer.FirstName, Item.Freelancer.LastName) : "No freelancers") %></strong></p>
                             <p class="text-muted">Category <i><%#: Item.Category.Name %></i></p>
@@ -45,7 +46,7 @@
                 <RoleGroups>
                    <asp:RoleGroup Roles="Freelancer">
                        <ContentTemplate>
-                              <asp:Button class="btn btn-success" onclick="ApplyForWork" Text="Apply" runat="server"/>
+                              <asp:LinkButton class="btn btn-success" OnCommand="ApplyForWork_Click" Text="Apply" runat="server" />
                         </ContentTemplate>
                    </asp:RoleGroup>
              </RoleGroups>
