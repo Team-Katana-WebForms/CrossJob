@@ -9,6 +9,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 using CrossJob.Models;
+using Microsoft.AspNet.Identity;
 
 namespace CrossJob.Web
 {
@@ -16,6 +17,9 @@ namespace CrossJob.Web
     {
         [Inject]
         public IFreelancersService FreelancersService { get; set; }
+
+        [Inject]
+        public IRatingsService RatingsService { get; set; }
 
         protected void Page_PreInit(object sender, EventArgs e)
         {
@@ -31,7 +35,27 @@ namespace CrossJob.Web
         }
         public Models.Freelancer ListViewFreelancerDetails_GetData([QueryString]string ID)
         {
+            var label = this.loginFreelancer.FindControl("lbRate") as Label;
+            label.Text = ID;
+
             return FreelancersService.GetFreelancerDetails(ID);
+        }
+
+        protected void btnRate_Click(object sender, ImageClickEventArgs e)
+        {
+            if (this.User.Identity.IsAuthenticated)
+            {
+                var textBox = this.loginFreelancer.FindControl("tbRate") as TextBox;
+                var rate = int.Parse(textBox.Text);
+                textBox.Text = "";
+
+                var label = this.loginFreelancer.FindControl("lbRate") as Label;
+                var freelancerId = label.Text;
+
+                var employerId = this.User.Identity.GetUserId();
+
+                this.RatingsService.AddNew(rate, freelancerId, employerId);
+            }
         }
     }
 }

@@ -15,15 +15,19 @@
             this.ratings = ratings;
         }
 
-        public int AddNew(Rating rating, string userId, string authorId)
+        public int AddNew(int rating, string userId, string authorId)
         {
-            rating.FreelancerID = userId;
-            rating.EmployerID = authorId;
+            var newRating = new Rating()
+            {
+                Value = rating,
+                FreelancerID = userId,
+                EmployerID = authorId
+            };
 
-            this.ratings.Add(rating);
+            this.ratings.Add(newRating);
             this.ratings.SaveChanges();
 
-            return rating.Id;
+            return newRating.Id;
         }
 
         public IQueryable<Rating> GetAllByAuthor(string userId, int skip, int take)
