@@ -1,6 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CrossJob.Web.SiteMaster" EnableViewState="true" %>
 
-<%@ Register Src="~/Utilities/Notifier/Notifier.ascx" TagPrefix="ucHandler" TagName="ErrorSuccessNotifier" %>
+<%@ Register Src="~/Controls/Notifier/Notifier.ascx" TagPrefix="ucHandler" TagName="ErrorSuccessNotifier" %>
 
 <!DOCTYPE html>
 

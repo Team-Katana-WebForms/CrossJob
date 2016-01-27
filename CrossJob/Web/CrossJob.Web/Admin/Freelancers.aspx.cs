@@ -6,7 +6,7 @@
     using Models;
     using Ninject;
     using Services.Contracts;
-    using Utilities.Notifier;
+    using Controls.Notifier;
 
     public partial class Freelancers : Page
     {

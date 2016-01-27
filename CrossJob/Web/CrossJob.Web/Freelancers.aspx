@@ -29,7 +29,7 @@
                         DataKeyNames="ID"
                         EmptyDataText="There are no data records to display.">
                         <Columns>
-                            <asp:HyperLinkField HeaderText="First name" DataTextField="FirstName"  DataNavigateUrlFields="Id" DataNavigateUrlFormatString="~/Projects/ProjectDetails.aspx?id={0}" />
+                            <asp:HyperLinkField HeaderText="First name" DataTextField="FirstName"  DataNavigateUrlFields="Id" DataNavigateUrlFormatString="~/FreelancerDetails.aspx?id={0}" />
                             <asp:DynamicField DataField="LastName" HeaderText="Last name" />
                             <asp:DynamicField DataField="RatePerHour" HeaderText="Rate per hour" />
                             <asp:BoundField DataField="AverageRating" HeaderText="Average rating" />

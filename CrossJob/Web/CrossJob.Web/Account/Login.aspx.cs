@@ -2,7 +2,7 @@
 using System.Web;
 using System.Web.UI;
 using CrossJob.Data;
-using CrossJob.Utilities.Notifier;
+using CrossJob.Controls.Notifier;
 using Microsoft.AspNet.Identity.Owin;
 
 namespace CrossJob.Web.Account

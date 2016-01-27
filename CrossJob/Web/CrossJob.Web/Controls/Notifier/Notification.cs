@@ -1,4 +1,4 @@
-﻿namespace CrossJob.Utilities.Notifier
+﻿namespace CrossJob.Controls.Notifier
 {
     using Enums;
 
