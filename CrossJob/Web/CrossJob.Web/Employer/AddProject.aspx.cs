@@ -130,7 +130,7 @@
                     projectEndDate);
 
                 Notifier.Success("New project was added successfully!");
-                this.Response.Redirect("~/");
+                this.Response.Redirect("~/Employer/MyProjects");
             }
         }
     }

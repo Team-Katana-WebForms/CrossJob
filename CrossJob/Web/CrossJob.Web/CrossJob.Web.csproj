@@ -181,7 +181,7 @@
     <Content Include="Admin\Employers.aspx" />
     <Content Include="Admin\Freelancers.aspx" />
     <Content Include="Admin\Projects.aspx" />
-    <Content Include="Employer\ProjectDetails.aspx" />
+    <Content Include="ProjectDetails.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
@@ -204,7 +204,6 @@
     <Content Include="Freelancers.aspx" />
     <Content Include="Freelancer\Account.aspx" />
     <Content Include="Freelancer\Comments.aspx" />
-    <Content Include="Freelancer\Employers.aspx" />
     <Content Include="Freelancer\MyProjects.aspx" />
     <Content Include="Imgs\calendar-icon.jpg" />
     <Content Include="Employer\MyProjects.aspx" />
@@ -258,7 +257,6 @@
     <Content Include="Utilities\Notifier\Notifier.ascx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Employer\Users.aspx" />
-    <Content Include="Freelancer\Projects.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -424,11 +422,11 @@
     <Compile Include="Admin\Projects.aspx.designer.cs">
       <DependentUpon>Projects.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employer\ProjectDetails.aspx.cs">
+    <Compile Include="ProjectDetails.aspx.cs">
       <DependentUpon>ProjectDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Employer\ProjectDetails.aspx.designer.cs">
+    <Compile Include="ProjectDetails.aspx.designer.cs">
       <DependentUpon>ProjectDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -478,13 +476,6 @@
     </Compile>
     <Compile Include="Freelancer\Comments.aspx.designer.cs">
       <DependentUpon>Comments.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Freelancer\Employers.aspx.cs">
-      <DependentUpon>Employers.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Freelancer\Employers.aspx.designer.cs">
-      <DependentUpon>Employers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Freelancer\MyProjects.aspx.cs">
       <DependentUpon>MyProjects.aspx</DependentUpon>
@@ -559,13 +550,6 @@
     </Compile>
     <Compile Include="Employer\Users.aspx.designer.cs">
       <DependentUpon>Users.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Freelancer\Projects.aspx.cs">
-      <DependentUpon>Projects.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Freelancer\Projects.aspx.designer.cs">
-      <DependentUpon>Projects.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

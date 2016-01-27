@@ -75,7 +75,7 @@
                                         <asp:Label Text='<%# Eval("FinishOn","{0:MM-dd-yyyy}")  %>' runat="server" />
                                     </td>
                                     <td>
-                                        <asp:HyperLink NavigateUrl='<%#: string.Format("~/Employer/ProjectDetails.aspx?id={0}", Item.ID) %>' runat="server" CssClass="btn btn-primary"> Details
+                                        <asp:HyperLink NavigateUrl='<%#: string.Format("~/ProjectDetails.aspx?id={0}", Item.ID) %>' runat="server" CssClass="btn btn-primary"> Details
                                         </asp:HyperLink>
                                     </td>
                                     <td>

@@ -1,12 +1,11 @@
 ﻿namespace CrossJob.Web.Employer
 {
-    using Models;
-    using Ninject;
-    using Services.Contracts;
     using System;
     using System.Linq;
     using System.Web.ModelBinding;
-    using System.Web.UI.WebControls;
+    using Models;
+    using Ninject;
+    using Services.Contracts;
 
     public partial class ProjectDetails : System.Web.UI.Page
     {
