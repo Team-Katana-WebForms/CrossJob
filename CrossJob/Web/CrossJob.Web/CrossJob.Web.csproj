@@ -247,7 +247,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
-    <Content Include="TopFreelancers.aspx" />
     <Content Include="Uploads\default.jpg" />
     <Content Include="Utilities\ModalWindow\ModalWindow.ascx" />
     <Content Include="Utilities\ModalWindow\modalWindow.js" />
@@ -516,13 +515,6 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="TopFreelancers.aspx.cs">
-      <DependentUpon>TopFreelancers.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TopFreelancers.aspx.designer.cs">
-      <DependentUpon>TopFreelancers.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Utilities\ModalWindow\ModalWindow.ascx.cs">
       <DependentUpon>ModalWindow.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

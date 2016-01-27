@@ -13,6 +13,27 @@
                 <h3><em>And let's get it done!</em></h3>
             </div>
         </div>
+
+        <div class="row text-bold">
+            <div class="text-center">
+                <div class="col-md-4 text-bold">Registered freelancers</div>
+                <div class="col-md-4">Registered employers</div>
+                <div class="col-md-4">Registered projects</div>
+            </div>
+            <asp:Repeater ID="Statistics" runat="server">
+                <HeaderTemplate>
+                    <div class="row text-center">
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <div class="col-md-4"><%# Container.DataItem %></div>
+                </ItemTemplate>
+                <FooterTemplate>
+                    </div>
+                </FooterTemplate>
+            </asp:Repeater>
+        </div>
+        <hr />
+
         <div class="row vertical-divider" style="margin-top: 30px">
             <div class="col-md-6 text-center">
                 <h3>Top 10 Freelancers</h3>
@@ -61,6 +82,7 @@
                 </asp:ListView>
             </div>
         </div>
+        <br />
     </div>
 
 
