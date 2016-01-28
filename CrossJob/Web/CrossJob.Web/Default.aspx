@@ -49,7 +49,7 @@
                         <a class="list-group-item"
                             href='<%#: string.Format("FreelancerDetails.aspx?id={0}", Item.Id) %>'>
                             <%#:Item.UserName  %>
-                            <span class="pull-right"><%#: Item.AverageRating %></span>
+                            <span class="pull-right"><%#: Item.Ratings.Count() > 0 ? string.Format("{0:0.00}",Item.Ratings.Average(r => r.Value)) : "Not rated" %></span>
                         </a>
                         </li>
                     </ItemTemplate>

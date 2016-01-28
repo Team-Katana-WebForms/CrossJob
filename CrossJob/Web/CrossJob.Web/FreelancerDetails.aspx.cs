@@ -50,7 +50,6 @@ namespace CrossJob.Web
 
         protected void btnRate_Click(object sender, ImageClickEventArgs e)
         {
-
             if (this.User.Identity.IsAuthenticated)
             {
                 var textBox = this.loginFreelancer.FindControl("tbRate") as TextBox;
@@ -67,6 +66,12 @@ namespace CrossJob.Web
                 var freelancerId = label.Text;
 
                 var employerId = this.User.Identity.GetUserId();
+
+                if (freelancerId == employerId)
+                {
+                    Notifier.Error("You cannot rate yourself");
+                    return;
+                }
 
                 var employerRatings = this.RatingsService.GetAllByAuthor(employerId);
                 var freelancerRating = employerRatings.Any(f => f.FreelancerID == freelancerId);
@@ -109,6 +114,7 @@ namespace CrossJob.Web
                 var employerId = this.User.Identity.GetUserId();
 
                 this.CommentsService.AddNew(comment, freelancerId, employerId);
+                Notifier.Error("Comment added successfully!!");
             }
         }
     }
