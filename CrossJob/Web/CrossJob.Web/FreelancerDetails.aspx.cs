@@ -67,21 +67,27 @@ namespace CrossJob.Web
 
                 var employerId = this.User.Identity.GetUserId();
 
-                //var employerRatings = this.RatingsService.GetAllByAuthor(employerId);
-                //var freelancerRating = employerRatings.Any(f => f.FreelancerID == freelancerId);
-                //if (freelancerRating)
-                //{
-                //    Notifier.Error("You already rated this freelancer");
-                //    return;
-                //}
+                if (freelancerId == employerId)
+                {
+                    Notifier.Error("You cannot rate yourself");
+                    return;
+                }
 
-                //var employerProjects = this.ProjectsService.GetAllProjectsOfUser(employerId);
-                //var freelancerProjects = employerProjects.Any(f => f.FreelancerID == freelancerId);
-                //if (freelancerProjects)
-                //{
-                //    Notifier.Error("No projects related to this freelancer");
-                //    return;
-                //}
+                var employerRatings = this.RatingsService.GetAllByAuthor(employerId);
+                var freelancerRating = employerRatings.Any(f => f.FreelancerID == freelancerId);
+                if (freelancerRating)
+                {
+                    Notifier.Error("You already rated this freelancer");
+                    return;
+                }
+
+                var employerProjects = this.ProjectsService.GetAllProjectsOfUser(employerId);
+                var freelancerProjects = employerProjects.Any(f => f.FreelancerID == freelancerId);
+                if (freelancerProjects)
+                {
+                    Notifier.Error("No projects related to this freelancer");
+                    return;
+                }
 
                 this.RatingsService.AddNew(rate, freelancerId, employerId);
             }
