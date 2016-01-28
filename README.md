@@ -15,17 +15,17 @@ The requirements for the project can be found [here](./Requirements.md).
 The documentation can be found [here](Documentation/Documentation.md).
 
 1. Public part 
-    -Home page - all top 10 projects and freelancers are shown. Statistics about the site participann are also available. On click - the project details are shown on separate page (available only for logged in users)
-    -  Freelancers page - list all freelancers. On click - the freelancer profile is shown including the average freelancer rating and 
+    - Home page - all top 10 projects and freelancers are shown. Statistics about the site participann are also available. On click - the project details are shown on separate page (available only for logged in users)
+    - Freelancers page - list all freelancers. On click - the freelancer profile is shown including the average freelancer rating and 
 adding of rating and comment for the given freelancer is available
     - Projects page = all available projects in the system
    - Employer page -  list all employers. Only if the user is logged in the user can see details about the employer(company)    - (Private part) if the user is logged in a button "Hire" is shown on the freelancer profile page and the employer hires the freelancer for a specific project. This happens on a separate page where the employer chooses the project(all projects of the employer are shown) and adds the freelancer to it
 2. Private part:
-a) Freelancer 
+    a) Freelancer 
     - has access to his/her profile. Can change his/her profile information
     (The freelancer profile is the user profile which is different from the freelancer page in the public part)
     - can view the projects they are part from
-b) Employer 
+    b) Employer 
     -  has access to his/her profile. Can change his/her profile information
     - can give rating and comments about the freelancer
     -  can publish new project (Add project page) and view his/her own projects and project details
