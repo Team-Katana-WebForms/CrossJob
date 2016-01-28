@@ -46,14 +46,14 @@
             this.Statistics.DataBind();
         }
 
-        public IQueryable<CrossJob.Models.Freelancer> ListViewTopFreelancers_GetData()
+        public IQueryable<Models.Freelancer> ListViewTopFreelancers_GetData()
         {
-            return this.FreelancersService.GetTopFreelancersByRating(5);
+            return this.FreelancersService.GetTopFreelancersByRating(10);
         }
 
-        public IQueryable<CrossJob.Models.Project> ListViewLatestProjects_GetData()
+        public IQueryable<Models.Project> ListViewLatestProjects_GetData()
         {
-            return this.ProjectsService.GetAllLatest(5);
+            return this.ProjectsService.GetAllLatest(10);
         }
 
         public List<int> ListViewStatistics_GetData()
