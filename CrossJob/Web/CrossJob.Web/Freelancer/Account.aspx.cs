@@ -39,7 +39,7 @@
             this.Country.Text = currentUser.Country;
             this.UserName.Text = currentUser.UserName;
             this.Email.Text = currentUser.Email;
-            this.Rating.Text = currentUser.AverageRating.ToString();
+            this.Rating.Text = currentUser.Ratings.Count > 0 ? currentUser.Ratings.Average(r => r.Value).ToString() : "Not rated yet";
             this.RatePerHour.Text = currentUser.RatePerHour.ToString();
         }
 

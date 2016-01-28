@@ -36,7 +36,11 @@
                     <asp:DynamicField DataField="LastName" HeaderText="Last name" />
                     <asp:DynamicField DataField="Country" HeaderText="Country" />
                     <asp:DynamicField DataField="RatePerHour" HeaderText="Rate per hour" />
-                    <asp:BoundField DataField="AverageRating"  HeaderText="Average rating" />
+                    <asp:TemplateField HeaderText="Rating">
+                        <ItemTemplate>
+                            <asp:Label ID="lbCat2" runat="server" Text='<%# Item.Ratings.Count() > 0 ? string.Format("{0:0.00}",Item.Ratings.Average(r => r.Value)) : "User is not rated yet" %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
             </asp:GridView>
         </ContentTemplate>
