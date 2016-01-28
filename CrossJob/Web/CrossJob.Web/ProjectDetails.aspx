@@ -59,34 +59,8 @@
                           </div>
                            <ContentTemplate>
                                <div>
-                                  <asp:GridView ID="GridViewCandidates" runat="server"
-                                        AutoGenerateColumns="False"
-                                        CssClass="table table-hover table-striped"
-                                        GridLines="None"
-                                        SelectMethod="GridViewCandidates_GetData"
-                                        ItemType="CrossJob.Models.Freelancer"
-                                        AllowPaging="True"
-                                        PageSize="5"
-                                        AllowSorting="True"
-                                        DataKeyNames="ID"
-                                        EmptyDataText="There are no candidates for this project."
-                                          OnRowDeleting="GridViewCandidates_RowDeleting">
-                                        <Columns>
-                                            <asp:HyperLinkField HeaderText="First name" DataTextField="FirstName" SortExpression="FirstName" DataNavigateUrlFields="Id" DataNavigateUrlFormatString="~/FreelancerDetails.aspx?id={0}" />
-                                            <asp:DynamicField DataField="LastName" HeaderText="Last name" />
-                                            <asp:DynamicField DataField="Country" HeaderText="Country" />
-                                            <asp:DynamicField DataField="RatePerHour" HeaderText="Rate per hour" />
-                                            <asp:BoundField DataField="AverageRating" HeaderText="Average rating" />
-                                                <asp:TemplateField HeaderText="Select">
-                                                     <ItemTemplate>
-                                                       <asp:LinkButton ID="LinkButton1" 
-                                                         CommandArgument='<%# Eval("ID") %>' 
-                                                         CommandName="Delete" runat="server">
-                                                         Delete</asp:LinkButton>
-                                                     </ItemTemplate>
-                                                   </asp:TemplateField>
-                                        </Columns>
-                                    </asp:GridView>
+                                  <asp:ListBox ID="GridViewCandidates" runat="server" ItemType="CrossJob.Models.Freelancer">
+                                    </asp:ListBox>
                                    </div>
                            </ContentTemplate>
                         </Content>

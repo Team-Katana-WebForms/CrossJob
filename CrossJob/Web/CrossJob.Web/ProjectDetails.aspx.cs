@@ -67,14 +67,12 @@
             Label label = (Label)b.Parent.Parent.Parent.FindControl("projectId");
             int id = Convert.ToInt32(label.Text);
             var project = ProjectsService.GetById(id);
-            var candidates = project.Candidates as HashSet<Freelancer>;
-            GridViewCandidates_GetData(candidates);
-
-
-        }
-        public IQueryable<Models.Freelancer> GridViewCandidates_GetData(HashSet<Freelancer> candidates)
-        {
-            return candidates.AsQueryable();
+            var candidates = project.Candidates;
+            var list = b.Parent.FindControl("GridViewCandidates") as ListBox;
+            foreach (Freelancer item in candidates)
+            {
+                list.Items.Add(item.FirstName + "\nEmail: "  + item.Email);
+             }
         }
 
         protected void GridViewCandidates_RowDeleting(object sender, GridViewDeleteEventArgs e)
