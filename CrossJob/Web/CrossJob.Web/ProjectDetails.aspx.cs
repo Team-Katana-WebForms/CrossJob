@@ -10,6 +10,8 @@
     using System.Web.UI.WebControls;
     using System.Web;
     using Microsoft.AspNet.Identity;
+    using System.Data;
+    using System.Collections.Generic;
     public partial class ProjectDetails : System.Web.UI.Page
     {
         [Inject]
@@ -57,6 +59,28 @@
             var project = ProjectsService.GetById(id);
             project.Candidates.Add(candidate);
             this.ProjectsService.Update(project);
+        }
+
+        protected void SeeCandidates_Click(object sender, CommandEventArgs e)
+        {
+            LinkButton b = sender as LinkButton;
+            Label label = (Label)b.Parent.Parent.Parent.FindControl("projectId");
+            int id = Convert.ToInt32(label.Text);
+            var project = ProjectsService.GetById(id);
+            var candidates = project.Candidates as HashSet<Freelancer>;
+            GridViewCandidates_GetData(candidates);
+
+
+        }
+        public IQueryable<Models.Freelancer> GridViewCandidates_GetData(HashSet<Freelancer> candidates)
+        {
+            return candidates.AsQueryable();
+        }
+
+        protected void GridViewCandidates_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            //string id = GridViewCandidates.DataKeys[e.RowIndex].Value;
+            //FreelancersService.DeleteFreelancer(id);
         }
     }
 }
