@@ -19,7 +19,7 @@ namespace CrossJob.Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         public IQueryable<Models.Freelancer> GridViewFreelancers_GetData([Control] double? displayRating)
@@ -28,20 +28,20 @@ namespace CrossJob.Web
 
             switch (DisplayRating.SelectedValue)
             {
-                case  "1":
-                    query = UsersService.GetAllFreelancers().ToList().Where(f => f.AverageRating > 1).AsQueryable();
+                case "1":
+                    query = UsersService.GetAllFreelancers().ToList().Where(f => f.Ratings.Count > 0 && f.Ratings.Average(r => r.Value) > 1).AsQueryable();
                     break;
                 case "2":
-                    query = UsersService.GetAllFreelancers().ToList().Where(f => f.AverageRating > 2).AsQueryable();
+                    query = UsersService.GetAllFreelancers().ToList().Where(f => f.Ratings.Count > 0 && f.Ratings.Average(r => r.Value) > 2).AsQueryable();
                     break;
                 case "3":
-                    query = UsersService.GetAllFreelancers().ToList().Where(f => f.AverageRating > 3).AsQueryable();
+                    query = UsersService.GetAllFreelancers().ToList().Where(f => f.Ratings.Count > 0 && f.Ratings.Average(r => r.Value) > 3).AsQueryable();
                     break;
-                case  "4":
-                    query = UsersService.GetAllFreelancers().ToList().Where(f => f.AverageRating > 4).AsQueryable();
+                case "4":
+                    query = UsersService.GetAllFreelancers().ToList().Where(f => f.Ratings.Count > 0 && f.Ratings.Average(r => r.Value) > 4).AsQueryable();
                     break;
                 case "5":
-                    query = UsersService.GetAllFreelancers().ToList().Where(f => f.AverageRating == 5).AsQueryable();
+                    query = UsersService.GetAllFreelancers().ToList().Where(f => f.Ratings.Count > 0 && f.Ratings.Average(r => r.Value) == 5).AsQueryable();
                     break;
             }
 
