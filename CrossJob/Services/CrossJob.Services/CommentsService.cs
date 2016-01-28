@@ -17,16 +17,20 @@
             this.comments = comments;
         }
 
-        public int AddNew(Comment comment, string userId, string authorId)
+        public int AddNew(string comment, string userId, string authorId)
         {
-            comment.CreatedOn = DateTime.UtcNow;
-            comment.FreelancerId = userId;
-            comment.EmployerId = authorId;
+            var newComment = new Comment()
+            {
+                Content = comment,
+                CreatedOn = DateTime.UtcNow,
+                FreelancerId = userId,
+                EmployerId = authorId
+            };
 
-            this.comments.Add(comment);
+            this.comments.Add(newComment);
             this.comments.SaveChanges();
 
-            return comment.Id;
+            return newComment.Id;
         }
 
         public List<Comment> GetAllByAuthor(string userId, int skip, int take)
@@ -46,7 +50,7 @@
                 .Where(r => r.Id == id);
         }
 
-        private IQueryable<Comment> SortAndPageComments(Expression<Func<Comment, bool>> filterExpression,int skip,int take)
+        private IQueryable<Comment> SortAndPageComments(Expression<Func<Comment, bool>> filterExpression, int skip, int take)
         {
             return this.comments
                 .All()

@@ -94,4 +94,11 @@ input[type="select"] {
     font-size:15px;
 }
 
+.box-number{
+    display:inline-block;
+    width:20%;
+}
 
+.box-text{
+    display:block;
+}

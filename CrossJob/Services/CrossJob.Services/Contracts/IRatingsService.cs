@@ -11,6 +11,8 @@
 
         IQueryable<Rating> GetAllByAuthor(string userId, int skip, int take);
 
-        int AddNew(Rating rating, string userId, string authorId);
+        IQueryable<Rating> GetAllByAuthor(string userId);
+
+        int AddNew(int rating, string userId, string authorId);
     }
 }

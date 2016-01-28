@@ -60,7 +60,7 @@
              .OrderByDescending(r => r.CreatedOn);
         }
 
-        public IQueryable<Project> GetAllProjectsOfUser(string userId, bool isEmployer)
+        public IQueryable<Project> GetAllProjectsOfUser(string userId, bool isEmployer = false)
         {
             if (isEmployer)
             {
