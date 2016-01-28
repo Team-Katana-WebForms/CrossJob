@@ -25,7 +25,7 @@
                     <div class="row text-center">
                 </HeaderTemplate>
                 <ItemTemplate>
-                    <div class="col-md-4"><%# Container.DataItem %></div>
+                    <div class="col-md-4"><%#: Container.DataItem %></div>
                 </ItemTemplate>
                 <FooterTemplate>
                     </div>
@@ -71,8 +71,8 @@
                     <ItemTemplate>
                         <a class="list-group-item"
                             href='<%#: string.Format("ProjectDetails.aspx?id={0}", Item.ID) %>'>
-                            <b>Title: </b><%#:Item.Title  %>
-                            <span class="pull-right"><b>Category: </b><%#: Item.Category.Name %></span>
+                            <b>Title: </b><%#:Item.Title  %>&nbsp;&nbsp;
+                            <span class=""><b>Category: </b><%#: Item.Category.Name %></span>
                         </a>
                         </li>
                     </ItemTemplate>

@@ -48,12 +48,12 @@
 
         public IQueryable<Models.Freelancer> ListViewTopFreelancers_GetData()
         {
-            return this.FreelancersService.GetTopFreelancersByRating(10);
+            return this.FreelancersService.GetTopFreelancersByRating(5);
         }
 
         public IQueryable<Models.Project> ListViewLatestProjects_GetData()
         {
-            return this.ProjectsService.GetAllLatest(10);
+            return this.ProjectsService.GetAllLatest(5);
         }
 
         public List<int> ListViewStatistics_GetData()
