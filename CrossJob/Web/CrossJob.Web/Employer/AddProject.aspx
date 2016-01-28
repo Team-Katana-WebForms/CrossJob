@@ -118,7 +118,7 @@
                                 <asp:TextBox ID="tbPrice" runat="server" CssClass="form-control" PlaceHolder="0.00"></asp:TextBox>
                                 <asp:RequiredFieldValidator ErrorMessage="*Price is required" ControlToValidate="tbPrice" runat="server" ValidationGroup="AddProject" ForeColor="Red" />
                                 <asp:RangeValidator ErrorMessage="Price must be greater than 0" ControlToValidate="tbPrice" runat="server" ValidationGroup="AddProject" ForeColor="Red"
-                                    MinimumValue="0"
+                                    MinimumValue="0.01" MaximumValue="999999999.99"
                                     Type="Double" />
                             </div>
                         </div>

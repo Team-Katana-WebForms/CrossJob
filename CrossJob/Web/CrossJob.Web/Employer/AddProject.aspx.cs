@@ -93,7 +93,7 @@
         protected void btnAddProject_Click(object sender, EventArgs e)
         {
             Page.Validate("AddProject");
-            if (!Page.IsValid)
+            if (Page.IsValid)
             {
                 var projectTitle = this.tbTitle.Text;
                 var projectDescription = this.tbDescription.Text;

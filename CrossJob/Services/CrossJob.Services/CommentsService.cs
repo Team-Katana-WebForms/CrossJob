@@ -38,9 +38,9 @@
             return this.SortAndPageComments(c => c.EmployerId == userId, skip, take).ToList();
         }
 
-        public List<Comment> GetAllByUser(string userId, int skip, int take)
+        public IQueryable<Comment> GetAllByUser(string userId, int skip, int take)
         {
-            return this.SortAndPageComments(c => c.FreelancerId == userId, skip, take).ToList();
+            return this.SortAndPageComments(c => c.FreelancerId == userId, skip, take);
         }
 
         public IQueryable<Comment> GetById(int id)

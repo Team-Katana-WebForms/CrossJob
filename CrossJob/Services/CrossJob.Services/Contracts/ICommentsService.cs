@@ -8,7 +8,7 @@
     {
         IQueryable<Comment> GetById(int id);
 
-        List<Comment> GetAllByUser(string userId, int skip, int take);
+        IQueryable<Comment> GetAllByUser(string userId, int skip, int take);
 
         List<Comment> GetAllByAuthor(string userId, int skip, int take);
 

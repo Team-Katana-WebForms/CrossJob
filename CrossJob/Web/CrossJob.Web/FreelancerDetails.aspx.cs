@@ -73,19 +73,19 @@ namespace CrossJob.Web
                     return;
                 }
 
+                var employerProjects = this.ProjectsService.GetAllProjectsOfUser(employerId, true);
+                var freelancerProjects = employerProjects.Any(f => f.FreelancerID == freelancerId);
+                if (!freelancerProjects)
+                {
+                    Notifier.Error("No projects related to this freelancer to rate!");
+                    return;
+                }
+
                 var employerRatings = this.RatingsService.GetAllByAuthor(employerId);
                 var freelancerRating = employerRatings.Any(f => f.FreelancerID == freelancerId);
                 if (freelancerRating)
                 {
                     Notifier.Error("You already rated this freelancer");
-                    return;
-                }
-
-                var employerProjects = this.ProjectsService.GetAllProjectsOfUser(employerId);
-                var freelancerProjects = employerProjects.Any(f => f.FreelancerID == freelancerId);
-                if (freelancerProjects)
-                {
-                    Notifier.Error("No projects related to this freelancer");
                     return;
                 }
 
@@ -99,23 +99,42 @@ namespace CrossJob.Web
             if (this.User.Identity.IsAuthenticated)
             {
                 var textBox = this.loginFreelancer.FindControl("tbComment") as TextBox;
+                var comment = textBox.Text;
                 if (textBox.Text == string.Empty)
                 {
                     Notifier.Error("Comment cannot be an empty string");
                     return;
                 }
 
-                var comment = textBox.Text;
-                textBox.Text = "";
-
+                var employerId = this.User.Identity.GetUserId();
                 var label = this.loginFreelancer.FindControl("lbRate") as Label;
                 var freelancerId = label.Text;
+                var employerProjects = this.ProjectsService.GetAllProjectsOfUser(employerId, true);
+                var freelancerProjects = employerProjects.Any(f => f.FreelancerID == freelancerId);
+                if (!freelancerProjects)
+                {
+                    Notifier.Error("No projects related to this freelancer to comment!");
+                    textBox.Text = "";
+                    return;
+                }
 
-                var employerId = this.User.Identity.GetUserId();
-
+                textBox.Text = "";
                 this.CommentsService.AddNew(comment, freelancerId, employerId);
-                Notifier.Error("Comment added successfully!!");
+                Notifier.Success("Comment added successfully!!");
             }
+        }
+
+        // The return type can be changed to IEnumerable, however to support
+        // paging and sorting, the following parameters must be added:
+        //     int maximumRows
+        //     int startRowIndex
+        //     out int totalRowCount
+        //     string sortByExpression
+        public IQueryable<CrossJob.Models.Comment> ListComments_GetData()
+        {
+            var label = this.loginFreelancer.FindControl("lbRate") as Label;
+            var freelancerId = label.Text;
+            return this.CommentsService.GetAllByUser(freelancerId, 0, 10);
         }
     }
 }
