@@ -1,3 +1,16 @@
+# Katana Team / Telerik Academy 2016 #
+*Teamwork project for the course "ASP.NET Web Forms" 2016 @ TelerikAcademy*
+
+##Contributors
+
+* Boyana Tsvetkova ([TelerikAcademy](https://telerikacademy.com/Users/bo071992), [GitHub](https://github.com/boyanatsvetkova))
+* Daniela Simeonova ([TelerikAcademy](https://telerikacademy.com/Users/danisio), [GitHub](https://github.com/danisio))
+* Pavlina Dragneva ([TelerikAcademy](https://telerikacademy.com/Users/DragnevaPavlina), [GitHub](https://github.com/PavDragneva))
+
+## Description
+
+CrossJob application is developed to provide an opportunity for employers to present their projects and those wishing to apply for them. Separately, there is a section for people seeking work, and they can provide their contact details to be invited by employers. Freelancers can be evaluated and / or discussed by the employer after their inclusion in a project.
+
 1. Public part 
     - Home page - all top 10 projects and freelancers are shown. Statistics about the site participann are also available. On click - the project details are shown on separate page (available only for logged in users)
     - Freelancers page - list all freelancers. On click - the freelancer profile is shown including the average freelancer rating and 
