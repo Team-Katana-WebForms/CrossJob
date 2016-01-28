@@ -43,12 +43,14 @@
                 <asp:TextBox ID="tbRate" runat="server" TextMode="Number" CssClass="form-control box-number" ValidationGroup="Rating"></asp:TextBox>
                 <asp:RangeValidator ID="rvRating" runat="server" Display="Dynamic" ControlToValidate="tbRate"
                     MinimumValue="0" MaximumValue="5" ErrorMessage="Rating must be between 1 and 5 stars" ValidationGroup="Rating"></asp:RangeValidator>
-                <asp:ImageButton ID="btnRate" runat="server" OnClick="btnRate_Click" ImageUrl="~/Imgs/rating.jpg" CssClass="image-container" ValidationGroup="Rating"/>
+                <asp:ImageButton ID="btnRate" runat="server" OnClick="btnRate_Click" ImageUrl="~/Imgs/rating.jpg" CssClass="image-container" ValidationGroup="Rating" />
             </div>
 
             <div>
                 <asp:TextBox ID="tbComment" runat="server" TextMode="MultiLine" Rows="5" CssClass="form-control" ValidationGroup="Comment"></asp:TextBox>
-                <asp:Button ID="btnComment" runat="server" OnClick="btnComment_Click"  CssClass="btn btn-success box-text" ValidationGroup="Comment" Text="Add Comment" />
+                <asp:RegularExpressionValidator ErrorMessage="Comment is between 10 and 500 characters long" ControlToValidate="tbComment" ValidationGroup="Comment" runat="server" ForeColor="Red"
+                                            ValidationExpression="^[\s\S]{10,500}" />
+                <asp:Button ID="btnComment" runat="server" OnClick="btnComment_Click" CssClass="btn btn-success box-text" ValidationGroup="Comment" Text="Add Comment" />
             </div>
 
         </LoggedInTemplate>
