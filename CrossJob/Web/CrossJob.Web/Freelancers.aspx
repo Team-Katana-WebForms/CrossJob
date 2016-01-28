@@ -36,7 +36,7 @@
                     <asp:DynamicField DataField="LastName" HeaderText="Last name" />
                     <asp:DynamicField DataField="Country" HeaderText="Country" />
                     <asp:DynamicField DataField="RatePerHour" HeaderText="Rate per hour" />
-                    <asp:BoundField DataField="AverageRating" HeaderText="Average rating" />
+                    <asp:BoundField DataField="AverageRating"  HeaderText="Average rating" />
                 </Columns>
             </asp:GridView>
         </ContentTemplate>

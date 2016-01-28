@@ -50,7 +50,6 @@ namespace CrossJob.Web
 
         protected void btnRate_Click(object sender, ImageClickEventArgs e)
         {
-
             if (this.User.Identity.IsAuthenticated)
             {
                 var textBox = this.loginFreelancer.FindControl("tbRate") as TextBox;
@@ -68,21 +67,21 @@ namespace CrossJob.Web
 
                 var employerId = this.User.Identity.GetUserId();
 
-                var employerRatings = this.RatingsService.GetAllByAuthor(employerId);
-                var freelancerRating = employerRatings.Any(f => f.FreelancerID == freelancerId);
-                if (freelancerRating)
-                {
-                    Notifier.Error("You already rated this freelancer");
-                    return;
-                }
+                //var employerRatings = this.RatingsService.GetAllByAuthor(employerId);
+                //var freelancerRating = employerRatings.Any(f => f.FreelancerID == freelancerId);
+                //if (freelancerRating)
+                //{
+                //    Notifier.Error("You already rated this freelancer");
+                //    return;
+                //}
 
-                var employerProjects = this.ProjectsService.GetAllProjectsOfUser(employerId);
-                var freelancerProjects = employerProjects.Any(f => f.FreelancerID == freelancerId);
-                if (freelancerProjects)
-                {
-                    Notifier.Error("No projects related to this freelancer");
-                    return;
-                }
+                //var employerProjects = this.ProjectsService.GetAllProjectsOfUser(employerId);
+                //var freelancerProjects = employerProjects.Any(f => f.FreelancerID == freelancerId);
+                //if (freelancerProjects)
+                //{
+                //    Notifier.Error("No projects related to this freelancer");
+                //    return;
+                //}
 
                 this.RatingsService.AddNew(rate, freelancerId, employerId);
             }
@@ -109,6 +108,7 @@ namespace CrossJob.Web
                 var employerId = this.User.Identity.GetUserId();
 
                 this.CommentsService.AddNew(comment, freelancerId, employerId);
+                Notifier.Error("Comment added successfully!!");
             }
         }
     }

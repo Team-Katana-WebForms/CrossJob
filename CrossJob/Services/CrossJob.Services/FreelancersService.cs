@@ -30,7 +30,7 @@
             var result = this.freelancers
                 .All()
                 .ToList()
-                .OrderByDescending(f => f.AverageRating)
+                .OrderByDescending(f => f.Ratings.Any() ? f.Ratings.Average(r => r.Value) : 0)
                 .ThenByDescending(f => f.Projects.Count)
                 .Take(top)
                 .AsQueryable();

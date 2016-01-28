@@ -30,7 +30,7 @@
                             </p>
                             <p>
                                 <span><strong>Average rating: </strong></span>
-                                <%#: Item.AverageRating %>
+                                <%#: Item.Ratings.Count() > 0 ? string.Format("{0:0.00}",Item.Ratings.Average(r => r.Value)) : "User is not rated yet" %>
                             </p>
                         </div>
                     </ItemTemplate>
